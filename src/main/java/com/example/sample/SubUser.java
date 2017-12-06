@@ -17,7 +17,7 @@ public class SubUser implements Serializable {
 
 	
 	public SubUser() {
-	//変更
+	
 	}
 	
 	public SubUser(String custid,String password,String role) {

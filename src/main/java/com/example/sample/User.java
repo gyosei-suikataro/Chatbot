@@ -9,95 +9,94 @@ import javax.persistence.*;
  * 
  */
 @Entity
-@Table(name="custinfo2")
+@Table(name="custinfo1")
 public class User implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue
-	private Integer NO;
-
+	private Integer no;
 	@Column
-	private String CUSTID;
+	private String custid;
 	@Column
-	private String CUSTNAME;
+	private String custname;
 	@Column
-	private String ORGNAME;
+	private String orgname;
 	@Column
-	private String PASSWORD;
+	private String password;
 	@Column
-	private String EFFECT;
+	private String effect;
 	@Column
-	private String ROLE;
+	private String role;
 	
 	
 
 	public User() {
 	}
 	
-	public User(Integer NO,String CUSTID,String CUSTNAME,String ORGNAME,String PASSWORD,String EFFECT,String ROLE) {
-		this.NO = NO;
-		this.CUSTID = CUSTID;
-        this.CUSTNAME = CUSTNAME;
-        this.ORGNAME = ORGNAME;
-        this.PASSWORD = PASSWORD;
-        this.EFFECT = EFFECT;
-        this.ROLE = ROLE;
+	public User(Integer no,String custid,String custname,String orgname,String password,String effect,String role) {
+		this.no = no;
+		this.custid = custid;
+        this.custname = custname;
+        this.orgname = orgname;
+        this.password = password;
+        this.effect = effect;
+        this.role = role;
     }
 
 	public Integer getNo() {
-		return this.NO;
+		return this.no;
 	}
 
-	public void setNo(Integer NO) {
-		this.NO = NO;
+	public void setNo(Integer no) {
+		this.no = no;
 	}
 	public String getCustid() {
-		return this.CUSTID;
+		return this.custid;
 	}
 
-	public void setCustid(String CUSTID) {
-		this.CUSTID = CUSTID;
+	public void setCustid(String custid) {
+		this.custid = custid;
 	}
 
 	public String getCustname() {
-		return this.CUSTNAME;
+		return this.custname;
 	}
 
-	public void setCustname(String CUSTNAME) {
-		this.CUSTNAME = CUSTNAME;
+	public void setCustname(String custname) {
+		this.custname = custname;
 	}
 	
 	public String getOrgname() {
-		return this.ORGNAME;
+		return this.orgname;
 	}
 
-	public void setOrgname(String ORGNAME) {
-		this.ORGNAME = ORGNAME;
+	public void setOrgname(String orgname) {
+		this.orgname = orgname;
 	}
 
 	public String getPassword() {
-		return this.PASSWORD;
+		return this.password;
 	}
 
-	public void setPassword(String PASSWORD) {
-		this.PASSWORD = PASSWORD;
+	public void setPassword(String password) {
+		this.password = password;
 	}
 	
 	public String getEffect() {
-		return this.EFFECT;
+		return this.effect;
 	}
 
-	public void setEffect(String EFFECT) {
-		this.EFFECT = EFFECT;
+	public void setEffect(String effect) {
+		this.effect = effect;
 	}
 
 	public String getRole() {
-		return this.ROLE;
+		return this.role;
 	}
 
-	public void setRole(String ROLE) {
-		this.ROLE = ROLE;
+	public void setRole(String role) {
+		this.role = role;
 	}
 
 

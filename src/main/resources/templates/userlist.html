@@ -7,17 +7,17 @@
 <body>
 <table>
 	<tr th:each="user :${users}">
-		<td th:text="${user.NO}"></td>
-		<td th:text="${user.CUSTID}"></td>
-		<td th:text="${user.CUSTNAME}"></td>
-		<td th:text="${user.ORGNAME}"></td>
-		<td th:text="${user.PASSWORD}"></td>
-		<td th:text="${user.EFFECT}"></td>
-		<td th:text="${user.ROLE}"></td>
+		<td th:text="${user.no}"></td>
+		<td th:text="${user.custid}"></td>
+		<td th:text="${user.custname}"></td>
+		<td th:text="${user.orgname}"></td>
+		<td th:text="${user.password}"></td>
+		<td th:text="${user.effect}"></td>
+		<td th:text="${user.role}"></td>
 		<td>
 			<form th:action="@{/userlist}" method="post">
 				<input type="submit" value="削除"/>
-				<input type="hidden" name="NO" th:value="${user.NO}"/>
+				<input type="hidden" name="NO" th:value="${user.no}"/>
 			</form>
 		</td>
 	</tr>

@@ -2,70 +2,69 @@ package com.example.sample;
 
 public class UserForm {
 
-	private Integer NO;
-	private String CUSTID;
-	private String CUSTNAME;
-	private String ORGNAME;
-	private String PASSWORD;
-	private String EFFECT;
-	private String ROLE;
-	
+	private Integer no;
+	private String custid;
+	private String custname;
+	private String orgname;
+	private String password;
+	private String effect;
+	private String role;
 	
 	
 	public Integer getNo() {
-		return NO;
+		return no;
 	}
 
-	public void setNo(Integer NO) {
-		this.NO = NO;
+	public void setNo(Integer no) {
+		this.no = no;
 	}
 	public String getCustid() {
-		return CUSTID;
+		return custid;
 	}
 
-	public void setCustid(String CUSTID) {
-		this.CUSTID = CUSTID;
+	public void setCustid(String custid) {
+		this.custid = custid;
 	}
 
 	public String getCustname() {
-		return CUSTNAME;
+		return custname;
 	}
 
-	public void setCustname(String CUSTNAME) {
-		this.CUSTNAME = CUSTNAME;
+	public void setCustname(String custname) {
+		this.custname = custname;
 	}
 	
 	public String getOrgname() {
-		return ORGNAME;
+		return orgname;
 	}
 
-	public void setOrgname(String ORGNAME) {
-		this.ORGNAME = ORGNAME;
+	public void setOrgname(String orgname) {
+		this.orgname = orgname;
 	}
 
 	public String getPassword() {
-		return PASSWORD;
+		return password;
 	}
 
-	public void setPassword(String PASSWORD) {
-		this.PASSWORD = PASSWORD;
+	public void setPassword(String password) {
+		this.password = password;
 	}
     
     
 	public String getEffect() {
-		return EFFECT;
+		return effect;
 	}
 
-	public void setEffect(String EFFECT) {
-		this.EFFECT = EFFECT;
+	public void setEffect(String effect) {
+		this.effect = effect;
 	}
 
 	public String getRole() {
-		return ROLE;
+		return role;
 	}
 
-	public void setRole(String ROLE) {
-		this.ROLE = ROLE;
+	public void setRole(String role) {
+		this.role = role;
 	}
     
     

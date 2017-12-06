@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<title>登録</title>
+</head>
+<body>
+<h1>登録ページ</h1>
+
+<form action="#" th:action="@{/signup}" th:object="${userForm}" method="post">
+    
+    
+    <p><label for="userid">ユーザーID</label>:
+       <input type="text" id="userid" name="userid" autofocus="autofocus" /></p>
+    <p><label for="name">ユーザー名</label>:
+       <input type="text" id="username" name="username" /></p>
+    <p><label for="orgname">組織名</label>:
+       <input type="text" id="orgname" name="orgname" /></p>
+    <p><label for="password">パスワード</label>:
+       <input type="password" id="password" name="password" /></p>
+    
+       
+    <p><input type="submit" value="登録" /></p>
+    
+</form>
+</body>
+</html>

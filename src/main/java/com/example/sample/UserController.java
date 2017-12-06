@@ -33,7 +33,10 @@ public class UserController {
 	@Autowired
 	UserRepository repository;
 	
-	
+	@RequestMapping("/test")
+	public String test() {
+		return "test";
+	}
 	
 	
 	//登録

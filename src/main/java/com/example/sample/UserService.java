@@ -18,8 +18,8 @@ public class UserService {
 	
 	
 	@Transactional
-    public void registerUser(Integer no,String userid,String username,String orgname,String password,String effect,String auth) {
-		User user = new User(no,userid,username,orgname,passwordEncoder.encode(password),effect,auth);
+    public void registerUser(Integer NO,String CUSTID,String CUSTNAME,String ORGNAME,String PASSWORD,String EFFECT,String ROLE) {
+		User user = new User(NO,CUSTID,CUSTNAME,ORGNAME,passwordEncoder.encode(PASSWORD),EFFECT,ROLE);
         repository.save(user);
     }
     

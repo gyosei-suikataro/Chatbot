@@ -9,95 +9,95 @@ import javax.persistence.*;
  * 
  */
 @Entity
-@Table(name="chatbot")
+@Table(name="custinfo2")
 public class User implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue
-	private Integer no;
+	private Integer NO;
 
 	@Column
-	private String userid;
+	private String CUSTID;
 	@Column
-	private String username;
+	private String CUSTNAME;
 	@Column
-	private String orgname;
+	private String ORGNAME;
 	@Column
-	private String password;
+	private String PASSWORD;
 	@Column
-	private String effect;
+	private String EFFECT;
 	@Column
-	private String auth;
+	private String ROLE;
 	
 	
 
 	public User() {
 	}
 	
-	public User(Integer no,String userid,String username,String orgname,String password,String effect,String auth) {
-		this.no = no;
-		this.userid = userid;
-        this.username = username;
-        this.orgname = orgname;
-        this.password = password;
-        this.effect = effect;
-        this.auth = auth;
+	public User(Integer NO,String CUSTID,String CUSTNAME,String ORGNAME,String PASSWORD,String EFFECT,String ROLE) {
+		this.NO = NO;
+		this.CUSTID = CUSTID;
+        this.CUSTNAME = CUSTNAME;
+        this.ORGNAME = ORGNAME;
+        this.PASSWORD = PASSWORD;
+        this.EFFECT = EFFECT;
+        this.ROLE = ROLE;
     }
 
 	public Integer getNo() {
-		return this.no;
+		return this.NO;
 	}
 
-	public void setNo(Integer no) {
-		this.no = no;
+	public void setNo(Integer NO) {
+		this.NO = NO;
 	}
-	public String getUserid() {
-		return this.userid;
-	}
-
-	public void setUserid(String userid) {
-		this.userid = userid;
+	public String getCustid() {
+		return this.CUSTID;
 	}
 
-	public String getUsername() {
-		return this.username;
+	public void setCustid(String CUSTID) {
+		this.CUSTID = CUSTID;
 	}
 
-	public void setUsername(String username) {
-		this.username = username;
+	public String getCustname() {
+		return this.CUSTNAME;
+	}
+
+	public void setCustname(String CUSTNAME) {
+		this.CUSTNAME = CUSTNAME;
 	}
 	
 	public String getOrgname() {
-		return this.orgname;
+		return this.ORGNAME;
 	}
 
-	public void setOrgname(String orgname) {
-		this.orgname = orgname;
+	public void setOrgname(String ORGNAME) {
+		this.ORGNAME = ORGNAME;
 	}
 
 	public String getPassword() {
-		return this.password;
+		return this.PASSWORD;
 	}
 
-	public void setPassword(String password) {
-		this.password = password;
+	public void setPassword(String PASSWORD) {
+		this.PASSWORD = PASSWORD;
 	}
 	
 	public String getEffect() {
-		return this.effect;
+		return this.EFFECT;
 	}
 
-	public void setEffect(String effect) {
-		this.effect = effect;
+	public void setEffect(String EFFECT) {
+		this.EFFECT = EFFECT;
 	}
 
-	public String getAuth() {
-		return this.auth;
+	public String getRole() {
+		return this.ROLE;
 	}
 
-	public void setAuth(String auth) {
-		this.auth = auth;
+	public void setRole(String ROLE) {
+		this.ROLE = ROLE;
 	}
 
 

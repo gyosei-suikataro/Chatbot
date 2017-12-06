@@ -2,70 +2,71 @@ package com.example.sample;
 
 public class UserForm {
 
-	private Integer no;
-	private String userid;
-	private String username;
-	private String orgname;
-	private String password;
-	private String effect;
-	private String auth;
+	private Integer NO;
+	private String CUSTID;
+	private String CUSTNAME;
+	private String ORGNAME;
+	private String PASSWORD;
+	private String EFFECT;
+	private String ROLE;
+	
+	
 	
 	public Integer getNo() {
-		return no;
+		return NO;
 	}
 
-	public void setNo(Integer no) {
-		this.no = no;
+	public void setNo(Integer NO) {
+		this.NO = NO;
+	}
+	public String getCustid() {
+		return CUSTID;
+	}
+
+	public void setCustid(String CUSTID) {
+		this.CUSTID = CUSTID;
+	}
+
+	public String getCustname() {
+		return CUSTNAME;
+	}
+
+	public void setCustname(String CUSTNAME) {
+		this.CUSTNAME = CUSTNAME;
 	}
 	
-    
-    public String getUserid() {
-        return userid;
-    }
+	public String getOrgname() {
+		return ORGNAME;
+	}
 
-    public void setUserid(String userid) {
-        this.userid = userid;
-    }
-    
-    public String getUsername() {
-        return username;
-    }
+	public void setOrgname(String ORGNAME) {
+		this.ORGNAME = ORGNAME;
+	}
 
-    public void setUsername(String username) {
-        this.username = username;
-    }
-    
-    public String getOrgname() {
-        return orgname;
-    }
+	public String getPassword() {
+		return PASSWORD;
+	}
 
-    public void setOrgname(String orgname) {
-        this.orgname = orgname;
-    }
+	public void setPassword(String PASSWORD) {
+		this.PASSWORD = PASSWORD;
+	}
     
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
     
-    public String getEffect() {
-        return effect;
-    }
+	public String getEffect() {
+		return EFFECT;
+	}
 
-    public void setEffect(String effect) {
-        this.effect = effect;
-    }
-    
-    public String getAuth() {
-        return auth;
-    }
+	public void setEffect(String EFFECT) {
+		this.EFFECT = EFFECT;
+	}
 
-    public void setAuth(String auth) {
-        this.auth = auth;
-    }
+	public String getRole() {
+		return ROLE;
+	}
+
+	public void setRole(String ROLE) {
+		this.ROLE = ROLE;
+	}
     
     
 }

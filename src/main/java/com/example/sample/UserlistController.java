@@ -47,7 +47,7 @@ public class UserlistController {
 	
 	
 	
-	//一覧表示
+	//荳�隕ｧ陦ｨ遉ｺ
 	@GetMapping
 	public String list(Model model) {
 		List<User> users = repository.findAll();
@@ -55,7 +55,7 @@ public class UserlistController {
 		return "userlist";
 	}
 	
-	//削除
+	//蜑企勁
 	/*
 	@DeleteMapping(path = "{no}")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
@@ -66,11 +66,11 @@ public class UserlistController {
     */
 	
 	
-	//削除
+	//蜑企勁
 	@PostMapping
 	@ResponseStatus(HttpStatus.NO_CONTENT)
-	void delete(@RequestParam Integer no) {
-		repository.delete(no);
+	void delete(@RequestParam Integer NO) {
+		repository.delete(NO);
 	}
 	
 

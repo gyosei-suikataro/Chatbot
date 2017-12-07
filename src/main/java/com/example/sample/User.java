@@ -3,7 +3,6 @@ package com.example.sample;
 import java.io.Serializable;
 import javax.persistence.*;
 
-
 /**
  * The persistent class for the chatbot database table.
  * 

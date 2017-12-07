@@ -1,3 +1,4 @@
+/*
 package com.example.config;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -28,7 +29,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		.antMatchers("/login").permitAll()
 		.antMatchers("/").hasAnyAuthority("ADMIN","USER")
 		.antMatchers("/Home").hasAnyAuthority("ADMIN","USER")
-		.antMatchers("/signup").hasAnyAuthority("ADMIN","USER")
+		//.antMatchers("/signup").hasAnyAuthority("ADMIN","USER")
+		//.antMatchers("/userlist").hasAnyAuthority("ADMIN","USER")
 		.antMatchers("/Account").hasAuthority("ADMIN")
 		.antMatchers("/logout").hasAnyAuthority("ADMIN","USER")
 		//.antMatchers("/User/**").hasAuthority("ADMIN")
@@ -46,10 +48,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		.disable();
 	}
 	
-/*
 	@Bean
 	PasswordEncoder passwordEncoder() {
 	    return new BCryptPasswordEncoder();
 	}
-*/
 }
+*/

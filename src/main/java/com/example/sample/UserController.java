@@ -35,7 +35,7 @@ public class UserController {
 	
 	@RequestMapping("/")
 	public String test() {
-		return "test";
+		return "signup";
 	}
 	
 	

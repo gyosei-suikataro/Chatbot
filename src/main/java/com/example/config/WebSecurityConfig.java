@@ -3,7 +3,9 @@ package com.example.config;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Controller;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -63,4 +65,19 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	    return new BCryptPasswordEncoder();
 	}
 	 */
+
+	@Configuration
+	public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
+
+		@Override
+		protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+			auth.inMemoryAuthentication()
+			// ユーザ名'user', パスワード'user',ロール'USER'のユーザを追加
+			.withUser("user").password("user").roles("USER")
+			.and()
+			// ユーザ名'admin', パスワード'admin',ロール'ADMIN'のユーザを追加
+			.withUser("admin").password("admin").roles("ADMIN");
+		}
+	}
+
 }

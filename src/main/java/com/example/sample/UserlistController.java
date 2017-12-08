@@ -47,15 +47,13 @@ public class UserlistController {
 	
 	
 	
-	//ˆê——•\¦
 	@GetMapping
 	public String list(Model model) {
 		List<User> users = repository.findAll();
 		model.addAttribute("users",users);
 		return "userlist";
 	}
-	
-	//íœ
+
 	/*
 	@DeleteMapping(path = "{no}")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
@@ -65,8 +63,6 @@ public class UserlistController {
     }
     */
 	
-	
-	//íœ
 	@PostMapping
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	void delete(@RequestParam Integer no) {

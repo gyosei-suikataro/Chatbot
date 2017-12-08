@@ -1,23 +1,12 @@
 package com.example.sample;
 
-/*
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
-import javax.validation.Valid;
-*/
 
 import org.springframework.beans.factory.annotation.Autowired;
-//import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-//import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-//import org.springframework.web.bind.annotation.ModelAttribute;
-
-
-//import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 /*
 import org.springframework.validation.BindingResult;
@@ -47,7 +36,7 @@ public class UserlistController {
 	
 	
 	
-	//àÍóóï\é¶
+	
 	@GetMapping
 	public String list(Model model) {
 		List<User> users = repository.findAll();
@@ -55,7 +44,7 @@ public class UserlistController {
 		return "userlist";
 	}
 	
-	//çÌèú
+	
 	/*
 	@DeleteMapping(path = "{no}")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
@@ -66,7 +55,7 @@ public class UserlistController {
     */
 	
 	
-	//çÌèú
+	
 	@PostMapping
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	void delete(@RequestParam Integer no) {

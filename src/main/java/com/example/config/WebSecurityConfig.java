@@ -16,11 +16,11 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 @SpringBootApplication
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
-	
-    @Override
-    public void configure(WebSecurity web) throws Exception {
-    	web.ignoring().antMatchers("/webjars/**", "/css/**");
-    }
+
+	@Override
+	public void configure(WebSecurity web) throws Exception {
+		web.ignoring().antMatchers("/webjars/**", "/css/**");
+	}
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
@@ -36,21 +36,21 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		//.antMatchers("/User/**").hasAuthority("ADMIN")
 		.and()
 		.formLogin()
-		.loginPage("/");
-		http.formLogin()
 		.defaultSuccessUrl("/signup", true)
-		.and().logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
+		.and()
+		.logout()
+		.logouturl("/logout")
 		.logoutSuccessUrl("/")
 		.deleteCookies("JSESSIONID")
 		.invalidateHttpSession(true).permitAll()
 		.and()
 		.csrf()
-		.disable();
+		.disable();user
 	}
 	/*
 	@Bean
 	PasswordEncoder passwordEncoder() {
 	    return new BCryptPasswordEncoder();
 	}
-	*/
+	 */
 }

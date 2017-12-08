@@ -44,19 +44,18 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		 */
 		.anyRequest().authenticated(); 
 
-		//ログイン設定
 		http.formLogin()
-		.loginProcessingUrl("processing")   //認証処理のパス
-		.loginPage("/")            //ログインフォームのパス
-		//.failureHandler(new SampleAuthenticationFailureHandler())       //認証失敗時に呼ばれるハンドラクラス
-		.defaultSuccessUrl("/signup")     //認証成功時の遷移先
+		.loginProcessingUrl("processing")
+		.loginPage("/")
+		//.failureHandler(new SampleAuthenticationFailureHandler())
+		.defaultSuccessUrl("/signup")
 		.usernameParameter("custid").passwordParameter("password")
 		.and();
 
 		// ログアウト設定
 		http.logout()
-		.logoutRequestMatcher(new AntPathRequestMatcher("/logout**"))       // ログアウト処理のパス
-		.logoutSuccessUrl("/login");                                        // ログアウト完了時のパス
+		.logoutRequestMatcher(new AntPathRequestMatcher("/logout**"))
+		.logoutSuccessUrl("/login");
 	}
 
 	/*
@@ -67,7 +66,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	 */
 
 	@Configuration
-	public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
+	public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 		@Override
 		protected void configure(AuthenticationManagerBuilder auth) throws Exception {

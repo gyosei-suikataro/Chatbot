@@ -50,7 +50,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		.loginPage("/")            //ログインフォームのパス
 		//.failureHandler(new SampleAuthenticationFailureHandler())       //認証失敗時に呼ばれるハンドラクラス
 		.defaultSuccessUrl("/signup")     //認証成功時の遷移先
-		.usernameParameter("custid").passwordParameter("password")  //ユーザ、パスワードのパラメータ名
+		.usernameParameter("custid").passwordParameter("password")
 		.and();
 
 		// ログアウト設定

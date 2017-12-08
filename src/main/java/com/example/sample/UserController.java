@@ -40,9 +40,10 @@ public class UserController {
         model.addAttribute("userForm", new UserForm());
         return "signup";
     }
+	
 	@PostMapping("/signup")
     public String signupPost(Model model, @Valid UserForm userForm, BindingResult bindingResult, HttpServletRequest request) {
-		userService.registerUser(userForm.getNo,userForm.getCustid(),userForm.getCustname(),userForm.getOrgname(),userForm.getPassword(),"1","USER");
+		userService.registerUser(userForm.getNo(),userForm.getCustid(),userForm.getCustname(),userForm.getOrgname(),userForm.getPassword(),"1","USER");
 		return "signup";
 	}
 	

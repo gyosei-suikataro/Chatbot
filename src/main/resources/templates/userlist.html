@@ -5,6 +5,7 @@
 <title>ユーザー一覧</title>
 </head>
 <body>
+<input type="submit" onclick="location.href='/signup'" value = "登録ページ" />
 <table>
 	<tr th:each="user :${users}">
 		<td th:text="${user.no}"></td>

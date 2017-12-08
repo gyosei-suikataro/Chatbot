@@ -34,7 +34,7 @@ public class UserlistController {
 	@Autowired
 	UserRepository repository;
 	
-	
+	public static final String DEFAULT_ENCODING = "UTF-8";
 	
 	//ˆê——•\Ž¦
 	@GetMapping

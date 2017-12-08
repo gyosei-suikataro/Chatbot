@@ -33,11 +33,11 @@ public class UserController {
 	@Autowired
 	UserRepository repository;
 	
-	@RequestMapping("/")
+	/*@RequestMapping("/")
 	public String test() {
 		return "signup";
 	}
-	
+	*/
 	
 	//登録
 	@GetMapping("/signup")

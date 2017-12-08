@@ -1,4 +1,4 @@
-package com.example.sample;
+/*package com.example.sample;
 
 import java.io.Serializable;
 import javax.persistence.*;
@@ -51,3 +51,4 @@ public class SubUser implements Serializable {
 	}
 	
 }
+*/

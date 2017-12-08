@@ -1,4 +1,4 @@
-package com.example.sample;
+/*package com.example.sample;
 
 import com.example.sample.SubUser;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -11,3 +11,4 @@ public interface SubUserRepository extends JpaRepository<SubUser, String>{
 
 	
 }
+*/

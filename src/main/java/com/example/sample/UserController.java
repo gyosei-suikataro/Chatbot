@@ -33,13 +33,13 @@ public class UserController {
 	@Autowired
 	UserRepository repository;
 	
-	@RequestMapping("/")
+	@RequestMapping("/signup")
 	public String test() {
 		return "signup";
 	}
 	
 	
-	//登録
+	//
 	@GetMapping("/signup")
     public String signup(Model model) {
         model.addAttribute("userForm", new UserForm());

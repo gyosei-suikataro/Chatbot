@@ -38,13 +38,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		*/
 		.anyRequest().authenticated(); 
 		
-        // ログイン設定
+        //ログイン設定
         http.formLogin()
-            .loginProcessingUrl("processing")   // 認証処理のパス
-            .loginPage("/login")            // ログインフォームのパス
-            .failureHandler(new SampleAuthenticationFailureHandler())       // 認証失敗時に呼ばれるハンドラクラス
-            .defaultSuccessUrl("/signup")     // 認証成功時の遷移先
-            .usernameParameter("custid").passwordParameter("password")  // ユーザー名、パスワードのパラメータ名
+            .loginProcessingUrl("processing")   //認証処理のパス
+            .loginPage("/login")            //ログインフォームのパス
+            //.failureHandler(new SampleAuthenticationFailureHandler())       //認証失敗時に呼ばれるハンドラクラス
+            .defaultSuccessUrl("/signup")     //認証成功時の遷移先
+            .usernameParameter("custid").passwordParameter("password")  //ユーザ、パスワードのパラメータ名
             .and();
         
         // ログアウト設定

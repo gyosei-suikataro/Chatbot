@@ -27,7 +27,6 @@ import com.example.sample.UserRepository;
 @Controller
 public class UserController {
 	
-	public static final String DEFAULT_ENCODING = "UTF-8";
 
 	@Autowired
     UserService userService;
@@ -36,7 +35,7 @@ public class UserController {
 	UserRepository repository;
 	
 	
-	//“o˜^
+	
 	@GetMapping("/signup")
     public String signup(Model model) {
         model.addAttribute("userForm", new UserForm());

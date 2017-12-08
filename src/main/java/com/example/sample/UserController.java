@@ -38,6 +38,10 @@ public class UserController {
 		return "signup";
 	}
 	
+	@RequestMapping(value = {"/", "/login"})
+	public String test() {
+		return "login";
+	}
 	
 	//
 	@GetMapping("/signup")

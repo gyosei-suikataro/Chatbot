@@ -51,6 +51,4 @@ public class UserController {
 		userService.registerUser(userForm.getNo(),userForm.getCustid(), userForm.getCustname(),userForm.getOrgname(),userForm.getPassword(),"1","USER");
 		return "signup";
 	}
-	
-	
 }

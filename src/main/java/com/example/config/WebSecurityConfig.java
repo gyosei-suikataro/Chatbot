@@ -110,6 +110,3 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 }
 
 */
-
-
->>>>>>> branch 'branch3' of https://github.com/gyosei-suikataro/Chatbot

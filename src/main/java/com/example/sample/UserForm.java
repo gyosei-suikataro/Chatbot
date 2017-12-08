@@ -2,7 +2,7 @@ package com.example.sample;
 
 public class UserForm {
 
-	private Integer no;
+	//private Integer no;
 	private String custid;
 	private String custname;
 	private String orgname;
@@ -10,7 +10,7 @@ public class UserForm {
 	private String effect;
 	private String role;
 	
-	
+	/*
 	public Integer getNo() {
 		return no;
 	}
@@ -18,6 +18,7 @@ public class UserForm {
 	public void setNo(Integer no) {
 		this.no = no;
 	}
+	*/
 	public String getCustid() {
 		return custid;
 	}

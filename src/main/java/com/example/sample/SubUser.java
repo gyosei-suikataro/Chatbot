@@ -1,3 +1,4 @@
+/*
 package com.example.sample;
 
 import java.io.Serializable;
@@ -51,3 +52,4 @@ public class SubUser implements Serializable {
 	}
 	
 }
+*/

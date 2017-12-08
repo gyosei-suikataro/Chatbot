@@ -1,3 +1,4 @@
+/*
 package com.example.sample;
 
 import com.example.sample.SubUser;
@@ -11,3 +12,4 @@ public interface SubUserRepository extends JpaRepository<SubUser, String>{
 
 	
 }
+*/

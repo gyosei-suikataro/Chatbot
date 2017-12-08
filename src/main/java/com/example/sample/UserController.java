@@ -39,7 +39,7 @@ public class UserController {
 	}
 	
 	@RequestMapping(value = {"/", "/login"})
-	public String test() {
+	public String login() {
 		return "login";
 	}
 	

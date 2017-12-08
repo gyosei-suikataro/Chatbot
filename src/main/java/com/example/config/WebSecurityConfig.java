@@ -45,7 +45,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		.invalidateHttpSession(true).permitAll()
 		.and()
 		.csrf()
-		.disable();user
+		.disable();
 	}
 	/*
 	@Bean

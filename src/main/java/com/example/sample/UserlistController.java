@@ -34,9 +34,9 @@ public class UserlistController {
 	@Autowired
 	UserRepository repository;
 	
-	public static final String DEFAULT_ENCODING = "UTF-8";
 	
-	//ˆê——•\¦
+	
+	
 	@GetMapping
 	public String list(Model model,Pageable pageable) {
 		List<User> users = repository.findAll();
@@ -55,7 +55,7 @@ public class UserlistController {
     */
 	
 	
-	//íœ
+	
 	@PostMapping
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	void delete(@RequestParam Integer no) {

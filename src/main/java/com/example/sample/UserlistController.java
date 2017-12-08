@@ -36,7 +36,7 @@ public class UserlistController {
 	
 	
 	
-	
+	//ˆê——•\¦
 	@GetMapping
 	public String list(Model model) {
 		List<User> users = repository.findAll();
@@ -55,7 +55,7 @@ public class UserlistController {
     */
 	
 	
-	
+	//íœ
 	@PostMapping
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	void delete(@RequestParam Integer no) {

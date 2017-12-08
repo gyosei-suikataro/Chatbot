@@ -33,13 +33,8 @@ public class UserController {
 	@Autowired
 	UserRepository repository;
 	
-	/*@RequestMapping("/")
-	public String test() {
-		return "signup";
-	}
-	*/
 	
-	//ç™»éŒ²
+	//“o˜^
 	@GetMapping("/signup")
     public String signup(Model model) {
         model.addAttribute("userForm", new UserForm());
@@ -48,7 +43,7 @@ public class UserController {
 	
 	@PostMapping("/signup")
     public String signupPost(Model model, @Valid UserForm userForm, BindingResult bindingResult, HttpServletRequest request) {
-		userService.registerUser(userForm.getCustid(),userForm.getCustname(),userForm.getOrgname(),userForm.getPassword(),"1","USER");
+		userService.registerUser(userForm.getNo,userForm.getCustid(),userForm.getCustname(),userForm.getOrgname(),userForm.getPassword(),"1","USER");
 		return "signup";
 	}
 	

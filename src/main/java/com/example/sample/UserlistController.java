@@ -42,9 +42,9 @@ public class UserlistController {
 	@GetMapping
 	public String list(Model model,Pageable pageable) {
 		List<User> users = repository.findAll();
-		Page<User> usersPage = userService.getAllUser(pageable);
+		//Page<User> usersPage = repository.UserfindAll(pageable);
 		model.addAttribute("users",users);
-		model.addAttribute("page",usersPage);
+		//model.addAttribute("page",usersPage);
 		return "userlist";
 	}
 	

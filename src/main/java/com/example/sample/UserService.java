@@ -26,12 +26,13 @@ public class UserService {
     }
 	
 	
-	
+	/*
 	@Transactional
 	public Page<User> getAllUser(Pageable pageable) {
 
         return repository.UserfindAll(pageable);
     }
+    */
     
 	
     

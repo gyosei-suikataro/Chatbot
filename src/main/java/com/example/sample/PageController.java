@@ -17,6 +17,6 @@ public class PageController {
 	
 	@RequestMapping("/")
 	public String Home() {
-		return "Home";
+		return "signup";
 	}
 }

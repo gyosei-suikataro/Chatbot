@@ -4,9 +4,29 @@
 <meta charset="utf-8" />
 <title>Login</title>
 </head>
-<h1>Login</h1>
 <body>
-      <form role="form" action="/signup" method="post" id="login-form" autocomplete="off">
-      </form>
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 col-md-push-3 col-md-6">
+				<div class="form-wrap">
+					<div class="text-center">
+						<h1>Login</h1>
+					</div>
+					<br />
+					<form role="form" action="#" th:action="@{/login}" method="post"
+						id="login-form" autocomplete="off" class="center-block">
+						<div class="form-group"
+							th:if="${session['SPRING_SECURITY_LAST_EXCEPTION']} != null">
+							<p class="form-control-static text-danger"
+								th:text="${session['SPRING_SECURITY_LAST_EXCEPTION'].message}"></p>
+						</div>
+						
+						<br>
+						<button id="btn-login" class="btn btn-primary btn-block">Login</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
 </body>
 </html>

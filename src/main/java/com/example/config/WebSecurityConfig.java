@@ -27,6 +27,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		http
 		.authorizeRequests()
 		.antMatchers("/login").permitAll()
+		/*
 		.antMatchers("/**").hasAnyAuthority("ADMIN","USER")
 		.antMatchers("/Home").hasAnyAuthority("ADMIN","USER")
 		.antMatchers("/signup").hasAnyAuthority("ADMIN","USER")
@@ -34,19 +35,24 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		.antMatchers("/Account").hasAuthority("ADMIN")
 		.antMatchers("/logout").hasAnyAuthority("ADMIN","USER")
 		//.antMatchers("/User/**").hasAuthority("ADMIN")
-		.and()
-		.formLogin()
-		.defaultSuccessUrl("/signup", true)
-		.and()
-		.logout()
-		.logoutUrl("/logout")
-		.logoutSuccessUrl("/")
-		.deleteCookies("JSESSIONID")
-		.invalidateHttpSession(true).permitAll()
-		.and()
-		.csrf()
-		.disable();
-	}
+		*/
+		.anyRequest().authenticated(); 
+		
+        // ログイン設定
+        http.formLogin()
+            .loginProcessingUrl("processing")   // 認証処理のパス
+            .loginPage("/login")            // ログインフォームのパス
+            .failureHandler(new SampleAuthenticationFailureHandler())       // 認証失敗時に呼ばれるハンドラクラス
+            .defaultSuccessUrl("/signup")     // 認証成功時の遷移先
+            .usernameParameter("custid").passwordParameter("password")  // ユーザー名、パスワードのパラメータ名
+            .and();
+        
+        // ログアウト設定
+        http.logout()
+            .logoutRequestMatcher(new AntPathRequestMatcher("/logout**"))       // ログアウト処理のパス
+            .logoutSuccessUrl("/index");                                        // ログアウト完了時のパス
+    }
+        
 	/*
 	@Bean
 	PasswordEncoder passwordEncoder() {

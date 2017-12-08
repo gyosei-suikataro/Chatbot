@@ -23,6 +23,8 @@ import com.example.sample.UserService;
 import com.example.sample.UserRepository;
 
 import java.util.List;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
 @Controller
 @RequestMapping("userlist")
@@ -36,11 +38,13 @@ public class UserlistController {
 	
 	
 	
-	//一覧表示
+	//一覧表示+ページング
 	@GetMapping
-	public String list(Model model) {
+	public String list(Model model,Pageable pageable) {
 		List<User> users = repository.findAll();
+		Page<User> usersPage = repository.UserfindAll(pageable);
 		model.addAttribute("users",users);
+		model.addAttribute("page",usersPage);
 		return "userlist";
 	}
 	
@@ -62,6 +66,7 @@ public class UserlistController {
 		repository.delete(no);
 		
 	}
+	
 	
 
 	

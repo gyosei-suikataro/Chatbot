@@ -4,9 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-
-//import com.example.sample.User;
-//import com.example.sample.SubUser;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
 
 @Service
@@ -25,6 +24,16 @@ public class UserService {
 		User user = new User(no,custid,custname,orgname,passwordEncoder.encode(password),effect,role);
         repository.save(user);
     }
+	
+	
+	/*
+	@Transactional
+	public Page<User> getAllUser(Pageable pageable) {
+
+        return repository.UserfindAll(pageable);
+    }
+    */
+	
     
     
 	

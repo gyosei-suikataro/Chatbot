@@ -21,34 +21,32 @@
 				<div class="form-wrap">
 					<div class="text-center">
 						<h1>Login</h1>
+						<form role="form" action="#" th:action="@{/login}" method="post"
+							id="login-form" autocomplete="off" class="center-block">
+							<div class="form-group"
+								th:if="${session['SPRING_SECURITY_LAST_EXCEPTION']} != null">
+								<p class="form-control-static text-danger"
+									th:text="${session['SPRING_SECURITY_LAST_EXCEPTION'].message}"></p>
+							</div>
+							<div class="form-group">
+								<label for="id" class="sr-only">ID</label> <input type="text"
+									name="custid" id="custid" class="form-control input-lg"
+									placeholder="ID ‚ð“ü—Í‚µ‚Ä‚­‚¾‚³‚¢" />
+							</div>
+							<div class="form-group" style="align: center">
+								<label for="password" class="sr-only">Password</label> <input
+									type="password" name="password" id="password"
+									class="form-control input-lg" placeholder="Password ‚ð“ü—Í‚µ‚Ä‚­‚¾‚³‚¢"
+									style="margin-top: 30px;" />
+							</div>
+							<br>
+							<button id="btn-login" class="btn btn-primary btn-block">Login</button>
+						</form>
 					</div>
-					<br/>
-					<form role="form" action="#" th:action="@{/login}" method="post"
-						id="login-form" autocomplete="off" class="center-block">
-						<div class="form-group"
-							th:if="${session['SPRING_SECURITY_LAST_EXCEPTION']} != null">
-							<p class="form-control-static text-danger"
-								th:text="${session['SPRING_SECURITY_LAST_EXCEPTION'].message}"></p>
-						</div>
-						<div class="form-group">
-							<label for="id" class="sr-only">ID</label> <input type="text"
-								name="custid" id="custid" class="form-control input-lg"
-								placeholder="ID ‚ð“ü—Í‚µ‚Ä‚­‚¾‚³‚¢" />
-						</div>
-						<div class="form-group" style="align: center">
-							<label for="password" class="sr-only">Password</label> <input
-								type="password" name="password" id="password"
-								class="form-control input-lg" placeholder="Password ‚ð“ü—Í‚µ‚Ä‚­‚¾‚³‚¢"
-								style="margin-top: 30px;" />
-						</div>
-						<br>
-						<button id="btn-login" class="btn btn-primary btn-block">Login</button>
-					</form>
 				</div>
 			</div>
 		</div>
 	</div>
-
 	<!-- Bootstrap core JavaScript
     ================================================== -->
 	<!-- Placed at the end of the document so the pages load faster -->
@@ -56,6 +54,5 @@
 	<script src="/js/bootstrap.min.js"></script>
 	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 	<script src="/js/ie10-viewport-bug-workaround.js"></script>
-	</script>
 </body>
 </html>

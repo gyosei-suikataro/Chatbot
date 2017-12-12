@@ -1,4 +1,3 @@
-
 package com.example.sample;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;

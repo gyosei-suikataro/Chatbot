@@ -47,11 +47,14 @@
 var rowIds = [];
 
 $(function() {
-	var h = $(window).height();
-	$('#wrap').css('display','none');
-	$('#loader-bg ,#loader').height(h).css('display','block');
-	$("#header").load("header.html");
-	$("#grid-basic").bootgrid({
+	//alert("ｊｓはじまり");
+	//var h = $(window).height();
+	//$('#wrap').css('display','none');
+	//$('#loader-bg ,#loader').height(h).css('display','block');
+	//$('#btn_del').css('display', 'block');
+});
+$(document).ready(function () { //全ての読み込みが完了したら実行
+	$('#grid-basic').bootgrid({
 		selection: true,
 		multiSelect: true,
 		rowSelect: true,
@@ -74,12 +77,6 @@ $(function() {
 	    }
 	    //alert("Deselect: " + rowIds.join(","));
 	});
-});
-
-$(window).load(function () { //全ての読み込みが完了したら実行
-	  $('#loader-bg').delay(900).fadeOut(800);
-	  $('#loader').delay(600).fadeOut(300);
-	  $('#wrap').css('display', 'block');
 });
 	
 	function drow() {

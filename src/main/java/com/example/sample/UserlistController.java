@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.PathVariable;
 /*
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
@@ -54,13 +55,20 @@ public class UserlistController {
     }
     */
 	
+	@PostMapping
+	@ResponseStatus(HttpStatus.NO_CONTENT)
+	void delete(@PathVariable Integer no) {
+		repository.delete(no);	
+	}
 	
 	
+	/*
 	@PostMapping
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	void delete(@RequestParam Integer no) {
 		repository.delete(no);	
 	}
+	*/
 	
 	
 

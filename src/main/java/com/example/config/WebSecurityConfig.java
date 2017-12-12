@@ -52,7 +52,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		.usernameParameter("custid").passwordParameter("password")
 		.and()
 		.deleteCookies("JSESSIONID")
-		.invalidateHttpSession(true).permitAll();
+		.invalidateHttpSession(true).permitAll()
+		.and()
+		.csrf()
+		.disable();;
 
 		// ログアウト設定
 		http.logout()

@@ -40,20 +40,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		.antMatchers("/Account").hasAuthority("ADMIN")
 		.antMatchers("/logout").hasAnyAuthority("ADMIN","USER")
 		//.antMatchers("/User/**").hasAuthority("ADMIN")
-
-		.anyRequest().authenticated(); 
-
-		http.csrf().disable().formLogin()
-		.loginProcessingUrl("/processing")
-		.loginPage("/login")
-		//.failureHandler(new SampleAuthenticationFailureHandler())
-		.defaultSuccessUrl("/signup")
-		.usernameParameter("custid").passwordParameter("password")
-		.and();
-
-		http.logout()
-		.logoutRequestMatcher(new AntPathRequestMatcher("/logout**"))
-		.logoutSuccessUrl("/login").deleteCookies("JSESSIONID")
+		.and()
+		.formLogin()
+		.loginPage("/");
+		http.formLogin()
+		.defaultSuccessUrl("/signup", true)
+		.and().logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
+		.logoutSuccessUrl("/")
+		.deleteCookies("JSESSIONID")
 		.invalidateHttpSession(true).permitAll()
 		.and()
 		.csrf()

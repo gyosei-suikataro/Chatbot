@@ -23,7 +23,7 @@ import com.example.sample.UserService;
 import com.example.sample.UserRepository;
 
 import java.util.List;
-import java.util.ArrayList;
+//import java.util.ArrayList;
 
 @Controller
 @RequestMapping("userlist")
@@ -37,7 +37,7 @@ public class UserlistController {
 	
 	@GetMapping
 	public String list(Model model) {
-		ArrayList<User> users = repository.findAll();
+		List<User> users = repository.findAll();
 		model.addAttribute("users",users);
 		return "userlist";
 	}

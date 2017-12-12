@@ -1,7 +1,5 @@
 package com.example.config;
 
-import com.zaxxer.hikari.HikariConfig;
-import com.zaxxer.hikari.HikariDataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
@@ -40,24 +38,6 @@ import java.util.Map;
 @SpringBootApplication
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
-
-	@Value("${spring.datasource.url}")
-	private String dbUrl;
-
-	@Autowired
-	@Qualifier("dataSource")
-	private DataSource dataSource;
-
-	private static final String USER_QUERY = "SELECT custid, password,role FROM userdata WHERE custid = ?";
-	private static final String ROLE_QUERY = "SELECT custid, reserve FROM userdata WHERE custid = ?";
-
-	@Override
-	public void configure(AuthenticationManagerBuilder auth) throws Exception {
-		auth.jdbcAuthentication()
-		.dataSource(dataSource)
-		.usersByUsernameQuery(USER_QUERY)
-		.authoritiesByUsernameQuery(ROLE_QUERY);
-	}
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {

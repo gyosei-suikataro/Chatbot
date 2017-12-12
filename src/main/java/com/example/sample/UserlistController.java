@@ -37,8 +37,7 @@ public class UserlistController {
 	
 	@GetMapping
 	public String list(Model model) {
-		ArrayList<User> users = new ArrayList<User>();
-	    users = repository.findAll();
+		ArrayList<User> users = repository.findAll();
 		model.addAttribute("users",users);
 		return "userlist";
 	}

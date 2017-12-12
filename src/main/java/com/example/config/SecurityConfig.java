@@ -18,14 +18,19 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		.antMatchers("/**").hasRole("USER")
 		.and()
 		.formLogin()
-		.loginPage("/login").failureUrl("/login-error");
-		http.formLogin().loginProcessingUrl("/login").loginPage("/signin")
-		.failureUrl("?error").defaultSuccessUrl("/", false)
-		.usernameParameter("custid").passwordParameter("password")
-		.and().logout().logoutRequestMatcher(new AntPathRequestMatcher("signout"))
+		.loginProcessingUrl("/login")
+		.loginPage("/signin")
+		.failureUrl("?error")
+		.defaultSuccessUrl("/signup", true)
+		.usernameParameter("custid")
+		.passwordParameter("password")
+		.and()
+		.logout()
+		.logoutRequestMatcher(new AntPathRequestMatcher("signout"))
 		.logoutSuccessUrl("/login")
 		.deleteCookies("JSESSIONID")
-		.invalidateHttpSession(true).permitAll();
+		.invalidateHttpSession(true)
+		.permitAll();
 	}
 
 	@Autowired

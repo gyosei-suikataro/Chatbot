@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.http.HttpStatus;
 
-
+import com.example.sample.User;
 import com.example.sample.UserService;
 import com.example.sample.UserRepository;
 
@@ -37,7 +37,8 @@ public class UserlistController {
 	
 	@GetMapping
 	public String list(Model model) {
-		ArrayList<User> users = repository.findAll();
+		ArrayList<User> = new ArrayList<User>();
+		users = repository.findAll();
 		model.addAttribute("users",users);
 		return "userlist";
 	}

@@ -50,7 +50,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		//.failureHandler(new SampleAuthenticationFailureHandler())
 		.defaultSuccessUrl("/signup")
 		.usernameParameter("custid").passwordParameter("password")
-		.and();
+		.and()
+		.deleteCookies("JSESSIONID")
+		.invalidateHttpSession(true).permitAll();
 
 		// ログアウト設定
 		http.logout()

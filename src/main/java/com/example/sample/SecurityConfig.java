@@ -1,4 +1,4 @@
-package com.example.config;
+package com.example.sample;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -19,7 +19,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		.and()
 		.formLogin()
 		.loginProcessingUrl("/login")
-		.loginPage("/signin")
+		.loginPage("/login")
 		.failureUrl("?error")
 		.defaultSuccessUrl("/signup", true)
 		.usernameParameter("custid")

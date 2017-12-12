@@ -21,9 +21,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		.loginPage("/login").failureUrl("/login-error");
 		http.formLogin().loginProcessingUrl("/login").loginPage("/signin")
 		.failureUrl("?error").defaultSuccessUrl("/", false)
-		.usernameParameter("loginId").passwordParameter("password")
+		.usernameParameter("custid").passwordParameter("password")
 		.and().logout().logoutRequestMatcher(new AntPathRequestMatcher("signout"))
-		.logoutSuccessUrl("/signin")
+		.logoutSuccessUrl("/login")
 		.deleteCookies("JSESSIONID")
 		.invalidateHttpSession(true).permitAll();
 	}

@@ -9,7 +9,7 @@
 	</context-param>
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
-		<param-value>com.example.config.SecurityConfig</param-value>
+		<param-value>com.example.sample.SecurityConfig</param-value>
 	</context-param>
 	<listener>
 		<listener-class>org.springframework.web.context.CotextLoaderListener</listener-class>

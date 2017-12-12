@@ -34,9 +34,6 @@ public class UserlistController {
 	@Autowired
 	UserRepository repository;
 	
-	
-	
-	
 	@GetMapping
 	public String list(Model model) {
 		List<User> users = repository.findAll();
@@ -44,25 +41,5 @@ public class UserlistController {
 		return "userlist";
 	}
 	
-	
-	/*
-	@DeleteMapping(path = "{no}")
-	@ResponseStatus(HttpStatus.NO_CONTENT)
-    public String deleteUser(@PathVariable Integer no) {
-        repository.delete(no);
-        return "userlist";   
-    }
-    */
-	
-	
-	@PostMapping
-	@ResponseStatus(HttpStatus.NO_CONTENT)
-	void delete(@RequestParam Integer no) {
-		repository.delete(no);	
-	}
-	
-	
-	
-
 	
 }

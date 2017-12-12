@@ -50,17 +50,16 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		//.failureHandler(new SampleAuthenticationFailureHandler())
 		.defaultSuccessUrl("/signup")
 		.usernameParameter("custid").passwordParameter("password")
-		.and()
-		.deleteCookies("JSESSIONID")
-		.invalidateHttpSession(true).permitAll()
-		.and()
-		.csrf()
-		.disable();;
+		.and();
 
 		// ログアウト設定
 		http.logout()
 		.logoutRequestMatcher(new AntPathRequestMatcher("/logout**"))
-		.logoutSuccessUrl("/login");
+		.logoutSuccessUrl("/login").deleteCookies("JSESSIONID")
+		.invalidateHttpSession(true).permitAll()
+		.and()
+		.csrf()
+		.disable();
 	}
 
 	/*

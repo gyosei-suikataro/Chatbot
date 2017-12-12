@@ -25,8 +25,6 @@
 		<!-- 追加 -->
 		<webjars-bootstrap.version>3.3.6</webjars-bootstrap.version>
 		<webjars-jquery.version>3.2.1</webjars-jquery.version>
-		
-		<webjars-jquery-ui.version>1.12.0</webjars-jquery-ui.version>
 	</properties>
 
 	<dependencies>
@@ -87,12 +85,6 @@
 			<groupId>org.webjars</groupId>
 			<artifactId>bootstrap</artifactId>
 			<version>${webjars-bootstrap.version}</version>
-		</dependency>
-		
-		<dependency>
-			<groupId>org.webjars</groupId>
-			<artifactId>jquery-ui</artifactId>
-			<version>${webjars-jquery-ui.version}</version>
 		</dependency>
 	</dependencies>
 

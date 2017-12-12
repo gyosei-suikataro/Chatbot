@@ -9,7 +9,7 @@
 	</context-param>
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
-		<param-value>sample.security.config.SecurityConfig</param-value>
+		<param-value>com.example.config.SecurityConfig</param-value>
 	</context-param>
 	<listener>
 		<listener-class>

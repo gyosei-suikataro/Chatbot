@@ -46,7 +46,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 		http.csrf().disable().formLogin()
 		.loginProcessingUrl("processing")
-		.loginPage("/")
+		.loginPage("/login")
 		//.failureHandler(new SampleAuthenticationFailureHandler())
 		.defaultSuccessUrl("/signup")
 		.usernameParameter("custid").passwordParameter("password")

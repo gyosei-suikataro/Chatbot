@@ -52,7 +52,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		.usernameParameter("custid").passwordParameter("password")
 		.and();
 
-		// ƒƒOƒAƒEƒgİ’è
+		// Æ’ÂÆ’OÆ’AÆ’EÆ’gÂÃâ€™Ã¨
 		http.logout()
 		.logoutRequestMatcher(new AntPathRequestMatcher("/logout**"))
 		.logoutSuccessUrl("/login").deleteCookies("JSESSIONID")

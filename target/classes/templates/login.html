@@ -33,9 +33,13 @@
 					<form id="login_form" method="post" th:action="@{'/login'}">
 						<fieldset id="login_field">
 							<div class="form-group">
+								<!-- 
 								<label for="id" class="sr-only">ID</label> <input type="text"
 									name="custid" id="custid" class="form-control input-lg"
 									placeholder="ID を入力して下さい" />
+								-->
+								<label for="custid">ユーザーID</label>: <input type="text"
+									id="custid" name="custid" autofocus="autofocus" />
 							</div>
 							<div class="form-group" style="align: center">
 								<!--

@@ -21,8 +21,8 @@ public class UserService {
 	
 	
 	@Transactional
-    public void registerUser(String custid,String custname,String orgname,String password,String effect,String role) {
-		User user = new User(custid,custname,orgname,passwordEncoder.encode(password),effect,role);
+    public void registerUser(Integer no,String custid,String custname,String orgname,String password,String effect,String role) {
+		User user = new User(no,custid,custname,orgname,passwordEncoder.encode(password),effect,role);
         repository.save(user);
     }
 	

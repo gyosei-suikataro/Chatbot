@@ -33,8 +33,8 @@ public class User implements Serializable {
 	public User() {
 	}
 	
-	public User(String custid,String custname,String orgname,String password,String effect,String role) {
-		//this.no = no; Integer no
+	public User(Integer no,String custid,String custname,String orgname,String password,String effect,String role) {
+		this.no = no; 
 		this.custid = custid;
         this.custname = custname;
         this.orgname = orgname;

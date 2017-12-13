@@ -1,9 +1,9 @@
-package com.example.sample;
+package co.gyosei.botlog.domain.repository;
 
-import com.example.sample.User;
+import co.gyosei.botlog.domain.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import java.util.List;
+
 
 
 

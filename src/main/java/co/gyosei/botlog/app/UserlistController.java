@@ -1,4 +1,4 @@
-package com.example.sample;
+package co.gyosei.botlog.app;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,9 +18,9 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.http.HttpStatus;
 
-import com.example.sample.User;
-import com.example.sample.UserService;
-import com.example.sample.UserRepository;
+import co.gyosei.botlog.domain.entity.User;
+import co.gyosei.botlog.domain.service.UserService;
+import co.gyosei.botlog.domain.repository.UserRepository;
 
 import java.util.List;
 //import java.util.ArrayList;

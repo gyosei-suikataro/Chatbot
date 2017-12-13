@@ -1,4 +1,4 @@
-package com.example.sample;
+package co.gyosei.botlog.app;
 
 //import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -19,8 +19,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 //import org.springframework.validation.BindingResult;
 //import org.springframework.validation.annotation.Validated;
 
-import com.example.sample.UserService;
-import com.example.sample.UserRepository;
+import co.gyosei.botlog.domain.service.UserService;
+import co.gyosei.botlog.domain.repository.UserRepository;
+import co.gyosei.botlog.domain.form.UserForm;
+
 
 //import java.util.List;
 

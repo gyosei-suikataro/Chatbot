@@ -1,4 +1,4 @@
-package com.example.sample;
+package co.gyosei.botlog;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

@@ -1,4 +1,4 @@
-package com.example.sample;
+package co.gyosei.botlog.domain.form;
 
 public class UserForm {
 

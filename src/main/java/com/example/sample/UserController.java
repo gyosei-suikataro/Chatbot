@@ -37,12 +37,12 @@ public class UserController {
 	public String test() {
 		return "signup";
 	}
-	/*
+	
 	@RequestMapping(value = {"/", "/login"})
 	public String login() {
 		return "login";
 	}
-	*/
+	
 	//
 	@GetMapping("/signup")
     public String signup(Model model) {

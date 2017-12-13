@@ -1,4 +1,4 @@
-package co.gyosei.botlog.domain.form;
+package jp.co.gyosei.botlog.domain.form;
 
 public class UserForm {
 

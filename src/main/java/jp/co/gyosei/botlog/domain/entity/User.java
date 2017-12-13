@@ -1,4 +1,4 @@
-package co.gyosei.botlog.domain.entity;
+package jp.co.gyosei.botlog.domain.entity;
 
 import java.io.Serializable;
 import javax.persistence.*;

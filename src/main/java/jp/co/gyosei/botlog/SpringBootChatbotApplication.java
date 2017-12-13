@@ -1,4 +1,4 @@
-package co.gyosei.botlog;
+package jp.co.gyosei.botlog;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

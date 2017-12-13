@@ -1,4 +1,4 @@
-package co.gyosei.botlog.app;
+package jp.co.gyosei.botlog.app;
 
 
 import org.springframework.stereotype.Controller;

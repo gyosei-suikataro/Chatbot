@@ -43,11 +43,6 @@ public class User implements Serializable {
 		this.role = role;
 	}
 
-	//test«
-	public User(String custid, String password, String role) {
-	}
-	//testª
-
 	public Integer getNo() {
 		return this.no;
 	}

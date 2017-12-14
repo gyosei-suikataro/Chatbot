@@ -1,1 +1,27 @@
+package jp.co.gyosei.botlog;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Service;
+
+import jp.co.gyosei.botlog.LoginUser;
+import jp.co.gyosei.botlog.domain.repository.UserRepository;
+
+@Service
+public class LoginUserDetailsService implements UserDetailsService {
+ 
+    @Autowired
+    private UserRepository rep;
+ 
+    @Override
+    public UserDetails loadUserByUsername(String custid) throws UsernameNotFoundException {
+        LoginUser user = rep.findOne(custid);
+        if (user == null) {
+            throw new UsernameNotFoundException("User Not Found...");
+        }
+        return (UserDetails) new LoginUserDetails(user);
+    }
+ 
+}

@@ -1,17 +1,17 @@
 package jp.co.gyosei.botlog;
 
-import jp.co.gyosei.botlog.domain.entity.User;
+import jp.co.gyosei.botlog.LoginUser;
 
-public class LoginUserDetails extends User {
+public class LoginUserDetails extends LoginUser {
+ 	
+	private final LoginUser user;
  
-    private final User user;
- 
-    public LoginUserDetails(User user) {
+    public LoginUserDetails(LoginUser user) {
         super(user.getCustid(), user.getPassword(), user.getRole());
         this.user = user;
     }
  
-    public User getUser() {
+    public LoginUser getUser() {
         return user;
     }
  

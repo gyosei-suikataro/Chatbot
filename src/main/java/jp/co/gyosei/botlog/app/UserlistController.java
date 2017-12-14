@@ -45,7 +45,7 @@ public class UserlistController {
 	}
 	
 	@PostMapping
-	void delete(@RequestParam Integer no) {
+	void delete(Integer no) {
 		repository.delete(no);	  
     }
 	

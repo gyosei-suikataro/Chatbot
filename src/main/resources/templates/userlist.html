@@ -46,25 +46,26 @@
 	 
 	<script>
 	var rowIds = [];
-
+	
+	
 	$(function() {
 		$("#grid-basic").bootgrid({
 			selection: true,
 			multiSelect: true,
 			rowSelect: true,
 		    keepSelection: true,
-		}).on("selected.rs.jquery.bootgrid", function(e, rows)
+		}).on("selected.rs.jquery.bootgrid", function(e, users)
 		{
-		    for (var i = 0; i < rows.length; i++)
+		    for (var i = 0; i < users.length; i++)
 		    {
-		        rowIds.push(rows[i].no);
+		        rowIds.push(users[i].no);
 		    }
-		}).on("deselected.rs.jquery.bootgrid", function(e, rows)
+		}).on("deselected.rs.jquery.bootgrid", function(e, users)
 		{
-		    for (var i = 0; i < rows.length; i++)
+		    for (var i = 0; i < users.length; i++)
 		    {
 		    	rowIds.some(function(v, ii){
-		    	    if (v==rows[i].no) rowIds.splice(ii,1);
+		    	    if (v==users[i].no) rowIds.splice(ii,1);
 		    	});
 		    }
 		});

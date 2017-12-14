@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 //import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import jp.co.gyosei.botlog.domain.entity.User;
 import jp.co.gyosei.botlog.domain.service.UserService;
@@ -44,8 +45,8 @@ public class UserlistController {
 	}
 	
 	@PostMapping
-	//@ResponseStatus(HttpStatus.NO_CONTENT)
-	void delete(Integer no) {
+	@ResponseStatus(HttpStatus.NO_CONTENT)
+	void delete(@PathVariable Integer no) {
 		repository.delete(no);	
 	}
 	

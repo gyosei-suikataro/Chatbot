@@ -16,11 +16,11 @@ public class LoginUserDetailsService implements UserDetailsService {
     private LoginUserRepository rep;
  
     @Override
-    public UserDetails loadUserByUsername(String custid) throws UsernameNotFoundException {
+    public LoginUserDetails loadUserByUsername(String custid) throws UsernameNotFoundException {
         LoginUser user = rep.findOne(custid);
         if (user == null) {
             throw new UsernameNotFoundException("User Not Found...");
         }
-        return (UserDetails) new LoginUserDetails(user);
+        return (LoginUserDetails) new LoginUserDetails(user);
     }
 }

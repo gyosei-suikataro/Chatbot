@@ -26,8 +26,6 @@ public class UserService {
         repository.save(user);
     }
 	
-	//@Transactional
-	//public void deleteUser()
 	
 	
 	

@@ -1,4 +1,4 @@
-package com.example.sample;
+/*package jp.co.gyosei.botlog;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -14,3 +14,4 @@ public class SpringBootSampleApplicationTests {
 	}
 
 }
+*/

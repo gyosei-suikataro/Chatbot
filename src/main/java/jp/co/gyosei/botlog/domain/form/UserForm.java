@@ -1,4 +1,4 @@
-package com.example.sample;
+package jp.co.gyosei.botlog.domain.form;
 
 public class UserForm {
 
@@ -18,6 +18,7 @@ public class UserForm {
 	public void setNo(Integer no) {
 		this.no = no;
 	}
+	
 	public String getCustid() {
 		return custid;
 	}

@@ -7,13 +7,13 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import jp.co.gyosei.botlog.LoginUser;
-import jp.co.gyosei.botlog.domain.repository.UserRepository;
+import jp.co.gyosei.botlog.LoginUserRepository;
 
 @Service
 public class LoginUserDetailsService implements UserDetailsService {
  
     @Autowired
-    private UserRepository rep;
+    private LoginUserRepository rep;
  
     @Override
     public UserDetails loadUserByUsername(String custid) throws UsernameNotFoundException {

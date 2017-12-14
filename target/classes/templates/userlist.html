@@ -37,7 +37,81 @@
 				</tr>
 			</tbody>
 	</table>
-
-
+	
+	<div class="container" align="center">
+	<input id="btn_del" type="button" class="btn btn-default" value="選択行の削除" onclick="drow()">
+	</div>
+	
+	<script>
+	var rowIds = [];
+	
+	$(function() {
+		//alert("ｊｓはじまり");
+		//var h = $(window).height();
+		//$('#wrap').css('display','none');
+		//$('#loader-bg ,#loader').height(h).css('display','block');
+		//$('#btn_del').css('display', 'block');
+	});
+	
+	$(document).ready(function () { //全ての読み込みが完了したら実行
+		$('#grid-basic').bootgrid({
+			selection: true,
+			multiSelect: true,
+			rowSelect: true,
+		    keepSelection: true,
+		}).on("selected.rs.jquery.bootgrid", function(e, rows)
+		{
+		    for (var i = 0; i < rows.length; i++)
+		    {
+		        rowIds.push(rows[i].no);
+		    }
+		    //alert("Select: " + rowIds.join(","));
+		}).on("deselected.rs.jquery.bootgrid", function(e, rows)
+		{
+		    for (var i = 0; i < rows.length; i++)
+		    {
+		    	rowIds.some(function(v, ii){
+		    	    if (v==rows[i].no) rowIds.splice(ii,1);
+		    	});
+		        //rowIds.push(rows[i].no);
+		    }
+		    //alert("Deselect: " + rowIds.join(","));
+		});
+	});
+	
+	function drow() {
+		if(rowIds.length == 0){
+			alert("削除対象を選択してください");
+			return;
+		}
+		var successFlg = true;
+		var myRet = confirm("選択行を削除しますか？");
+		if ( myRet == true ){
+			//document.forms["frm_del"].submit();
+			//$('#frm_del').submit();
+			for (var i = 0; i < rowIds.length; i++){
+				$.ajax({
+					type: "POST",
+					url: "https://gchatbot-branch3.herokuapp.com/userlist",
+					data: "no=" + rowIds[i],
+				}).then(
+						function(){
+						},
+						function(){
+							successFlg = false;
+						}
+				);
+			}
+			if( successFlg == true){
+				alert("削除しました");
+				location.reload();
+			}else{
+				alert("削除できませんでした");
+			}
+			
+		}
+	}
+	
+	</script>
 </body>
 </html>		

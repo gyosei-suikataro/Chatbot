@@ -19,7 +19,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		http
 		.authorizeRequests()
 		.antMatchers("/", "/login", "/login-error").permitAll()
-		.antMatchers("/**").hasRole("USER")
+		.antMatchers("/**").hasAnyAuthority("ADMIN","USER")
 		.and()
 		.formLogin()
 		.loginProcessingUrl("/loading")

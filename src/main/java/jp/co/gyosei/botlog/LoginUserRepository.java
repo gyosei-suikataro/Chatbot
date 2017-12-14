@@ -8,9 +8,9 @@ import org.springframework.stereotype.Repository;
 public interface LoginUserRepository extends JpaRepository<LoginUser, String>{
 
 	//test
-	/*
+	
 	LoginUser $missing$(String custid);
-	*/
+	
 	//test
 	LoginUser findOne(String custid);
 	

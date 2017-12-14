@@ -36,7 +36,10 @@ public class UserController {
 	@Autowired
 	UserRepository repository;
 	
-	
+	@RequestMapping({"/","/login"})
+	String login() {
+		return "login";
+	}
 	
 	@GetMapping("/signup")
     public String signup(Model model) {

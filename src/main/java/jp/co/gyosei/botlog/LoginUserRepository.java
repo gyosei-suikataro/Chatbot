@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface LoginUserRepository extends JpaRepository<LoginUser, String>{
 
-	LoginUser findOne(String custid);
+	//LoginUser findOne(String custid);
 
 }
 

@@ -20,6 +20,7 @@
 		               <th data-column-id="password"  data-width="40%">パスワード</th>
 		               <th data-column-id="effect"  data-width="40%">EFFECT</th>
 		               <th data-column-id="role"  data-width="40%">役割</th>
+		               <th data-column-id="delete"  data-width="2%"></th>
 		           </tr>
 				</thead>
 				
@@ -33,6 +34,12 @@
 						<td th:text="${user.password}"></td>
 						<td th:text="${user.effect}"></td>
 						<td th:text="${user.role}"></td>
+						<td>
+						<form th:action="@{/userlist}" method="post">
+							<input type="submit" value="削除"/>
+							<input type="hidden" name="no" th:value="${user.no}"/>
+						</form>
+						</td>
 					</tr>
 				</tbody>
 		</table>

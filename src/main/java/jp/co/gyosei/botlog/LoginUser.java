@@ -10,7 +10,6 @@ import javax.persistence.*;
 @Entity
 @Table(name="custinfo")
 public class LoginUser implements Serializable {
-	private static final long serialVersionUID = 1L;
 
 	@Column
 	private String custid;
@@ -18,8 +17,6 @@ public class LoginUser implements Serializable {
 	private String password;
 	@Column
 	private String role;
-
-
 
 	public LoginUser() {
 	}

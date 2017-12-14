@@ -10,7 +10,9 @@ import org.springframework.stereotype.Repository;
 public interface UserRepository extends JpaRepository<User, Integer>{
 
 	//test
+	/*
 	LoginUser $missing$(String custid);
+	*/
 	//test
 	LoginUser findOne(String custid);
 	

@@ -1,10 +1,18 @@
 package jp.co.gyosei.botlog.domain.form;
 
-//import javax.validation.constraints.Pattern;
+import java.util.ArrayList;
+import java.util.List;
+
 
 
 public class UserlistForm{
-	private String[] checks;
+	private List<String> checkedUsers;
 	
+	public List<String> getCheckedUsers() {
+        return checkedUsers;
+    }
+    public void setCheckedUsers(List<String> checkedUsers) {
+        this.checkedUsers = checkedUsers;
+    }
 }
 

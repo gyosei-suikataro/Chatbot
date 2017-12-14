@@ -44,10 +44,12 @@ public class UserlistController {
 		return "userlist";
 	}
 	
+	/*
 	@PostMapping
-	void delete(@PathVariable Integer no) {
+	void delete(Integer no) {
 		repository.delete(no);	
 	}
+	*/
 	
 	
 }

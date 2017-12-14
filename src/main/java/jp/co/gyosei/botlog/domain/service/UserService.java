@@ -26,14 +26,11 @@ public class UserService {
         repository.save(user);
     }
 	
+	//@Transactional
+	//public void deleteUser()
 	
-	/*
-	@Transactional
-	public Page<User> getAllUser(Pageable pageable) {
-
-        return repository.UserfindAll(pageable);
-    }
-    */
+	
+	
     
 	
     

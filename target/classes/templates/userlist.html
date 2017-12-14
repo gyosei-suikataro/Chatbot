@@ -15,6 +15,7 @@
 	
 			<thead>
 				<tr>
+				   <th data-column-id="checkbox" data-width="1%"></th>
 				   <th data-column-id="no" data-type="numeric" data-identifier="true" data-width="3%">No</th>
 	               <th data-column-id="custid" data-width="7%">ユーザーID</th>
 	               <th data-column-id="custname"  data-width="10%">ユーザー名</th>
@@ -27,6 +28,7 @@
 			
 			<tbody>
 				<tr th:each="user :${users}">
+					<td><input type="checkbox" name = "checkbox1" th:checked="${checkbox1 == 1}" th:value="1" /></td>
 					<td th:text="${user.no}"></td>
 					<td th:text="${user.custid}"></td>
 					<td th:text="${user.custname}"></td>
@@ -36,6 +38,7 @@
 					<td th:text="${user.role}"></td>
 				</tr>
 			</tbody>
+			
 	</table>
 </body>
 </html>		

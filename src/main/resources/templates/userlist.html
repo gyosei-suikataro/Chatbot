@@ -28,7 +28,7 @@
 			
 			<tbody>
 				<tr th:each="user :${users}">
-					<td><input type="checkbox" name = "check"/></td>
+					<td><input type="checkbox" name = "checkbox1" th:checked="${checkbox1 == 1}" th:value="1" /></td>
 					<td th:text="${user.no}"></td>
 					<td th:text="${user.custid}"></td>
 					<td th:text="${user.custname}"></td>
@@ -38,7 +38,7 @@
 					<td th:text="${user.role}"></td>
 				</tr>
 			</tbody>
+			
 	</table>
-	
 </body>
 </html>		

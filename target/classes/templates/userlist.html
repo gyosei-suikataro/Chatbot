@@ -46,15 +46,10 @@
 	var rowIds = [];
 	
 	$(function() {
-		//alert("ｊｓはじまり");
-		//var h = $(window).height();
-		//$('#wrap').css('display','none');
+		var h = $(window).height();
+		$('#wrap').css('display','none');
 		//$('#loader-bg ,#loader').height(h).css('display','block');
-		//$('#btn_del').css('display', 'block');
-	});
-	
-	$(document).ready(function () { //全ての読み込みが完了したら実行
-		$('#grid-basic').bootgrid({
+		$("#grid-basic").bootgrid({
 			selection: true,
 			multiSelect: true,
 			rowSelect: true,
@@ -87,12 +82,10 @@
 		var successFlg = true;
 		var myRet = confirm("選択行を削除しますか？");
 		if ( myRet == true ){
-			//document.forms["frm_del"].submit();
-			//$('#frm_del').submit();
 			for (var i = 0; i < rowIds.length; i++){
 				$.ajax({
 					type: "POST",
-					url: "https://gchatbot-branch3.herokuapp.com/userlist",
+					url: "UserlistController.java",//削除するコントローラーを指定
 					data: "no=" + rowIds[i],
 				}).then(
 						function(){

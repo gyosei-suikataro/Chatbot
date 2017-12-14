@@ -11,6 +11,7 @@ import javax.persistence.*;
 @Table(name="custinfo")
 public class LoginUser implements Serializable {
 
+	@Id
 	@Column
 	private String custid;
 	@Column

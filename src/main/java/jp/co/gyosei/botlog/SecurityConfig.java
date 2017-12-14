@@ -1,4 +1,4 @@
-package com.example.sample;
+package jp.co.gyosei.botlog;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;

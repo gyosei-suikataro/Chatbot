@@ -46,9 +46,9 @@ public class UserlistController {
 	
 	@PostMapping
 	public String Delete(Integer no) {
-		List<Integer> list = new ArrayList<Integer>();
+		ArrayList<Integer> list = new ArrayList<Integer>();
 		list.add(no);
-		for (int i = 0 ; i < list.length() ; i++){
+		for (int i = 0 ; i < list.size() ; i++){
 		      Integer NO = list.get(i);
 		      repository.delete(NO);
 		}

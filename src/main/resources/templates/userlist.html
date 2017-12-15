@@ -19,13 +19,12 @@
 		               <th data-column-id="password"  data-width="40%">パスワード</th>
 		               <th data-column-id="effect"  data-width="40%">EFFECT</th>
 		               <th data-column-id="role"  data-width="40%">役割</th>
-		               <th data-column-id="detail"  data-width='6%' data-formatter='details' data-sortable='false'></th>
 		           </tr>
 				</thead>
 				
 				<tbody>
 					<tr th:each="user :${users}">
-						<td><input id="check1" type="checkbox" name = "check2" /></td>
+						<td input id="check1" type="checkbox" name = "check2" /></td>
 						<td th:text="${user.no}"></td>
 						<td th:text="${user.custid}"></td>
 						<td th:text="${user.custname}"></td>

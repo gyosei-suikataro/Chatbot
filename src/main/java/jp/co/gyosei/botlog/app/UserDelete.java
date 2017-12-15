@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import jp.co.gyosei.botlog.domain.repository.UserRepository;
 import java.util.ArrayList;
+import org.springframework.beans.factory.annotation.Autowired;
 
 @Controller
 @RequestMapping("userlist")

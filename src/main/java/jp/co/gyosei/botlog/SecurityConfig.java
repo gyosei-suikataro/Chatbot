@@ -31,7 +31,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		.usernameParameter("custid")
 		.passwordParameter("password");
 
-        http.rememberMe()
+        http
+        .rememberMe()
         .tokenValiditySeconds(86400);
 
 		http

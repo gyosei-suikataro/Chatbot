@@ -37,6 +37,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		.deleteCookies("JSESSIONID")
 		.invalidateHttpSession(true)
 		.permitAll();
+		
+        http.rememberMe()
+        .tokenValiditySeconds(86400);
 	}
 
 	@Autowired

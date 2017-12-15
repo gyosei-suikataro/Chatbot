@@ -40,12 +40,24 @@
 
 <script>
 
+$(function() {
+	//alert("ｊｓはじまり");
+	//var h = $(window).height();
+	//$('#wrap').css('display','none');
+	//$('#loader-bg ,#loader').height(h).css('display','block');
+	//$('#btn_del').css('display', 'block');
+});
 
-	$(function() {
+$(document).ready(function () {
 		
-		$("#grid-basic").bootgrid()
+		$("#grid-basic").bootgrid()({
+			selection: true,
+			multiSelect: true,
+			rowSelect: true,
+		    keepSelection: true,
+		});
 		
-	});
+});
 	
 	
 	

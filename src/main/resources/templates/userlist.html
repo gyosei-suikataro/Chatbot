@@ -6,8 +6,6 @@
 <link href="stylesheets/common.css" rel="stylesheet" />
 <link href="stylesheets/bootstrap.css" rel="stylesheet" />
 <link href="stylesheets/jquery.bootgrid.css" rel="stylesheet" />
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.js"></script>
-<script src="javascript/jquery.bootgrid.js"></script>
 </head>
 <body>
 	
@@ -83,7 +81,7 @@
 			for (var i = 0; i < rowIds.length; i++){
 				$.ajax({
 					type: "POST",
-					url: "Userlist.html",//削除するコントローラーを指定
+					url: "https://gchatbot-branch3.herokuapp.com/userlist",
 					data: "no=" + rowIds[i],
 				}).then(
 						function(){

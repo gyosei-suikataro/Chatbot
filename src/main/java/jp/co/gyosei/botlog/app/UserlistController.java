@@ -48,7 +48,7 @@ public class UserlistController {
 	public String Delete(Integer no) {
 		List<Integer> list = new ArrayList<Integer>();
 		list.add(no);
-		for (int i = 0 ; i < list.size() ; i++){
+		for (int i = 0 ; i < list.length() ; i++){
 		      Integer NO = list.get(i);
 		      repository.delete(NO);
 		}

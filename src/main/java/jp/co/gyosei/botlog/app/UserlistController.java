@@ -48,8 +48,10 @@ public class UserlistController {
 	public String Delete(Integer no) {
 		List<Integer> list = new ArrayList<Integer>();
 		list.add(no);
-		repository.delete(list);
-		
+		for (int i = 0 ; i < list.size() ; i++){
+		      Integer NO = array.get(i);
+		      repository.delete(NO);
+		}
 		return "userlist";
 	}
 	

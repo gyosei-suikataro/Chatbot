@@ -25,7 +25,7 @@ public class AuthenticationProviderImpl implements AuthenticationProvider {
         String password = auth.getCredentials().toString();
 		
         // 未設定の場合はエラー
-        if ("".equals(custid) || "".equals(password))  {
+        if ("custid".equals(custid) || "password".equals(password))  {
             // 例外はSpringSecurityにあったものを適当に使用
             throw new AuthenticationCredentialsNotFoundException("ログイン情報に不備があります。");
         }

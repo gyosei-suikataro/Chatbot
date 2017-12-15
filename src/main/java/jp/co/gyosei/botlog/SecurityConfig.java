@@ -29,18 +29,19 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		.defaultSuccessUrl("/signup", true)
 		//.usernameParameter("username")
 		.usernameParameter("custid")
-		.passwordParameter("password")
-		.and()
+		.passwordParameter("password");
+
+        http.rememberMe()
+        .tokenValiditySeconds(86400);
+
+		http
 		.logout()
 		.logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
 		.logoutSuccessUrl("/login")
 		.deleteCookies("JSESSIONID")
 		.invalidateHttpSession(true)
 		.permitAll();
-		/*
-        http.rememberMe()
-        .tokenValiditySeconds(86400);
-        */
+
 	}
 
 	@Autowired

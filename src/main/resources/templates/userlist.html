@@ -19,6 +19,7 @@
 		               <th data-column-id="password"  data-width="40%">パスワード</th>
 		               <th data-column-id="effect"  data-width="40%">EFFECT</th>
 		               <th data-column-id="role"  data-width="40%">役割</th>
+		               <th data-column-id="detail"  data-width='6%' data-formatter='details' data-sortable='false'></th>
 		           </tr>
 				</thead>
 				
@@ -44,22 +45,15 @@
 	
 	$(function() {
 		
-		
-		
-	});
-	
-	$(document).ready(function () { //全ての読み込みが完了したら実行
-		var h = $(window).height();
-		$('#wrap').css('display','none');
-		$('#loader-bg ,#loader').height(h).css('display','block');
-
 		$("#grid-basic").bootgrid({
 			selection: true,
 			multiSelect: true,
 			rowSelect: true,
-		    keepSelection: true
+		keepSelection: true
 		})
+		
 	});
+	
 	
 </script>
 </body>

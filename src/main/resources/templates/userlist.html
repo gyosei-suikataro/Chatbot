@@ -35,14 +35,21 @@
 						<td th:text="${user.role}"></td>
 					</tr>
 				</tbody>
-		</table>
-		
+		</table>	
 	
-	<input id="btn_del" type="button" class="btn btn-default" value="選択行の削除" onclick="drow()">	
-	
-<script>
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.js" th:src="@{//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.js}" th:inline="javascript"></script>
+<script type="text/javascript" src="/javascript/jquery.bootgrid.js" th:src="@{/javascript/jquery.bootgrid.js}" th:inline="javascript"></script>
+<script type="text/javascript" th:inline="javascript">
+
 	var rowIds = [];
+	
 	$(function() {
+		
+		
+		
+	});
+	
+	$(document).ready(function () { //全ての読み込みが完了したら実行
 		$("#grid-basic").bootgrid({
 			selection: true,
 			multiSelect: true,
@@ -76,7 +83,7 @@
 			for (var i = 0; i < rowIds.length; i++){
 				$.ajax({
 					type: "POST",
-					url: "UserlistController.java",//削除するコントローラーを指定
+					url: "Userlist.html",//削除するコントローラーを指定
 					data: "no=" + rowIds[i],
 				}).then(
 						function(){

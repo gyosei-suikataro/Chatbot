@@ -45,8 +45,37 @@
 <script src="javascript/jquery.bootgrid.js"></script>
 
 <script>
+
+var rowIds = [];
+
 $(function() {
   $("#grid-basic").bootgrid();
+});
+
+$(document).ready(function () { //全ての読み込みが完了したら実行
+	$('#grid-basic').bootgrid({
+		selection: true,
+		multiSelect: true,
+		rowSelect: true,
+	    keepSelection: true,
+	}).on("selected.rs.jquery.bootgrid", function(e, rows)
+	{
+	    for (var i = 0; i < rows.length; i++)
+	    {
+	        rowIds.push(rows[i].no);
+	    }
+	    //alert("Select: " + rowIds.join(","));
+	}).on("deselected.rs.jquery.bootgrid", function(e, rows)
+	{
+	    for (var i = 0; i < rows.length; i++)
+	    {
+	    	rowIds.some(function(v, ii){
+	    	    if (v==rows[i].no) rowIds.splice(ii,1);
+	    	});
+	        //rowIds.push(rows[i].no);
+	    }
+	    //alert("Deselect: " + rowIds.join(","));
+	});
 });
 
 

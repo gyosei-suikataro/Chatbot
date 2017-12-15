@@ -49,7 +49,7 @@ public class UserlistController {
 		List<Integer> list = new ArrayList<Integer>();
 		list.add(no);
 		for (int i = 0 ; i < list.size() ; i++){
-		      Integer NO = array.get(i);
+		      Integer NO = list.get(i);
 		      repository.delete(NO);
 		}
 		return "userlist";

@@ -50,6 +50,9 @@
 	
 	$(document).ready(function () { //全ての読み込みが完了したら実行
 		var h = $(window).height();
+		$('#wrap').css('display','none');
+		$('#loader-bg ,#loader').height(h).css('display','block');
+
 		$("#grid-basic").bootgrid({
 			selection: true,
 			multiSelect: true,

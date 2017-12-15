@@ -24,7 +24,7 @@ import jp.co.gyosei.botlog.domain.service.UserService;
 import jp.co.gyosei.botlog.domain.repository.UserRepository;
 
 import java.util.List;
-//import java.util.ArrayList;
+import java.util.ArrayList;
 
 @Controller
 @RequestMapping("userlist")
@@ -41,6 +41,15 @@ public class UserlistController {
 	public String list(Model model) {
 		List<User> users = repository.findAll();
 		model.addAttribute("users",users);
+		return "userlist";
+	}
+	
+	@PostMapping
+	public String Delete(Integer no) {
+		List<Integer> list = new ArrayList<Integer>();
+		list.add(no);
+		repository.delete(list);
+		
 		return "userlist";
 	}
 	

@@ -46,9 +46,12 @@ public class UserlistController {
 	
 	
 	@PostMapping
-	@ResponseStatus(HttpStatus.NO_CONTENT)
-	void delete(@RequestParam Integer no) {
-		repository.delete(no);	
+	public void delete() {
+		
+		 int[] a = {'no'};
+		 for(int i = 0; i < a.length; i++){
+			 repository.delete(a[i]);	
+		 }
 	}
 	
 }

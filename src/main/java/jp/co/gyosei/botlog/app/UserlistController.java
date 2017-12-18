@@ -47,8 +47,6 @@ public class UserlistController {
 	
 	
 	@PostMapping
-		consumes = MediaType.APPLICATION_JSON_VALUE,
-		produces = MediaType.APPLICATION_JSON_VALUE + ";charset=utf-8")
 	@ResponseBody
 		public void delete(@RequestBody no[] NO) {
 		  repository.delete(NO);

@@ -84,7 +84,7 @@ function drow() {
 		for (var i = 0; i < rowIds.length; i++){
 			$.ajax({
 				type: "POST",
-				url: "UserlistController.java",//削除するコントローラーを指定
+				url: "UserDelete.java",//削除するコントローラーを指定
 				data: "no=" + rowIds[i],
 			}).then(
 					function(){

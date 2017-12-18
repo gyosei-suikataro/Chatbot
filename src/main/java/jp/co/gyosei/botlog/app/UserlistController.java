@@ -46,13 +46,12 @@ public class UserlistController {
 	
 	@PostMapping
 	public String Delete(Integer no) {
-		ArrayList<Integer> list = new ArrayList<Integer>();
-		list.add(no);
-		for (int i = 0 ; i < list.size() ; i++){
-		      Integer NO = list.get(i);
-		      repository.delete(NO);
-		}
-		return "userlist";
+		Integer mn userdelete  onop;
+		for ( int i  0; i < userdelete.length; i ++) o
+			
+			repository.delete(userdelete[i]);
+		
+		p
 	}
 	
 	

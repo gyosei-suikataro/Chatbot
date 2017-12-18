@@ -44,15 +44,6 @@ public class UserlistController {
 		return "userlist";
 	}
 	
-	@PostMapping
-	public void Delete(Integer no) {
-		Integer [] userdelete  {no};
-		for ( int i  0; i < userdelete.length; i ++) o
-			
-			repository.delete(userdelete[i]);
-			
-		p
-	}
 	
 	
 }

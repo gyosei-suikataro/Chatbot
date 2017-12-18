@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestBody;
 /*
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
@@ -46,12 +47,12 @@ public class UserlistController {
 	
 	
 	@PostMapping
-	public void delete() {
-		
-		 Integer [] a = {"no"} ;
-		 for(int i = 0; i < a.length; i++){
-			 repository.delete(a[i]);	
-		 }
-	}
+		consumes = MediaType.APPLICATION_JSON_VALUE,
+		produces = MediaType.APPLICATION_JSON_VALUE + ";charset=utf-8")
+	@ResponseBody
+		public void delete(@RequestBody no[] NO) {
+		  repository.delete(NO);
+		        
+		    }
 	
 }

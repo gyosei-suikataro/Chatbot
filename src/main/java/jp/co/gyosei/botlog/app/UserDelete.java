@@ -10,20 +10,14 @@ import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 
+
 @Controller
-@RequestMapping("userlist")
+@RequestMapping(value = "/userlist",method = RequestMethod.POST)
 public class UserDelete{
 	
-	@Autowired
-	UserRepository repository;
 	
-	@PostMapping
-	public String Delete(Integer no) {
-		List<Integer> list = new ArrayList<Integer>();
-		list.add(no);
-		repository.delete(list);
-		
-	}
+	
+	
 	
 }
 */

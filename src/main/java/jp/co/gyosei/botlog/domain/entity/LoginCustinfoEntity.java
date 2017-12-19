@@ -9,20 +9,20 @@ public class LoginCustinfoEntity implements Serializable {
 
 	@Id
 	@Column
-	private String custid;
+	public String custid;
 	@Column
-	private String password;
-	@Column
-	private String role;
+	public String password;
+	//@Column
+	//public String role;
 
 	public LoginCustinfoEntity() {
 	}
 
-	public LoginCustinfoEntity(String custid,String password,String role) {
+	public LoginCustinfoEntity(String custid,String password/*,String role*/) {
  
 		this.custid = custid;
 		this.password = password;
-		this.role = role;
+		//this.role = role;
 	}
 
 	public String getCustid() {
@@ -40,7 +40,7 @@ public class LoginCustinfoEntity implements Serializable {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-
+/*
 	public String getRole() {
 		return this.role;
 	}
@@ -48,4 +48,5 @@ public class LoginCustinfoEntity implements Serializable {
 	public void setRole(String role) {
 		this.role = role;
 	}
+*/
 }

@@ -5,8 +5,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface LoginCustinfoRepository extends JpaRepository<CustinfoEntity, String>{
+public interface LoginCustinfoRepository extends JpaRepository<CustinfoEntity, Integer>{
 
 	LoginCustinfoRepository authLoginCustinfoRepository(String custid, String password);
-
+	
 }

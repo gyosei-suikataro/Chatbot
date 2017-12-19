@@ -30,7 +30,7 @@ public class AuthenticationProviderImpl implements AuthenticationProvider {
             throw new AuthenticationCredentialsNotFoundException("ログイン情報に不備があります。");
         }
 
-        LoginCustinfoRepository UserRepository = userRep.authLoginCustinfoRepository(custid, password);
+		LoginCustinfoRepository UserRepository = userRep.authLoginCustinfoRepository(custid, password);
         if (custid == null) {
             // 例外はSpringSecurityにあったものを適当に使用
             throw new AuthenticationCredentialsNotFoundException("ログイン情報が存在しません。");

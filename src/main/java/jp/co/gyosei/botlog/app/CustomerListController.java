@@ -29,19 +29,19 @@ import java.util.List;
 import java.util.ArrayList;
 
 @Controller
-@RequestMapping("userlist")
+@RequestMapping("CustomerList")
 public class UserlistController {
 
 	@Autowired
     CustinfoService custinfoService;
 	
 	@Autowired
-	CustinfoRepository custinforepository;
+	CustinfoRepository custinfoRepository;
 	
 	
 	@GetMapping
 	public String list(Model model) {
-		List<CustinfoEntity> custinfoEntity = custinforepository.findAll();
+		List<CustinfoEntity> custinfoEntity = custinfoRepository.findAll();
 		model.addAttribute("custinfoEntity",custinfoEntity);
 		return "userlist";
 	}

@@ -23,23 +23,23 @@ public class CustomerController {
     CustinfoService custinfoService;
 	
 	@Autowired
-	CustinfoRepository custinforepository;
+	CustinfoRepository custinfoRepository;
 	
 	@RequestMapping("/")
 	public String Home() {
-		return "signup";
+		return "Customer";
 	}
 	
-	@GetMapping("/signup")
+	@GetMapping("/Customer")
     public String signup(Model model) {
         model.addAttribute("customerForm", new CustomerForm());
-        return "signup";
+        return "Customer";
     }
 	
-	@PostMapping("/signup")
-    public String signupPost(Model model, @Valid CustomerForm customerForm, BindingResult bindingResult, HttpServletRequest request) {
-		custinfoService.registerUser(customerForm.getNo(),customerForm.getCustid(),customerForm.getCustname(),customerForm.getOrgname(),customerForm.getPassword(),"1","USER");
-		return "signup";
+	@PostMapping("/Customer")
+    public String customerPost(Model model, @Valid CustomerForm customerForm, BindingResult bindingResult, HttpServletRequest request) {
+		custinfoService.registerCustomer(customerForm.getNo(),customerForm.getCustid(),customerForm.getCustname(),customerForm.getOrgname(),customerForm.getPassword(),"1","USER");
+		return "Customer";
 	}
 	
 	

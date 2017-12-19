@@ -1,3 +1,4 @@
+/*
 package jp.co.gyosei.botlog;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,3 +25,4 @@ public class LoginUserDetailsService implements UserDetailsService {
         return (LoginUserDetails) new LoginUserDetails(user);
     }
 }
+*/

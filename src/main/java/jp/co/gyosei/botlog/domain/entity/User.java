@@ -1,7 +1,11 @@
 package jp.co.gyosei.botlog.domain.entity;
 
 import java.io.Serializable;
+import java.util.List;
+
 import javax.persistence.*;
+
+import org.springframework.security.core.GrantedAuthority;
 
 /**
  * The persistent class for the chatbot database table.
@@ -30,7 +34,7 @@ public class User implements Serializable {
 
 
 
-	public User() {
+	public User(String custid2, String string, String string2, List<GrantedAuthority> role2) {
 	}
 
 	public User(Integer no,String custid,String custname,String orgname,String password,String effect,String role) {
@@ -41,6 +45,10 @@ public class User implements Serializable {
 		this.password = password;
 		this.effect = effect;
 		this.role = role;
+	}
+
+	public User() {
+		// TODO 自動生成されたコンストラクター・スタブ
 	}
 
 	public Integer getNo() {
@@ -96,6 +104,11 @@ public class User implements Serializable {
 
 	public void setRole(String role) {
 		this.role = role;
+	}
+
+	public static String isEnabled() {
+		// TODO 自動生成されたメソッド・スタブ
+		return null;
 	}
 
 

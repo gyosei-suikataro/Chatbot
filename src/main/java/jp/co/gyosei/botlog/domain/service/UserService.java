@@ -26,7 +26,6 @@ public class UserService {
         repository.save(user);
     }
 	
-	
 	/*
 	@Transactional
 	public Page<User> getAllUser(Pageable pageable) {
@@ -34,12 +33,5 @@ public class UserService {
         return repository.UserfindAll(pageable);
     }
     */
-    
-	
-    
-    
 	
 }
-
-
-

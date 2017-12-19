@@ -1,3 +1,4 @@
+/*
 package jp.co.gyosei.botlog;
 
 import jp.co.gyosei.botlog.LoginUser;
@@ -10,3 +11,4 @@ public interface LoginUserRepository extends JpaRepository<LoginUser, String>{
 	public LoginUser findByCustid(String custid);
 
 }
+*/

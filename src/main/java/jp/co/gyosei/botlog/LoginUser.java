@@ -1,12 +1,9 @@
+/*
 package jp.co.gyosei.botlog;
 
 import java.io.Serializable;
 import javax.persistence.*;
 
-/**
- * The persistent class for the chatbot database table.
- * 
- */
 @Entity
 @Table(name="custinfo")
 public class LoginUser implements Serializable {
@@ -53,3 +50,4 @@ public class LoginUser implements Serializable {
 		this.role = role;
 	}
 }
+*/

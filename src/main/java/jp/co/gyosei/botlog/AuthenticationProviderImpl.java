@@ -1,3 +1,4 @@
+/*
 package jp.co.gyosei.botlog;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,14 +26,14 @@ public class AuthenticationProviderImpl implements AuthenticationProvider {
         String password = auth.getCredentials().toString();
 
         if ("".equals(custid) || "".equals(password)) {
-            // —áŠO‚ÍSpringSecurity‚É‚ ‚Á‚½‚à‚Ì‚ğ“K“–‚Ég—p
-            throw new AuthenticationCredentialsNotFoundException("ƒƒOƒCƒ“î•ñ‚É•s”õ‚ª‚ ‚è‚Ü‚·B");
+            // ä¾‹å¤–ã¯SpringSecurityã«ã‚ã£ãŸã‚‚ã®ã‚’é©å½“ã«ä½¿ç”¨
+            throw new AuthenticationCredentialsNotFoundException("ãƒ­ã‚°ã‚¤ãƒ³æƒ…å ±ã«ä¸å‚™ãŒã‚ã‚Šã¾ã™ã€‚");
         }
 
         UserRepository UserRepository = userRep.authUserRepository(custid, password);
         if (custid == null) {
-            // —áŠO‚ÍSpringSecurity‚É‚ ‚Á‚½‚à‚Ì‚ğ“K“–‚Ég—p
-            throw new AuthenticationCredentialsNotFoundException("ƒƒOƒCƒ“î•ñ‚ª‘¶İ‚µ‚Ü‚¹‚ñB");
+            // ä¾‹å¤–ã¯SpringSecurityã«ã‚ã£ãŸã‚‚ã®ã‚’é©å½“ã«ä½¿ç”¨
+            throw new AuthenticationCredentialsNotFoundException("ãƒ­ã‚°ã‚¤ãƒ³æƒ…å ±ãŒå­˜åœ¨ã—ã¾ã›ã‚“ã€‚");
         }
 
         return new UsernamePasswordAuthenticationToken(new User(), password, auth.getAuthorities());
@@ -43,3 +44,4 @@ public class AuthenticationProviderImpl implements AuthenticationProvider {
         return UsernamePasswordAuthenticationToken.class.isAssignableFrom(token);
     }
 }
+*/

@@ -5,7 +5,7 @@ import javax.persistence.*;
 
 /**
  * The persistent class for the chatbot database table.
- * 
+ * aaa
  */
 @Entity
 @Table(name="custinfo")

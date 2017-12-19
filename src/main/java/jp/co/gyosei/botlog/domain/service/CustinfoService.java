@@ -10,7 +10,7 @@ import jp.co.gyosei.botlog.domain.entity.User;
 import jp.co.gyosei.botlog.domain.repository.UserRepository;
 
 @Service
-public class UserService {
+public class CustinfoService {
 	
 	@Autowired
 	private UserRepository repository;

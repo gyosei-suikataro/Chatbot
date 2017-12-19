@@ -19,6 +19,7 @@ import jp.co.gyosei.botlog.domain.form.CustomerForm;
 public class CustomerController {
 	
 
+	
 	@Autowired
     CustinfoService custinfoService;
 	

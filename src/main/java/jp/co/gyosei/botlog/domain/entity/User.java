@@ -105,11 +105,4 @@ public class User implements Serializable {
 	public void setRole(String role) {
 		this.role = role;
 	}
-
-	public static String isEnabled() {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
-	}
-
-
 }

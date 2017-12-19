@@ -21,6 +21,7 @@
 		               <th data-column-id="effect"  data-width="10%">EFFECT</th>
 		               <th data-column-id="role"  data-width="7%">役割</th>
 		               <th data-column-id="delete"  data-width="5%">削除</th>
+		               
 		           </tr>
 				</thead>
 				
@@ -36,8 +37,8 @@
 						<td th:text="${custinfoEntity.role}"></td>
 						<td>
 							<form th:action="@{/CustomerList}" method="post">
-								<input type="submit" value="削除"/>
-								<input type="hidden" name="no" th:value="${custinfoEntity.no}"/>
+								<input type="button" value="削除"/>
+								<!--  <input type="hidden" name="no" th:value="${custinfoEntity.no}"/> -->
 							</form>
 						</td>
 					</tr>

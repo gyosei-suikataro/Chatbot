@@ -30,7 +30,7 @@ import java.util.ArrayList;
 
 @Controller
 @RequestMapping("CustomerList")
-public class UserlistController {
+public class CustomerListController {
 
 	@Autowired
     CustinfoService custinfoService;

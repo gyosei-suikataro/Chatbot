@@ -42,6 +42,14 @@ public class CustinfoEntity implements Serializable {
         this.role = role;
     }
 
+	public void LoginCustinfoEntity() {
+	}
+	
+	public void LoginCustinfoEntity(String custid,String password) {
+		this.custid = custid;
+        this.password = password;
+    }
+	
 	public Integer getNo() {
 		return this.no;
 	}

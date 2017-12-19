@@ -51,7 +51,8 @@ $(function() {
 		multiSelect: true,
 		rowSelect: true,
 	    keepSelection: true,
-	}).on("selected.rs.jquery.bootgrid", function(e, rows)
+	})
+	<!-- .on("selected.rs.jquery.bootgrid", function(e, rows)
 	{
 	    for (var i = 0; i < rows.length; i++)
 	    {
@@ -65,16 +66,20 @@ $(function() {
 	    	    if (v==rows[i].no) rowIds.splice(ii,1);
 	    	});
 	    }
+	    
 	});
+	
+	-->
 });
 
 </script>
 
+<!--  
 <form th:action="@{/CustomerList}" method="post">
 		<input type="submit" value="削除"/>
 		<input type="hidden" name="no" value=rowIds[] />
 </form>
-
+-->
 
 </body>
 </html>		

@@ -1,4 +1,3 @@
-/*
 package jp.co.gyosei.botlog;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,13 +9,13 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.stereotype.Component;
 
 import jp.co.gyosei.botlog.domain.entity.CustinfoEntity;
-import jp.co.gyosei.botlog.domain.repository.CustinfoRepository;
+import jp.co.gyosei.botlog.domain.repository.LoginCustinfoRepository;
 
 @Component
 public class AuthenticationProviderImpl implements AuthenticationProvider {
 
     @Autowired
-    private CustinfoRepository userRep;
+    private LoginCustinfoRepository userRep;
 
     @SuppressWarnings("unused")
 	@Override
@@ -31,7 +30,7 @@ public class AuthenticationProviderImpl implements AuthenticationProvider {
             throw new AuthenticationCredentialsNotFoundException("ログイン情報に不備があります。");
         }
 
-        CustinfoRepository UserRepository = userRep.authCustinfoRepository(custid, password);
+        LoginCustinfoRepository UserRepository = userRep.authLoginCustinfoRepository(custid, password);
         if (custid == null) {
             // 例外はSpringSecurityにあったものを適当に使用
             throw new AuthenticationCredentialsNotFoundException("ログイン情報が存在しません。");
@@ -45,4 +44,3 @@ public class AuthenticationProviderImpl implements AuthenticationProvider {
         return UsernamePasswordAuthenticationToken.class.isAssignableFrom(token);
     }
 }
-*/

@@ -19,22 +19,22 @@ import org.springframework.web.bind.annotation.RequestMapping;
 //import org.springframework.validation.BindingResult;
 //import org.springframework.validation.annotation.Validated;
 
-import jp.co.gyosei.botlog.domain.service.UserService;
-import jp.co.gyosei.botlog.domain.repository.UserRepository;
-import jp.co.gyosei.botlog.domain.form.UserForm;
+import jp.co.gyosei.botlog.domain.service.CustinfoService;
+import jp.co.gyosei.botlog.domain.repository.CustinfoRepository;
+import jp.co.gyosei.botlog.domain.form.CustomerForm;
 
 
 //import java.util.List;
 
 @Controller
-public class UserController {
+public class CustomerController {
 	
 
 	@Autowired
-    UserService userService;
+    CustinfoService custinfoService;
 	
 	@Autowired
-	UserRepository repository;
+	CustinfoRepository custinforepository;
 	
 	@RequestMapping("/")
 	public String Home() {
@@ -43,13 +43,13 @@ public class UserController {
 	
 	@GetMapping("/signup")
     public String signup(Model model) {
-        model.addAttribute("userForm", new UserForm());
+        model.addAttribute("customerForm", new CustomerForm());
         return "signup";
     }
 	
 	@PostMapping("/signup")
-    public String signupPost(Model model, @Valid UserForm userForm, BindingResult bindingResult, HttpServletRequest request) {
-		userService.registerUser(userForm.getNo(),userForm.getCustid(),userForm.getCustname(),userForm.getOrgname(),userForm.getPassword(),"1","USER");
+    public String signupPost(Model model, @Valid CustomerForm customerForm, BindingResult bindingResult, HttpServletRequest request) {
+		custinfoService.registerUser(customerForm.getNo(),customerForm.getCustid(),customerForm.getCustname(),customerForm.getOrgname(),customerForm.getPassword(),"1","USER");
 		return "signup";
 	}
 	

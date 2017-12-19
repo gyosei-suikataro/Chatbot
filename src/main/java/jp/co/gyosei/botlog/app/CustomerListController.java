@@ -21,9 +21,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.PathVariable;
 
-import jp.co.gyosei.botlog.domain.entity.User;
-import jp.co.gyosei.botlog.domain.service.UserService;
-import jp.co.gyosei.botlog.domain.repository.UserRepository;
+import jp.co.gyosei.botlog.domain.entity.Customer;
+import jp.co.gyosei.botlog.domain.service.CustinfoService;
+import jp.co.gyosei.botlog.domain.repository.CustinfoRepository;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -33,25 +33,26 @@ import java.util.ArrayList;
 public class UserlistController {
 
 	@Autowired
-    UserService userService;
+    CustinfoService custinfoService;
 	
 	@Autowired
-	UserRepository repository;
+	CustinfoRepository custinforepository;
 	
 	
 	@GetMapping
 	public String list(Model model) {
-		List<User> users = repository.findAll();
-		model.addAttribute("users",users);
+		List<Customer> customers = custinforepository.findAll();
+		model.addAttribute("customers",customers);
 		return "userlist";
 	}
 	
-	
+	/*
 	@PostMapping
 	@ResponseBody
 		public void delete(@RequestBody no[] NO) {
 		  repository.delete(NO);
 		        
 		    }
+	*/
 	
 }

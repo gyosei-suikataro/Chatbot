@@ -1,4 +1,4 @@
-/*package com.example.config;
+package jp.co.gyosei.botlog;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -50,7 +50,3 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	    return new BCryptPasswordEncoder();
 	}
 }
-
-*/
-
-

@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.PathVariable;
 
-import jp.co.gyosei.botlog.domain.entity.Customer;
+import jp.co.gyosei.botlog.domain.entity.CustinfoEntity;
 import jp.co.gyosei.botlog.domain.service.CustinfoService;
 import jp.co.gyosei.botlog.domain.repository.CustinfoRepository;
 
@@ -41,8 +41,8 @@ public class UserlistController {
 	
 	@GetMapping
 	public String list(Model model) {
-		List<Customer> customers = custinforepository.findAll();
-		model.addAttribute("customers",customers);
+		List<CustinfoEntity> custinfoEntity = custinforepository.findAll();
+		model.addAttribute("custinfoEntity",custinfoEntity);
 		return "userlist";
 	}
 	

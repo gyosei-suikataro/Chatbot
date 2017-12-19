@@ -30,10 +30,10 @@ public class Customer implements Serializable {
 	
 	
 	
-	public User() {
+	public CustinfoEntity() {
 	}
 	
-	public User(Integer no,String custid,String custname,String orgname,String password,String effect,String role) {
+	public CustinfoEntity(Integer no,String custid,String custname,String orgname,String password,String effect,String role) {
 		this.no = no; 
 		this.custid = custid;
         this.custname = custname;

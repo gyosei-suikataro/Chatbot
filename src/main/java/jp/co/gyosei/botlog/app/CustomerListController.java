@@ -49,7 +49,7 @@ public class CustomerListController {
 	
 	@PostMapping
 	void delete(@RequestParam Integer no) {
-		repository.delete(no);	
+		custinfoRepository.delete(no);	
 	}
 	
 	

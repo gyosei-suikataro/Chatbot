@@ -46,14 +46,19 @@
 var rowIds = [];
 
 $(function() {
-	$('#grid-basic').bootgrid({
+	$("#grid-basic").bootgrid({
 		selection: true,
 		multiSelect: true,
 		rowSelect: true,
 	    keepSelection: true,
+	    formatters: {
+	        "details": function($column, $row) {
+	        	return "<input type='button' value='詳細' onclick='detailwin("  + $row.no + ")'> ";
+             }
+	    }
 	}).on("selected.rs.jquery.bootgrid", function(e, rows)
-			{
-	    for (var i = 0; i < rows.size; i++)
+	{
+	    for (var i = 0; i < rows.length; i++)
 	    {
 	        rowIds.push(rows[i].no);
 	    }
@@ -64,10 +69,8 @@ $(function() {
 	    	rowIds.some(function(v, ii){
 	    	    if (v==rows[i].no) rowIds.splice(ii,1);
 	    	});
-	        
 	    }
 	});
-
 });
 
 </script>

@@ -46,16 +46,15 @@
 var rowIds = [];
 
 $(function() {
+	
+}
+
+$(document).ready(function () {
 	$("#grid-basic").bootgrid({
 		selection: true,
 		multiSelect: true,
 		rowSelect: true,
 	    keepSelection: true,
-	    formatters: {
-	        "details": function($column, $row) {
-	        	return "<input type='button' value='詳細' onclick='detailwin("  + $row.no + ")'> ";
-             }
-	    }
 	}).on("selected.rs.jquery.bootgrid", function(e, rows)
 	{
 	    for (var i = 0; i < rows.length; i++)

@@ -20,22 +20,22 @@ public class AuthenticationProviderImpl implements AuthenticationProvider {
 	@Override
 	public Authentication authenticate(Authentication auth) throws AuthenticationException {
 		
-		// ユーザーとパスワードを取得
+		//ユーザーとパスワードを取得
 		String custid = auth.getName();
         String password = auth.getCredentials().toString();
 		
-        // 未設定の場合はエラー
+        //未設定の場合はエラー
         if ("custid".equals(custid) || "password".equals(password))  {
-            // 例外はSpringSecurityにあったものを適当に使用
+            // 例外はSpringSecurityにあった物を適当に試用
             throw new AuthenticationCredentialsNotFoundException("ログイン情報に不備があります。");
         }
         
-        // 認証情報を取得
+        //認証情報を取得
         User user = authCheck(custid, password);
         if (user == null) {
         	throw new AuthenticationCredentialsNotFoundException("ログイン情報が存在しません。");
         }
-		// トークンを返却
+		//トークンを返却
 		return new UsernamePasswordAuthenticationToken(user, password, auth.getAuthorities());
 	}
 

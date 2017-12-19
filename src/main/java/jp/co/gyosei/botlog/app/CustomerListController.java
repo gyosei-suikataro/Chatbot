@@ -46,13 +46,11 @@ public class CustomerListController {
 		return "CustomerList";
 	}
 	
-	/*
+	
 	@PostMapping
-	@ResponseBody
-		public void delete(@RequestBody no[] NO) {
-		  repository.delete(NO);
-		        
-		    }
-	*/
+	void delete(@RequestParam Integer no) {
+		repository.delete(no);	
+	}
+	
 	
 }

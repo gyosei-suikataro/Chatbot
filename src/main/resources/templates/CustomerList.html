@@ -38,12 +38,12 @@
 		</table>	
 
 
-
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.js"></script>
 <script src="javascript/bootstrap.js"></script>
 <script src="javascript/jquery.bootgrid.js"></script>
 <script>
 
+var rowIds = [];
 
 $(function() {
 	$('#grid-basic').bootgrid({
@@ -51,11 +51,32 @@ $(function() {
 		multiSelect: true,
 		rowSelect: true,
 	    keepSelection: true,
-	})
-	
+	}).on("selected.rs.jquery.bootgrid", function(e, rows)
+			{
+	    for (var i = 0; i < rows.length; i++)
+	    {
+	        rowIds.push(rows[i].no);
+	    }
+	}).on("deselected.rs.jquery.bootgrid", function(e, rows)
+	{
+	    for (var i = 0; i < rows.length; i++)
+	    {
+	    	rowIds.some(function(v, ii){
+	    	    if (v==rows[i].no) rowIds.splice(ii,1);
+	    	});
+	        
+	    }
+	});
+
 });
 
-
 </script>
+
+<form th:action="@{/CustomerList}" method="post">
+		<input type="submit" value="削除"/>
+		<input type="hidden" name="no" th:value="${user.no}"/>
+</form>
+
+
 </body>
 </html>		

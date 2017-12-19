@@ -54,7 +54,14 @@ $(function() {
 		selection: true, 
 		multiSelect: true,
 		rowSelect: true,
-	    keepSelection: true
+	    keepSelection: true,
+	    formatters: {
+	        "details": function($column, $row) {
+	        	return "<input type='button' value='詳細'>";
+	        	//onclick='detailwin("  + $row.no + ")'
+	        	
+             }
+	    }
 	    
 	})
 	

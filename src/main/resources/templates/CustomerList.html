@@ -20,7 +20,7 @@
 		               <th data-column-id="orgname"  data-width="20%">組織名</th>
 		               <th data-column-id="effect"  data-width="10%">EFFECT</th>
 		               <th data-column-id="role"  data-width="7%">役割</th>
-		               <th data-column-id="delete"  data-width="3%">削除</th>
+		               
 		               
 		           </tr>
 				</thead>
@@ -35,12 +35,7 @@
 						<td th:text="${custinfoEntity.orgname}"></td>
 						<td th:text="${custinfoEntity.effect}"></td>
 						<td th:text="${custinfoEntity.role}"></td>
-						<td>
-							<form th:action="@{/CustomerList}" method="post">
-							<input type="submit" value="削除"/>
-							<input type="hidden" name="no" th:value="${custinfoEntity.no}"/> 
-							</form>
-						</td>
+					
 					</tr>
 				</tbody>
 		</table>	
@@ -56,12 +51,11 @@ var rowIds = [];
 $(function() {
 	$("#grid-basic").bootgrid({
 		
-		selection: true,
-		<!-- 
+		selection: true, 
 		multiSelect: true,
 		rowSelect: true,
 	    keepSelection: true
-	    -->
+	    
 	})
 });
 

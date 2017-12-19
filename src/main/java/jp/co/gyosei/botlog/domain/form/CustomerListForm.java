@@ -5,7 +5,7 @@ import java.util.List;
 
 
 
-public class UserlistForm{
+public class CustomerListForm{
 	private List<String> checkedUsers;
 	
 	public List<String> getCheckedUsers() {

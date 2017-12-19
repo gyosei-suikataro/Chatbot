@@ -32,11 +32,6 @@ public class User implements Serializable {
 	@Column
 	private String role;
 
-
-
-	public User(String custid2, String string, String string2, List<GrantedAuthority> role2) {
-	}
-
 	public User(Integer no,String custid,String custname,String orgname,String password,String effect,String role) {
 		this.no = no; 
 		this.custid = custid;
@@ -45,10 +40,6 @@ public class User implements Serializable {
 		this.password = password;
 		this.effect = effect;
 		this.role = role;
-	}
-
-	public User() {
-		
 	}
 
 	public Integer getNo() {

@@ -7,6 +7,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface CustinfoRepository extends JpaRepository<CustinfoEntity, Integer>{
 
-	CustinfoRepository authCustinfoRepository(String custid, String password);
+	//CustinfoRepository authCustinfoRepository(String custid, String password);
 	
 }

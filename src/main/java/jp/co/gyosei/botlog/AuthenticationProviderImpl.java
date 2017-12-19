@@ -1,3 +1,4 @@
+/*
 package jp.co.gyosei.botlog;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,3 +45,4 @@ public class AuthenticationProviderImpl implements AuthenticationProvider {
         return UsernamePasswordAuthenticationToken.class.isAssignableFrom(token);
     }
 }
+*/

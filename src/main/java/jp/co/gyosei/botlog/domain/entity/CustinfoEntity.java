@@ -97,5 +97,4 @@ public class CustinfoEntity implements Serializable {
 		this.role = role;
 	}
 
-
 }

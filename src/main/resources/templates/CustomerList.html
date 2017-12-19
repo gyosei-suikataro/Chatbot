@@ -35,12 +35,11 @@
 						<td th:text="${custinfoEntity.orgname}"></td>
 						<td th:text="${custinfoEntity.effect}"></td>
 						<td th:text="${custinfoEntity.role}"></td>
-						<td>
-							<form th:action="@{/CustomerList}" method="post">
-								<button type="button" value="削除"/>
+						<form th:action="@{/CustomerList}" method="post">
+								<input type="submit" value="削除"/>
 								  <input type="hidden" name="no" th:value="${custinfoEntity.no}"/> 
-							</form>
-						</td>
+						</form>
+						
 					</tr>
 				</tbody>
 		</table>	

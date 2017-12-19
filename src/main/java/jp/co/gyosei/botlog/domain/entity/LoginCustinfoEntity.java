@@ -1,4 +1,3 @@
-/*
 package jp.co.gyosei.botlog.domain.entity;
 
 import java.io.Serializable;
@@ -6,7 +5,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name="custinfo")
-public class LoginUser implements Serializable {
+public class LoginCustinfoEntity implements Serializable {
 
 	@Id
 	@Column
@@ -16,10 +15,10 @@ public class LoginUser implements Serializable {
 	@Column
 	private String role;
 
-	public LoginUser() {
+	public LoginCustinfoEntity() {
 	}
 
-	public LoginUser(String custid,String password,String role) {
+	public LoginCustinfoEntity(String custid,String password,String role) {
  
 		this.custid = custid;
 		this.password = password;
@@ -50,4 +49,3 @@ public class LoginUser implements Serializable {
 		this.role = role;
 	}
 }
-*/

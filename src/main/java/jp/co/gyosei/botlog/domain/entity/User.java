@@ -48,7 +48,7 @@ public class User implements Serializable {
 	}
 
 	public User() {
-		// TODO 自動生成されたコンストラクター・スタブ
+		
 	}
 
 	public Integer getNo() {

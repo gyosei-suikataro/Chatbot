@@ -5,11 +5,11 @@ import javax.persistence.*;
 
 /**
  * The persistent class for the chatbot database table.
- * 
+ * aaa
  */
 @Entity
 @Table(name="custinfo")
-public class User implements Serializable {
+public class CustinfoEntity implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -29,11 +29,10 @@ public class User implements Serializable {
 	private String role;
 	
 	
-	
-	public User() {
+	public CustinfoEntity() {
 	}
 	
-	public User(Integer no,String custid,String custname,String orgname,String password,String effect,String role) {
+	public CustinfoEntity(Integer no,String custid,String custname,String orgname,String password,String effect,String role) {
 		this.no = no; 
 		this.custid = custid;
         this.custname = custname;

@@ -1,6 +1,6 @@
 package jp.co.gyosei.botlog.domain.form;
 
-public class UserForm {
+public class CustomerForm {
 
 	private Integer no;
 	private String custid;

@@ -29,7 +29,6 @@ public class CustinfoEntity implements Serializable {
 	private String role;
 	
 	
-	
 	public CustinfoEntity() {
 	}
 	

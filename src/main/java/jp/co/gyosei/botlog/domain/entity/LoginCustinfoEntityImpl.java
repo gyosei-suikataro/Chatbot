@@ -1,3 +1,4 @@
+/*
 package jp.co.gyosei.botlog.domain.entity;
 
 import java.io.Serializable;
@@ -8,6 +9,7 @@ import javax.persistence.*;
 public class LoginCustinfoEntityImpl implements Serializable {
 
 	private static final long serialVersionUID = 1L;
+	private static final String auth = null;
 	@Id
 	@Column
 	public String custid;
@@ -50,3 +52,4 @@ public class LoginCustinfoEntityImpl implements Serializable {
 		this.role = role;
 	}
 }
+*/

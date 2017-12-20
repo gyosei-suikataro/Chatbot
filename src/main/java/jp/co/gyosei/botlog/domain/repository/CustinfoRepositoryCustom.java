@@ -1,6 +1,6 @@
 package jp.co.gyosei.botlog.domain.repository;
 
-import jp.co.gyosei.botlog.domain.entity.LoginCustinfoEntityImpl;
+import jp.co.gyosei.botlog.domain.entity.CustinfoEntity;
 
 import java.util.Collection;
 
@@ -9,7 +9,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface CustinfoRepositoryCustom extends JpaRepository<LoginCustinfoEntityImpl, Integer>{
+public interface CustinfoRepositoryCustom extends JpaRepository<CustinfoEntity, Integer>{
 
 	CustinfoRepositoryCustom custinfoRepositoryCustom(String custid, String password, Collection<? extends GrantedAuthority> role);
 	

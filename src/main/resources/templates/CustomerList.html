@@ -45,7 +45,6 @@
 <script src="javascript/bootstrap.js"></script>
 <script src="javascript/jquery.bootgrid.js"></script>
 <script>
-
 var rowIds = [];
 
 $(function() {
@@ -54,17 +53,10 @@ $(function() {
 		multiSelect: true,
 		rowSelect: true,
 	    keepSelection: true   
-	}) 
-	   <!-- 
-	    formatters: {
-	        "details": function($column, $row) {
-	        	return "<input type='button' value='詳細'>";
-	        	//onclick='detailwin("  + $row.no + ")'
-	        	
-             }
-	    } 
-		-->
-	
+	})
+});
+
+</script>
 	
 	<!-- .on("selected.rs.jquery.bootgrid", function(e, rows)
 			{
@@ -84,9 +76,7 @@ $(function() {
 	});
 	
 	-->
-});
 
-</script>
 
  <!--  
 <form th:action="@{/CustomerList}" method="post">

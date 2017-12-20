@@ -5,7 +5,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name="custinfo")
-public class LoginCustinfoEntity implements Serializable {
+public class LoginCustinfoEntityImpl implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	@Id
@@ -16,10 +16,10 @@ public class LoginCustinfoEntity implements Serializable {
 	//@Column
 	//public String role;
 
-	public LoginCustinfoEntity() {
+	public LoginCustinfoEntityImpl() {
 	}
 
-	public LoginCustinfoEntity(String custid,String password/*,String role*/) {
+	public LoginCustinfoEntityImpl(String custid,String password/*,String role*/) {
  
 		this.custid = custid;
 		this.password = password;

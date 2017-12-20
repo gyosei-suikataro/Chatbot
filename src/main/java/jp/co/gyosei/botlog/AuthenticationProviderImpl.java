@@ -15,7 +15,7 @@ import jp.co.gyosei.botlog.domain.repository.LoginCustinfoRepository;
 public class AuthenticationProviderImpl implements AuthenticationProvider {
 
     @Autowired
-    private LoginCustinfoRepository userRep;
+    private LoginCustinfoRepository authLoginCustinfoRepository;
 
     @SuppressWarnings("unused")
 	@Override
@@ -30,7 +30,7 @@ public class AuthenticationProviderImpl implements AuthenticationProvider {
             throw new AuthenticationCredentialsNotFoundException("ログイン情報に不備があります。");
         }
 
-		LoginCustinfoRepository UserRepository = userRep.authLoginCustinfoRepository(custid, password);
+		LoginCustinfoRepository UserRepository = authLoginCustinfoRepository.authLoginCustinfoRepository(custid, password);
         if (custid == null) {
             // 例外はSpringSecurityにあったものを適当に使用
             throw new AuthenticationCredentialsNotFoundException("ログイン情報が存在しません。");

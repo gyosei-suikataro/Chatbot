@@ -24,12 +24,12 @@ public class LoginCust extends User {
     public String password;
 
     // “Æ©‚Å•K—v‚È€–Ú
-    public String role;
+    public String auth;
 
     public LoginCust(LoginCustinfoEntityImpl cust) {
         super(cust.custid, cust.password, true, true, true, true, new ArrayList<GrantedAuthority>());
         custid = cust.custid;
         password = cust.password;
-        //role = cust.role;
+        //auth = cust.auth;
     }
 }

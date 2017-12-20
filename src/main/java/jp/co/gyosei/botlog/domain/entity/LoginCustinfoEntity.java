@@ -7,6 +7,7 @@ import javax.persistence.*;
 @Table(name="custinfo")
 public class LoginCustinfoEntity implements Serializable {
 
+	private static final long serialVersionUID = 1L;
 	@Id
 	@Column
 	public String custid;

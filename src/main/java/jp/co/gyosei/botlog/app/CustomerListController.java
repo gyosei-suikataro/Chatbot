@@ -47,13 +47,13 @@ public class CustomerListController {
 	}
 	
 	
-	/*
+	
 	@PostMapping
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	void delete(@RequestParam Integer no) {
 		custinfoRepository.delete(no);	
 	}
-	*/
+	
 	
 	
 }

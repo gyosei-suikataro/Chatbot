@@ -41,7 +41,7 @@ public class CustomerListController {
 	
 	@GetMapping
 	public String list(Model model) {
-		List<CustinfoEntity> custinfoEntity = custinfoRepository.findAll(new Sort(Sort.Direction.DESC,"no"));
+		List<CustinfoEntity> custinfoEntity = custinfoRepository.findAll();
 		model.addAttribute("custinfoEntity",custinfoEntity);
 		return "CustomerList";
 	}

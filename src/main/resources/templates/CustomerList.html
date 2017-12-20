@@ -52,7 +52,8 @@ $(function() {
 		multiSelect: true,
 		rowSelect: true,
 	    keepSelection: true   
-	}).on("selected.rs.jquery.bootgrid", function(e, rows){
+	})
+	<!--.on("selected.rs.jquery.bootgrid", function(e, rows){
 	    for (var i = 0; i < rows.length; i++)
 	    {
 	        rowIds.push(rows[i].no);
@@ -64,7 +65,7 @@ $(function() {
 	    	    if (v==rows[i].no) rowIds.splice(ii,1);
 	    	}); 
 	    }
-	});
+	});-->
 });
 
 </script>

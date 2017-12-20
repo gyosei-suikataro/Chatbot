@@ -12,7 +12,7 @@ public class LoginController {
     @RequestMapping(value = "/")
     public String index(Model model) {
         model.addAttribute(new LoginForm());
-        return "/login";
+        return "login";
     }
 /*
     // SpringConfig‚Åİ’è‚µ‚½ƒƒOƒCƒ“‚Å‚«‚È‚©‚Á‚½ê‡‚Ìˆ—‚ğ’è‹`‚·‚é

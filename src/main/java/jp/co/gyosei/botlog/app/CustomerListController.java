@@ -50,9 +50,8 @@ public class CustomerListController {
 	
 	@PostMapping
 	@ResponseStatus(HttpStatus.NO_CONTENT)
-	public String  delete(@RequestParam Integer no) {
+	void delete(@RequestParam Integer no) {
 		custinfoRepository.delete(no);	
-		return "CustomerList";
 	}
 	
 	

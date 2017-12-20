@@ -19,7 +19,6 @@
 		               <th data-column-id="orgname"  data-width="20%">組織名</th>
 		               <th data-column-id="effect"  data-width="10%">EFFECT</th>
 		               <th data-column-id="role"  data-width="7%">役割</th>
-		               <th data-column-id='detail'  data-width='6%' data-formatter='details' data-sortable='false'></th>
 		           </tr>
 				</thead>
 				
@@ -34,9 +33,13 @@
 					</tr>
 				</tbody>
 		</table>	
-		
+
+<div class="container" align="center">
+	<input id="btn_del" type="button"  value="選択行の削除">
+</div>
+
+
 <script type="text/javascript" th:inline="javascript">
-//↓ のコメントアウトは必要
 /*<![CDATA[*/
 var rowIds = [];
 $(function() {
@@ -62,7 +65,10 @@ $(function() {
 	});
 });
 
+
+
 /*]]>*/
 </script>
+
 </body>
 </html>

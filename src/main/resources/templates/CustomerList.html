@@ -19,6 +19,7 @@
 		               <th data-column-id="orgname"  data-width="20%">組織名</th>
 		               <th data-column-id="effect"  data-width="10%">EFFECT</th>
 		               <th data-column-id="role"  data-width="7%">役割</th>
+		               <th data-column-id="detail"  data-width="3%"></th>
 		           </tr>
 				</thead>
 				
@@ -30,6 +31,7 @@
 						<td th:text="${custinfoEntity.orgname}"></td>
 						<td th:text="${custinfoEntity.effect}"></td>
 						<td th:text="${custinfoEntity.role}"></td>
+						<td><input type = "button" value = "詳細" /></td>
 					</tr>
 				</tbody>
 		</table>	
@@ -65,38 +67,6 @@ $(function() {
 	    }
 	});
 });
-
-<!-- 
-function drow() {
-	if(rowIds.length == 0){
-		alert("削除する行を選択してください");
-		return;
-	}
-	var successFlg = true;
-	var myRet = confirm("選択行を削除しますか？");
-	if ( myRet == true ){
-		for (var i = 0; i < rowIds.length; i++){
-			$.ajax({
-				type: "POST",
-				url: "CustomerListController.java",
-				data: "no=" + rowIds[i],
-			}).then(
-				function(){
-				},
-				function(){
-					successFlg = false;
-				}
-			);
-		}
-		if( successFlg == true){
-			alert("削除しました");
-			location.reload();
-		}else{
-			alert("削除できませんでした");
-		}
-	}
-}
--->
 /*]]>*/
 </script>
 

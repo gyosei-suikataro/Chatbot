@@ -19,7 +19,7 @@
 		               <th data-column-id="orgname"  data-width="20%">組織名</th>
 		               <th data-column-id="effect"  data-width="10%">EFFECT</th>
 		               <th data-column-id="role"  data-width="7%">役割</th>
-		               <th data-column-id="detail"  data-width="3%"></th>
+		               <th data-column-id="detail"  data-width="5%" data-formatter="details" data-sortable="false"></th>
 		           </tr>
 				</thead>
 				
@@ -31,7 +31,6 @@
 						<td th:text="${custinfoEntity.orgname}"></td>
 						<td th:text="${custinfoEntity.effect}"></td>
 						<td th:text="${custinfoEntity.role}"></td>
-						<td><input type = "button" value = "詳細" /></td>
 					</tr>
 				</tbody>
 		</table>	
@@ -50,7 +49,12 @@ $(function() {
 		selection: true, 
 		multiSelect: true,
 		rowSelect: true,
-	    keepSelection: true
+	    keepSelection: true,
+	    formatters: {
+	        "details": function($column, ${custinfoEntity}) {
+	        	return "<input type='button' value='詳細'>";
+             }
+	    } 
 	}).on("selected.rs.jquery.bootgrid", function(e, rows)
 	{
 	    for (var i = 0; i < rows.length; i++)

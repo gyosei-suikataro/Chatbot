@@ -5,8 +5,7 @@
 <title>ユーザー一覧</title>
 <link href="stylesheets/bootstrap.css" rel="stylesheet" />
 <link href="stylesheets/jquery.bootgrid.css" rel="stylesheet" />
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.js"></script>
-<script src="javascript/jquery.bootgrid.js"></script>
+
 </head>
 <body>
 
@@ -34,7 +33,9 @@
 				</tbody>
 		</table>	
 		
-<script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.js"></script>
+<script src="javascript/jquery.bootgrid.js">	
+
 var rowIds = [];
 $(function() {
 	$("#grid-basic").bootgrid({
@@ -56,6 +57,7 @@ $(function() {
 	    }
 	});
 });
+
 
 </script>
 </body>

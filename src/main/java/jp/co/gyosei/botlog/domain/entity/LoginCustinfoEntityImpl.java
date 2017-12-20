@@ -13,17 +13,17 @@ public class LoginCustinfoEntityImpl implements Serializable {
 	public String custid;
 	@Column
 	public String password;
-	//@Column
-	//public String role;
+	@Column
+	public String role;
 
 	public LoginCustinfoEntityImpl() {
 	}
 
-	public LoginCustinfoEntityImpl(String custid,String password/*,String role*/) {
+	public LoginCustinfoEntityImpl(String custid, String password, String role) {
  
 		this.custid = custid;
 		this.password = password;
-		//this.role = role;
+		this.role = role;
 	}
 
 	public String getCustid() {
@@ -41,7 +41,7 @@ public class LoginCustinfoEntityImpl implements Serializable {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-/*
+
 	public String getRole() {
 		return this.role;
 	}
@@ -49,5 +49,5 @@ public class LoginCustinfoEntityImpl implements Serializable {
 	public void setRole(String role) {
 		this.role = role;
 	}
-*/
+
 }

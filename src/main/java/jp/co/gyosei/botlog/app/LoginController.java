@@ -14,12 +14,5 @@ public class LoginController {
         model.addAttribute(new LoginForm());
         return "login";
     }
-/*
-    // SpringConfig‚Åİ’è‚µ‚½ƒƒOƒCƒ“‚Å‚«‚È‚©‚Á‚½ê‡‚Ìˆ—‚ğ’è‹`‚·‚é
-    @RequestMapping(value = "/login-error")
-    public String loginError(Model model) {
-        model.addAttribute("loginError", true);
-        return "/login";
-    }
-*/
+
 }

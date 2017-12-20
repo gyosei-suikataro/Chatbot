@@ -34,6 +34,6 @@ public class LoginCust extends User {
         custid = cust.custid;
         password = cust.password;
         role = cust.role;
-        //auth = cust.auth;
+        auth = cust.auth;
     }
 }

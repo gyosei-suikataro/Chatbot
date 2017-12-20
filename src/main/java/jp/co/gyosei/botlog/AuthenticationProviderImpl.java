@@ -12,13 +12,13 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.stereotype.Component;
 
 import jp.co.gyosei.botlog.domain.entity.LoginCustinfoEntityImpl;
-import jp.co.gyosei.botlog.domain.repository.LoginCustinfoRepository;
+import jp.co.gyosei.botlog.domain.repository.CustinfoRepositoryCustom;
 
 @Component
 public class AuthenticationProviderImpl implements AuthenticationProvider {
 
 	@Autowired
-	private LoginCustinfoRepository loginCustinfoRepository;
+	private CustinfoRepositoryCustom custinfoRepositoryCustom;
 
 	@SuppressWarnings("unused")
 	@Override
@@ -34,7 +34,7 @@ public class AuthenticationProviderImpl implements AuthenticationProvider {
 			throw new AuthenticationCredentialsNotFoundException("ログイン情報に不備があります。");
 		}
 
-		LoginCustinfoRepository UserRepository = loginCustinfoRepository.loginCustinfoRepository(custid, password, role);
+		CustinfoRepositoryCustom UserRepository = custinfoRepositoryCustom.custinfoRepositoryCustom(custid, password, role);
 		if (custid == null) {
 			// 例外はSpringSecurityにあったものを適当に使用
 			throw new AuthenticationCredentialsNotFoundException("ログイン情報が存在しません。");
@@ -48,11 +48,11 @@ public class AuthenticationProviderImpl implements AuthenticationProvider {
 		return UsernamePasswordAuthenticationToken.class.isAssignableFrom(token);
 	}
 
-	public LoginCustinfoRepository getLoginCustinfoRepository() {
-		return loginCustinfoRepository;
+	public CustinfoRepositoryCustom getCustinfoRepositoryCustom() {
+		return custinfoRepositoryCustom;
 	}
 
-	public void setLoginCustinfoRepository(LoginCustinfoRepository loginCustinfoRepository) {
-		this.loginCustinfoRepository = loginCustinfoRepository;
+	public void setLoginCustinfoRepository(CustinfoRepositoryCustom custinfoRepositoryCustom) {
+		this.custinfoRepositoryCustom = custinfoRepositoryCustom;
 	}
 }

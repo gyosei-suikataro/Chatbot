@@ -9,10 +9,12 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
-
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
+    @Autowired
+    private UserDetailsServiceImpl userDetailsService;
+	
 	@Autowired
 	private AuthenticationProviderImpl authenticationProvider;
 
@@ -65,7 +67,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
 		// ì∆é©îFèÿÉNÉâÉXÇê›íËÇ∑ÇÈ
 		auth
-		.authenticationProvider(authenticationProvider);
-		//.userDetailsService(userDetailsService);
+		.authenticationProvider(authenticationProvider)
+		.userDetailsService(userDetailsService);
 	}
 }

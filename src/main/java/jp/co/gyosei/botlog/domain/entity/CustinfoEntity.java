@@ -32,7 +32,6 @@ public class CustinfoEntity implements Serializable {
 
 	public String auth;
 	
-	
 	public CustinfoEntity() {
 	}
 	

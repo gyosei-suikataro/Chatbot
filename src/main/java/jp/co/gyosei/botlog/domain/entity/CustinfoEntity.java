@@ -3,6 +3,8 @@ package jp.co.gyosei.botlog.domain.entity;
 import java.io.Serializable;
 import javax.persistence.*;
 
+import jp.co.gyosei.botlog.domain.repository.CustinfoRepositoryCustom;
+
 /**
  * The persistent class for the chatbot database table.
  * aaa
@@ -43,7 +45,11 @@ public class CustinfoEntity implements Serializable {
         this.effect = effect;
         this.role = role;
     }
-	
+	//
+	public CustinfoEntity(CustinfoRepositoryCustom cust) {
+		// TODO 自動生成されたコンストラクター・スタブ
+	}
+	//
 	public Integer getNo() {
 		return this.no;
 	}

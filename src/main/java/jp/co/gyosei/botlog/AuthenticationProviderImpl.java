@@ -34,13 +34,13 @@ public class AuthenticationProviderImpl implements AuthenticationProvider {
 			throw new AuthenticationCredentialsNotFoundException("ログイン情報に不備があります。");
 		}
 
-		CustinfoRepositoryCustom UserRepository = custinfoRepositoryCustom.custinfoRepositoryCustom(custid, password, role);
-		if (custid == null) {
+		CustinfoRepositoryCustom cust = custinfoRepositoryCustom.authCustom(custid, password, role);
+		if (cust == null) {
 			// 例外はSpringSecurityにあったものを適当に使用
 			throw new AuthenticationCredentialsNotFoundException("ログイン情報が存在しません。");
 		}
 
-		return new UsernamePasswordAuthenticationToken(new CustinfoEntity(), password, auth.getAuthorities());
+		return new UsernamePasswordAuthenticationToken(new CustinfoEntity(cust), password, auth.getAuthorities());
 	}
 
 	@Override
@@ -52,7 +52,7 @@ public class AuthenticationProviderImpl implements AuthenticationProvider {
 		return custinfoRepositoryCustom;
 	}
 
-	public void setCustinfoRepositoryCustom(CustinfoRepositoryCustom custinfoRepositoryCustom) {
+	public void setCustinfoRepository(CustinfoRepositoryCustom custinfoRepositoryCustom) {
 		this.custinfoRepositoryCustom = custinfoRepositoryCustom;
 	}
 }

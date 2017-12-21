@@ -11,7 +11,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface CustinfoRepositoryCustom extends JpaRepository<CustinfoEntity, String>{
 
-	CustinfoEntity custinfoEntity(String custid, String password, Collection<? extends GrantedAuthority> role);
+	CustinfoRepositoryCustom custinfoRepositoryCustom(String custid, String password, Collection<? extends GrantedAuthority> role);
 
 	//CustinfoEntity authCustom(String custid, String password, Collection<? extends GrantedAuthority> role);
 	

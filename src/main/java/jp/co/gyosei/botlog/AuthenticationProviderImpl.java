@@ -18,7 +18,7 @@ import jp.co.gyosei.botlog.domain.repository.CustinfoRepositoryCustom;
 public class AuthenticationProviderImpl implements AuthenticationProvider {
 
 	@Autowired
-	private CustinfoRepositoryCustom custinfoEntity;
+	private CustinfoRepositoryCustom custinfoRepositoryCustom;
 
 	@Override
 	public Authentication authenticate(Authentication auth)
@@ -33,7 +33,7 @@ public class AuthenticationProviderImpl implements AuthenticationProvider {
 			throw new AuthenticationCredentialsNotFoundException("ログイン情報に不備があります。");
 		}
 
-		CustinfoEntity cust = CustinfoEntity.custinfoEntity(custid, password, role);
+		CustinfoEntity cust = CustinfoEntity.custinfoRepositoryCustom(custid, password, role);
 		if (cust == null) {
 			// 例外はSpringSecurityにあったものを適当に使用
 			throw new AuthenticationCredentialsNotFoundException("ログイン情報が存在しません。");
@@ -48,10 +48,10 @@ public class AuthenticationProviderImpl implements AuthenticationProvider {
 	}
 
 	public CustinfoRepositoryCustom getCustinfoRepositoryCustom() {
-		return custinfoEntity;
+		return custinfoRepositoryCustom;
 	}
 
 	public void setCustinfoRepository(CustinfoRepositoryCustom custinfoRepositoryCustom) {
-		this.custinfoEntity = custinfoRepositoryCustom;
+		this.custinfoRepositoryCustom = custinfoRepositoryCustom;
 	}
 }

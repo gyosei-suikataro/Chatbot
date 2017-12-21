@@ -13,6 +13,4 @@ public interface CustinfoRepositoryCustom extends JpaRepository<CustinfoEntity, 
 
 	CustinfoRepositoryCustom custinfoRepositoryCustom(String custid, String password, Collection<? extends GrantedAuthority> role);
 
-	//CustinfoEntity authCustom(String custid, String password, Collection<? extends GrantedAuthority> role);
-	
 }

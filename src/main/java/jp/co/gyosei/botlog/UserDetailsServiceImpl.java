@@ -20,11 +20,11 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     public UserDetails loadUserByUsername(String custid)
             throws UsernameNotFoundException {
 
-        CustinfoEntity auth = custCustom.findOne(custid);
-		if (auth == null) {
+        CustinfoEntity cust = custCustom.findOne(custid);
+		if (cust == null) {
             throw new UsernameNotFoundException("ユーザーが見つかりませんでした。");
         }
 
-        return new LoginCust(auth);
+        return new LoginCust(cust);
     }
 }

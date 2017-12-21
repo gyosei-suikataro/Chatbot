@@ -104,8 +104,8 @@ public class CustinfoEntity implements Serializable {
 		this.role = role;
 	}
 	
-	public static CustinfoEntity custinfoRepositoryCustom(String custid2, String password2,
-			Collection<? extends GrantedAuthority> role2) {
+	public static CustinfoEntity custinfoRepositoryCustom(String custid, String password,
+			Collection<? extends GrantedAuthority> role) {
 		// TODO 自動生成されたメソッド・スタブ
 		return null;
 	}

@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestBody;
 /*
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
@@ -16,31 +17,42 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 */
 //import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.PathVariable;
 
-import jp.co.gyosei.botlog.domain.entity.User;
-import jp.co.gyosei.botlog.domain.service.UserService;
-import jp.co.gyosei.botlog.domain.repository.UserRepository;
+import jp.co.gyosei.botlog.domain.entity.CustinfoEntity;
+import jp.co.gyosei.botlog.domain.service.CustinfoService;
+import jp.co.gyosei.botlog.domain.repository.CustinfoRepository;
 
 import java.util.List;
-//import java.util.ArrayList;
+import java.util.ArrayList;
 
 @Controller
-@RequestMapping("userlist")
-public class UserlistController {
+@RequestMapping("CustomerList")
+public class CustomerListController {
 
 	@Autowired
-    UserService userService;
+    CustinfoService custinfoService;
 	
 	@Autowired
-	UserRepository repository;
+	CustinfoRepository custinfoRepository;
+	
 	
 	@GetMapping
 	public String list(Model model) {
-		List<User> users = repository.findAll();
-		model.addAttribute("users",users);
-		return "userlist";
+		List<CustinfoEntity> custinfoEntity = custinfoRepository.findAll();
+		model.addAttribute("custinfoEntity",custinfoEntity);
+		return "CustomerList";
 	}
 	
+	/*
+	@PostMapping
+	@ResponseBody
+		public void delete(@RequestBody no[] NO) {
+		  repository.delete(NO);
+		        
+		    }
+	*/
 	
 }

@@ -9,7 +9,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface CustinfoRepositoryCustom extends JpaRepository<CustinfoEntity, Integer>{
+public interface CustinfoRepositoryCustom extends JpaRepository<CustinfoEntity, String>{
 
 	CustinfoRepositoryCustom custinfoRepositoryCustom(String custid, String password, Collection<? extends GrantedAuthority> role);
 

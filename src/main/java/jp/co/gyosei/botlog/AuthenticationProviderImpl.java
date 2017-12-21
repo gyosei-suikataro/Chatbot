@@ -52,7 +52,7 @@ public class AuthenticationProviderImpl implements AuthenticationProvider {
 		return custinfoRepositoryCustom;
 	}
 
-	public void setLoginCustinfoRepository(CustinfoRepositoryCustom custinfoRepositoryCustom) {
+	public void setCustinfoRepositoryCustom(CustinfoRepositoryCustom custinfoRepositoryCustom) {
 		this.custinfoRepositoryCustom = custinfoRepositoryCustom;
 	}
 }

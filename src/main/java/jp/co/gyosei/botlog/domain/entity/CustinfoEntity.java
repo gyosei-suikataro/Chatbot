@@ -5,10 +5,6 @@ import javax.persistence.*;
 
 import jp.co.gyosei.botlog.domain.repository.CustinfoRepositoryCustom;
 
-/**
- * The persistent class for the chatbot database table.
- * aaa
- */
 @Entity
 @Table(name="custinfo")
 public class CustinfoEntity implements Serializable {

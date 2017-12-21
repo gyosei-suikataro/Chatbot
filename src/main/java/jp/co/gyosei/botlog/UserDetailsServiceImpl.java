@@ -14,13 +14,13 @@ import jp.co.gyosei.botlog.domain.repository.CustinfoRepositoryCustom;
 public class UserDetailsServiceImpl implements UserDetailsService {
 
     @Autowired
-    private CustinfoRepositoryCustom custCustom;
+    private CustinfoRepositoryCustom CustinfoEntity;
 
     @Override
     public UserDetails loadUserByUsername(String custid)
             throws UsernameNotFoundException {
 
-        CustinfoEntity cust = custCustom.findOne(custid);
+        CustinfoEntity cust = CustinfoEntity.findOne(custid);
 		if (cust == null) {
             throw new UsernameNotFoundException("ユーザーが見つかりませんでした。");
         }

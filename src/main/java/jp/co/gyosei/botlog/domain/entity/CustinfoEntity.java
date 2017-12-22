@@ -44,11 +44,7 @@ public class CustinfoEntity implements Serializable {
         this.effect = effect;
         this.role = role;
     }
-	//
-	public CustinfoEntity(CustinfoRepositoryCustom cust) {
-		// TODO 自動生成されたコンストラクター・スタブ
-	}
-	//
+
 	public Integer getNo() {
 		return this.no;
 	}

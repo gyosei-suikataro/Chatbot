@@ -30,9 +30,9 @@ public class LoginController {
 	}
 */
     @RequestMapping(value = "/menu")
-    public String index(@AuthenticationPrincipal LoginCust loginUser, Model model) {
+    public String Menu(@AuthenticationPrincipal LoginCust loginCust, Model model) {
         // @AuthenticationPrincipalを使うと認証オブジェクトを参照できる。
 
-        return "menu/menu";
+        return "/menu";
     }
 }

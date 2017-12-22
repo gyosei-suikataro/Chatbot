@@ -52,18 +52,12 @@ public class CustomerListController {
 	public String list(Model model) {
 		List<CustinfoEntity> custinfoEntity = custinfoRepository.findAll();
 		model.addAttribute("custinfoEntity",custinfoEntity);
+		model.addAttribute("customerListForm", new CustomerListForm());
 		return "CustomerList";
 	}
 	
 	
-	
-	@GetMapping("/CustomerList")
-    public String delete(Model model) {
-        model.addAttribute("customerListForm", new CustomerListForm());
-        return "CustomerList";
-    }
-	
-	@PostMapping("/CustomerList")
+	@RequestMapping(value = "CustomerList", method = RequestMethod.POST)
     public String customerPost(Model model, @Valid CustomerListForm customerListForm, BindingResult bindingResult, HttpServletRequest request) {
 		
 		List<Integer>rowIdsdata = customerListForm.getRowIds();

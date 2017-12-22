@@ -37,7 +37,7 @@
 
 
 
-<script type="text/javascript">
+<script>
 /*<![CDATA[*/
 var rowIds = [];
 $(function() {
@@ -64,7 +64,12 @@ $(function() {
 });
 
 /*]]>*/
- /*<![CDATA[*/
+
+</script>
+</body>
+</html>
+
+<!--  
 function delete() {
 	if(rowIds.length == 0){
 		alert("削除する行を選択してください");
@@ -94,14 +99,6 @@ function delete() {
 		}
 	}
 }
-/*]]>*/
-</script>
-
-</body>
-</html>
-
-<!--  
-
 
 formatters: {
 	        "details": function($column, $custinfoEntity) {

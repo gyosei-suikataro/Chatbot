@@ -29,8 +29,6 @@ public class CustinfoEntity implements Serializable {
 	private String effect;
 	@Column
 	public String role;
-
-	//public String auth;
 	
 	public CustinfoEntity() {
 	}

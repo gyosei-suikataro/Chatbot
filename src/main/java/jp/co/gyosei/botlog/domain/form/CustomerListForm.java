@@ -1,17 +1,17 @@
 package jp.co.gyosei.botlog.domain.form;
 
-import java.util.List;
+
 
 
 public class CustomerListForm {
 	
-	 private List<Integer> rowIds;
+	 private Integer[] rowIds;
 	 
-	 public List<Integer> getRowIds() {
+	 public Integer[] getRowIds() {
 	        return rowIds;
 	    }
 	 
-	 public void setRowIds(List<Integer> rowIds) {
+	 public void setRowIds(Integer[] rowIds) {
 	        this.rowIds = rowIds;
 	    }
 }

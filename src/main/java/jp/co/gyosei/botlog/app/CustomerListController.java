@@ -59,16 +59,13 @@ public class CustomerListController {
 	
 	@RequestMapping(value = "CustomerList", method = RequestMethod.POST)
     public String customerPost(Model model, @Valid CustomerListForm customerListForm, BindingResult bindingResult, HttpServletRequest request) {
-		
-		List<Integer>rowIdsdata = customerListForm.getRowIds();
-		for (Integer no: rowIdsdata){
+		Integer[] rowIdsdata = customerListForm.getRowIds();
+		for(int i = 0; i < rowIdsdata.length; i++) {
+			Integer no = rowIdsdata[i];
 			custinfoRepository.delete(no);
 		}
+		
 		return "CustomerList";
 	}
-	
-	
-	
-	
 	
 }

@@ -1,3 +1,4 @@
+/*
 package jp.co.gyosei.botlog.app;
 
 
@@ -13,3 +14,4 @@ public class LoginController {
 		return "login";
 	}
 }
+*/

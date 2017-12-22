@@ -110,4 +110,9 @@ public class CustinfoEntity implements Serializable {
 		return null;
 	}
 
+	public CustinfoEntity findOne(String custid) {
+		// TODO 自動生成されたメソッド・スタブ
+		return null;
+	}
+
 }

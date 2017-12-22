@@ -14,7 +14,7 @@ import jp.co.gyosei.botlog.domain.repository.CustinfoRepositoryCustom;
 public class UserDetailsServiceImpl implements UserDetailsService {
 
     @Autowired
-    private CustinfoRepositoryCustom custinfoRepositoryCustom;
+    private CustinfoEntity custinfoRepositoryCustom;
 
     @Override
     public UserDetails loadUserByUsername(String custid)

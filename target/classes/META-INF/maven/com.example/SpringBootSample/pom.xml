@@ -61,8 +61,6 @@
 			<scope>test</scope>
 		</dependency>
 
-
-
 		<!-- Security -->
 		<dependency>
 			<groupId>org.springframework.security</groupId>

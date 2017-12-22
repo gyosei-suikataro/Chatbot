@@ -23,7 +23,7 @@ public class LoginController {
     }
 	 */
 
-	@RequestMapping(value = "/login")
+	@RequestMapping(value = "/")
 	public String Login() {
 		return "login";
 	}

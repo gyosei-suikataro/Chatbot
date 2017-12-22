@@ -32,7 +32,7 @@ import java.util.List;
 import java.util.ArrayList;
 
 
-//@RequestMapping("CustomerList")
+
 @Controller
 public class CustomerListController {
 
@@ -43,13 +43,21 @@ public class CustomerListController {
 	CustinfoRepository custinfoRepository;
 	
 	
-	//@GetMapping
+	
 	@RequestMapping(value = "CustomerList", method = RequestMethod.GET)
 	public String list(Model model) {
 		List<CustinfoEntity> custinfoEntity = custinfoRepository.findAll();
 		model.addAttribute("custinfoEntity",custinfoEntity);
 		return "CustomerList";
 	}
+	
+	/*
+	@RequestMapping(value = "rowIdsData", method = RequestMethod.POST)
+	@ResponseBody
+	public void rowIdsData (@RequestBody String body) {
+		
+	}
+	*/
 	
 	
 	/*

@@ -31,8 +31,9 @@ import jp.co.gyosei.botlog.domain.repository.CustinfoRepository;
 import java.util.List;
 import java.util.ArrayList;
 
+
+//@RequestMapping("CustomerList")
 @Controller
-@RequestMapping("CustomerList")
 public class CustomerListController {
 
 	@Autowired
@@ -43,7 +44,7 @@ public class CustomerListController {
 	
 	
 	//@GetMapping
-	@RequestMapping(value = "CustomerListController", method = RequestMethod.GET)
+	@RequestMapping(value = "CustomerList", method = RequestMethod.GET)
 	public String list(Model model) {
 		List<CustinfoEntity> custinfoEntity = custinfoRepository.findAll();
 		model.addAttribute("custinfoEntity",custinfoEntity);

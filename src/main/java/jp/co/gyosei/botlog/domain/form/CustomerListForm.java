@@ -1,11 +1,9 @@
 package jp.co.gyosei.botlog.domain.form;
 
 
-
-
 public class CustomerListForm {
 	
-	 private Integer[] rowIds;
+	 private Integer[] rowIds = new Integer[] {9,10};
 	 
 	 public Integer[] getRowIds() {
 	        return rowIds;

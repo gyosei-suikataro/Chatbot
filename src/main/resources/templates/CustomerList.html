@@ -34,11 +34,9 @@
 				</tbody>
 		</table>	
  
- <form action="#" th:action="@{/CustomerList}" th:object="${customerListForm}" method="post">
- <input type="hidden" name = "rowIds[]" value = "rowIds[]" />
+ <form  th:action="@{/CustomerList}" method="post">
  <input type="submit" value="選択行を削除" />
  </form>
- 
  
 <script type="text/javascript" th:inline="javascript">
 /*<![CDATA[*/
@@ -71,3 +69,10 @@ $(function() {
 </script>
 </body>
 </html>
+
+<!-- 
+<form action="#" th:action="@{/CustomerList}" th:object="${customerListForm}" method="post">
+ <input type="hidden" name = "rowIds[]" value = "rowIds[]" />
+ <input type="submit" value="選択行を削除" />
+ </form>
+ -->

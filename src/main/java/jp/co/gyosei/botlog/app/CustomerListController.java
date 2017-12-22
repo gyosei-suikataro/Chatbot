@@ -59,8 +59,9 @@ public class CustomerListController {
 	
 	@RequestMapping(value = "CustomerList", method = RequestMethod.POST)
     public String customerPost(Model model, @Valid CustomerListForm customerListForm, BindingResult bindingResult, HttpServletRequest request) {
-		
-		Integer[] rowIdsdata = customerListForm.getRowIds();
+		//Integer[] rowIdsdata = customerListForm.getRowIds();
+		Integer[] rowIdsdata ;
+		rowIdsdata = new Integer[] {5,6};
 		for(int i = 0; i < rowIdsdata.length; i++) {
 			Integer no = rowIdsdata[i];
 			custinfoRepository.delete(no);

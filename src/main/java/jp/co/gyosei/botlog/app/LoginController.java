@@ -4,7 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import jp.co.gyosei.botlog.domain.form.LoginForm;
+//import jp.co.gyosei.botlog.domain.form.LoginForm;
 
 @Controller
 public class LoginController {

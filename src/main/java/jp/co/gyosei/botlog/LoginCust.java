@@ -1,3 +1,4 @@
+/*
 package jp.co.gyosei.botlog;
 
 import java.util.ArrayList;
@@ -37,3 +38,4 @@ public class LoginCust extends User {
         auth = cust.auth;
     }
 }
+*/

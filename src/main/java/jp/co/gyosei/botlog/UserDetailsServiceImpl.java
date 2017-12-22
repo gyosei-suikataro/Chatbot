@@ -14,7 +14,7 @@ import jp.co.gyosei.botlog.domain.repository.CustinfoRepositoryCustom;
 public class UserDetailsServiceImpl implements UserDetailsService {
 
     @Autowired
-    private CustinfoEntity custinfoRepositoryCustom;
+    private CustinfoRepositoryCustom custinfoRepositoryCustom;
 
     @Override
     public UserDetails loadUserByUsername(String custid)
@@ -22,7 +22,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
         CustinfoEntity cust = custinfoRepositoryCustom.findOne(custid);
 		if (cust == null) {
-            throw new UsernameNotFoundException("„É¶„Éº„Ç∂„Éº„ÅåË¶ã„Å§„Åã„Çä„Åæ„Åõ„Çì„Åß„Åó„Åü„ÄÇ");
+            throw new UsernameNotFoundException("ÉÜÅ[ÉUÅ[Ç™å©Ç¬Ç©ÇËÇ‹ÇπÇÒÇ≈ÇµÇΩÅB");
         }
 
         return new LoginCust(cust);

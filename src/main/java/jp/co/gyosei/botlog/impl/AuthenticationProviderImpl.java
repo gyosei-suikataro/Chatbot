@@ -1,4 +1,4 @@
-package jp.co.gyosei.botlog;
+package jp.co.gyosei.botlog.impl;
 
 import java.util.Collection;
 
@@ -11,6 +11,7 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.stereotype.Component;
 
+import jp.co.gyosei.botlog.LoginCust;
 import jp.co.gyosei.botlog.domain.entity.CustinfoEntity;
 import jp.co.gyosei.botlog.domain.repository.CustinfoRepositoryCustom;
 

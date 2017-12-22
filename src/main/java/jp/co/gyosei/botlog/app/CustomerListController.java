@@ -20,6 +20,8 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.PathVariable;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import jp.co.gyosei.botlog.domain.entity.CustinfoEntity;
 import jp.co.gyosei.botlog.domain.service.CustinfoService;
@@ -50,7 +52,7 @@ public class CustomerListController {
 	
 	@PostMapping
 	@ResponseStatus(HttpStatus.NO_CONTENT)
-	public String delete(@RequestParam(value="rowIds[]") List<Integer> rowIds) {
+	public String delete(@RequestParam("rowIds") Integer rowIds[],HttpServletRequest request,HttpServletResponse response, Model model) {
 		for (int no: rowIds){
 			custinfoRepository.delete(no);
 		}

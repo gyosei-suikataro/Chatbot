@@ -51,13 +51,14 @@ public class CustomerListController {
 	
 	
 	
-	//@ResponseStatus(HttpStatus.NO_CONTENT)public String delete(@RequestParam Integer[] rowIds,HttpServletRequest request,HttpServletResponse response)
+	//@ResponseStatus(HttpStatus.NO_CONTENT)
+	//public String delete(@RequestParam Integer[] rowIds,HttpServletRequest request,HttpServletResponse response)
 	
 	@PostMapping
-	public String delete(@RequestParam Integer[] rowIds) {
-		for (int no: rowIds){
+	@ResponseStatus(HttpStatus.NO_CONTENT)
+	void delete(@RequestParam Integer[] rowIds,HttpServletRequest request,HttpServletResponse response) {
+		for (Integer no: rowIds){
 			custinfoRepository.delete(no);
 		}
-		return "CustomerList";
 	}
 }

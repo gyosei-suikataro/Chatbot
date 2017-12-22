@@ -8,6 +8,6 @@
     <p th:if="${#authorization.expression('isAuthenticated()')}">認証済み</p>
 
     <!-- 認証オブジェクトの参照 -->
-    <p th:text="${#authentication.principal.auth}"></p>
+    <p th:text="${#authentication.principal.role}"></p>
 </body>
 </html>

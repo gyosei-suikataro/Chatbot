@@ -1,15 +1,18 @@
-/*
 package jp.co.gyosei.botlog.domain.entity;
 
 import java.io.Serializable;
+import java.util.Collection;
+
 import javax.persistence.*;
+
+import org.springframework.security.core.GrantedAuthority;
 
 @Entity
 @Table(name="custinfo")
-public class LoginCustinfoEntityImpl implements Serializable {
+public class CustinfoEntityImpl implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	private static final String auth = null;
+	public final String auth = null;
 	@Id
 	@Column
 	public String custid;
@@ -18,10 +21,10 @@ public class LoginCustinfoEntityImpl implements Serializable {
 	@Column
 	public String role;
 
-	public LoginCustinfoEntityImpl() {
+	public CustinfoEntityImpl() {
 	}
 
-	public LoginCustinfoEntityImpl(String custid, String password, String role) {
+	public CustinfoEntityImpl(String custid, String password, String role) {
  
 		this.custid = custid;
 		this.password = password;
@@ -51,5 +54,11 @@ public class LoginCustinfoEntityImpl implements Serializable {
 	public void setRole(String role) {
 		this.role = role;
 	}
+	
+	public static CustinfoEntityImpl custinfoRepositoryCustom(String custid, String password,
+			Collection<? extends GrantedAuthority> role) {
+		// TODO 自動生成されたメソッド・スタブ
+		return null;
+	}
+
 }
-*/

@@ -1,4 +1,3 @@
-/*
 package jp.co.gyosei.botlog;
 
 import java.util.ArrayList;
@@ -6,7 +5,8 @@ import java.util.ArrayList;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
-import jp.co.gyosei.botlog.domain.entity.CustinfoEntity;
+
+import jp.co.gyosei.botlog.domain.entity.CustinfoEntityImpl;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.User;
@@ -30,7 +30,7 @@ public class LoginCust extends User {
     // ì∆é©Ç≈ïKóvÇ»çÄñ⁄
     public String auth;
 
-    public LoginCust(CustinfoEntity cust) {
+    public LoginCust(CustinfoEntityImpl cust) {
         super(cust.custid, cust.password, new ArrayList<GrantedAuthority>());
         custid = cust.custid;
         password = cust.password;
@@ -38,4 +38,3 @@ public class LoginCust extends User {
         auth = cust.auth;
     }
 }
-*/

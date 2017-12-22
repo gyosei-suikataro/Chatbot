@@ -1,4 +1,3 @@
-/*
 package jp.co.gyosei.botlog.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,7 +6,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Component;
 
-import jp.co.gyosei.botlog.domain.entity.CustinfoEntity;
+import jp.co.gyosei.botlog.domain.entity.CustinfoEntityImpl;
 import jp.co.gyosei.botlog.LoginCust;
 import jp.co.gyosei.botlog.domain.repository.CustinfoRepositoryCustom;
 
@@ -21,7 +20,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     public UserDetails loadUserByUsername(String custid)
             throws UsernameNotFoundException {
 
-        CustinfoEntity cust = custinfoRepositoryCustom.findOne(custid);
+    	CustinfoEntityImpl cust = custinfoRepositoryCustom.findOne(custid);
 		if (cust == null) {
             throw new UsernameNotFoundException("ユーザーが見つかりませんでした。");
         }
@@ -29,4 +28,3 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         return new LoginCust(cust);
     }
 }
-*/

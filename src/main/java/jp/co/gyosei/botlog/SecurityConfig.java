@@ -8,19 +8,19 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
-/*
+
 import jp.co.gyosei.botlog.impl.UserDetailsServiceImpl;
 import jp.co.gyosei.botlog.impl.AuthenticationProviderImpl;
-*/
+
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
-/*
+
     @Autowired
     private UserDetailsServiceImpl userDetailsService;
 	
 	@Autowired
 	private AuthenticationProviderImpl authenticationProvider;
-*/
+
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http
@@ -66,7 +66,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
          return new BCryptPasswordEncoder();
      }
 	 
-/*
+
 	@Autowired
 	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
 		// ì∆é©îFèÿÉNÉâÉXÇê›íËÇ∑ÇÈ
@@ -74,5 +74,5 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		.authenticationProvider(authenticationProvider)
 		.userDetailsService(userDetailsService);
 	}
-	*/
+
 }

@@ -18,17 +18,18 @@ public class CustinfoEntityImpl implements Serializable {
 	public String custid;
 	@Column
 	public String password;
+	/*
 	@Column
 	public String role;
-
+*/
 	public CustinfoEntityImpl() {
 	}
 
-	public CustinfoEntityImpl(String custid, String password, String role) {
+	public CustinfoEntityImpl(String custid, String password/*, String role*/) {
  
 		this.custid = custid;
 		this.password = password;
-		this.role = role;
+		//this.role = role;
 	}
 
 	public String getCustid() {
@@ -54,10 +55,10 @@ public class CustinfoEntityImpl implements Serializable {
 	public void setRole(String role) {
 		this.role = role;
 	}
-*/
+
 	public static CustinfoEntityImpl custinfoRepositoryCustom(String custid, String password,
 			Collection<? extends GrantedAuthority> role) {
 		return null;
 	}
-
+*/
 }

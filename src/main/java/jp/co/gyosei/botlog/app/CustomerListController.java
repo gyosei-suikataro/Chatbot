@@ -24,7 +24,8 @@ public class CustomerListController {
 	
 	@GetMapping
 	public String list(Model model) {
-		model.addAttribute("custinfoEntity",custinfoEntityImpl);
+		List<CustinfoEntityImpl> custinfoEntityImpl = custinfoRepositoryCustom.findAll();
+		model.addAttribute("custinfoEntityImpl",custinfoEntityImpl);
 		return "CustomerList";
 	}
 	

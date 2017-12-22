@@ -54,11 +54,11 @@ public class CustinfoEntityImpl implements Serializable {
 	public void setRole(String role) {
 		this.role = role;
 	}
-	
+	/*
 	public static CustinfoEntityImpl custinfoRepositoryCustom(String custid, String password,
 			Collection<? extends GrantedAuthority> role) {
 		// TODO 自動生成されたメソッド・スタブ
 		return null;
 	}
-
+*/
 }

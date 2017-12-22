@@ -19,7 +19,6 @@
 		               <th data-column-id="orgname"  data-width="20%">組織名</th>
 		               <th data-column-id="effect"  data-width="10%">EFFECT</th>
 		               <th data-column-id="role"  data-width="7%">役割</th>
-		               <th data-column-id="detail"  data-width="3%" data-formatter="details" data-sortable="false"></th>
 		           </tr>
 				</thead>
 				
@@ -48,12 +47,7 @@ $(function() {
 		selection: true, 
 		multiSelect: true,
 		rowSelect: true,
-	    keepSelection: true,
-	    formatters: {
-	        "details": function($column, $custinfoEntity) {
-	        	return "<input type='button' value='詳細'>";
-             }
-	    }
+	    keepSelection: true
 	}).on("selected.rs.jquery.bootgrid", function(e, rows)
 	{
 	    for (var i = 0; i < rows.length; i++)
@@ -107,5 +101,14 @@ function delete() {
 		}
 	}
 }
+
+formatters: {
+	        "details": function($column, $custinfoEntity) {
+	        	return "<input type='button' value='詳細'>";
+             }
+	    }
+
+<th data-column-id="detail"  data-width="3%" data-formatter="details" data-sortable="false"></th>
+
 -->
 

@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMethod;
 /*
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
@@ -41,7 +42,8 @@ public class CustomerListController {
 	CustinfoRepository custinfoRepository;
 	
 	
-	@GetMapping
+	//@GetMapping
+	@RequestMapping(value = "CustomerListController", method = RequestMethod.GET)
 	public String list(Model model) {
 		List<CustinfoEntity> custinfoEntity = custinfoRepository.findAll();
 		model.addAttribute("custinfoEntity",custinfoEntity);
@@ -49,11 +51,9 @@ public class CustomerListController {
 	}
 	
 	
-	
-	
+	/*
 	//@ResponseStatus(HttpStatus.NO_CONTENT)
 	//public String delete(@RequestParam Integer[] rowIds,HttpServletRequest request,HttpServletResponse response)
-	
 	@PostMapping
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	void delete(@RequestParam Integer[] rowIds) {
@@ -61,4 +61,11 @@ public class CustomerListController {
 			custinfoRepository.delete(no);
 		}
 	}
+	*/
+	
+	
+	
+	
+	
+	
 }

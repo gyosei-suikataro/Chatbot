@@ -7,7 +7,7 @@ import javax.persistence.*;
 
 import org.springframework.security.core.GrantedAuthority;
 
-import jp.co.gyosei.botlog.domain.repository.CustinfoRepositoryCustom;
+//import jp.co.gyosei.botlog.domain.repository.CustinfoRepositoryCustom;
 
 @Entity
 @Table(name="custinfo")
@@ -30,7 +30,7 @@ public class CustinfoEntity implements Serializable {
 	@Column
 	public String role;
 
-	public String auth;
+	//public String auth;
 	
 	public CustinfoEntity() {
 	}
@@ -99,10 +99,11 @@ public class CustinfoEntity implements Serializable {
 	public void setRole(String role) {
 		this.role = role;
 	}
-
+/*
 	public static CustinfoEntity custinfoRepositoryCustom(String custid, String password,
 			Collection<? extends GrantedAuthority> role) {
 		// TODO 自動生成されたメソッド・スタブ
 		return null;
 	}
+*/
 }

@@ -36,7 +36,7 @@
 		</table>	
  
 
-<input type="button" value="選択行を削除" />
+<input type="button" value="選択行を削除" onclick = "delete()" />
 
 
 
@@ -70,13 +70,7 @@ $(function() {
 	    }
 	});
 });
-/*]]>*/
-</script>
 
-</body>
-</html>
-
-<!--  
 function delete() {
 	if(rowIds.length == 0){
 		alert("削除する行を選択してください");
@@ -88,7 +82,7 @@ function delete() {
 		for (var i = 0; i < rowIds.length; i++){
 			$.ajax({
 				type: "POST",
-				url: "CustomerListController.java",
+				url: "rowIdsData",
 				data: "no=" + rowIds[i],
 			}).then(
 				function(){
@@ -106,5 +100,13 @@ function delete() {
 		}
 	}
 }
+/*]]>*/
+</script>
+
+</body>
+</html>
+
+<!--  
+
 -->
 

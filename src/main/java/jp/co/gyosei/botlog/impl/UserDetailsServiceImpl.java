@@ -22,7 +22,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
         CustinfoEntity cust = custinfoRepositoryCustom.findOne(custid);
 		if (cust == null) {
-            throw new UsernameNotFoundException("ƒ†[ƒU[‚ªŒ©‚Â‚©‚è‚Ü‚¹‚ñ‚Å‚µ‚½B");
+            throw new UsernameNotFoundException("ãƒ¦ãƒ¼ã‚¶ãƒ¼ãŒè¦‹ã¤ã‹ã‚Šã¾ã›ã‚“ã§ã—ãŸã€‚");
         }
 
         return new LoginCust(cust);

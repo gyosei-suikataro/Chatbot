@@ -4,6 +4,7 @@ package jp.co.gyosei.botlog.app;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,8 +24,11 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.PathVariable;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.validation.Valid;
 
 import jp.co.gyosei.botlog.domain.entity.CustinfoEntity;
+import jp.co.gyosei.botlog.domain.form.CustomerForm;
+import jp.co.gyosei.botlog.domain.form.CustomerListForm;
 import jp.co.gyosei.botlog.domain.service.CustinfoService;
 import jp.co.gyosei.botlog.domain.repository.CustinfoRepository;
 
@@ -51,27 +55,23 @@ public class CustomerListController {
 		return "CustomerList";
 	}
 	
-	/*
-	@RequestMapping(value = "rowIdsData", method = RequestMethod.POST)
-	@ResponseBody
-	public void rowIdsData (@RequestBody String body) {
+	
+	
+	@GetMapping("/CustomerList")
+    public String delete(Model model) {
+        model.addAttribute("customerListForm", new CustomerListForm());
+        return "CustomerList";
+    }
+	
+	@PostMapping("/CustomerList")
+    public String customerPost(Model model, @Valid CustomerListForm customerListForm, BindingResult bindingResult, HttpServletRequest request) {
 		
-	}
-	*/
-	
-	
-	/*
-	//@ResponseStatus(HttpStatus.NO_CONTENT)
-	//public String delete(@RequestParam Integer[] rowIds,HttpServletRequest request,HttpServletResponse response)
-	@PostMapping
-	@ResponseStatus(HttpStatus.NO_CONTENT)
-	void delete(@RequestParam Integer[] rowIds) {
-		for (Integer no: rowIds){
+		List<Integer>rowIdsdata = customerListForm.getRowIds();
+		for (Integer no: rowIdsdata){
 			custinfoRepository.delete(no);
 		}
+		return "CustomerList";
 	}
-	*/
-	
 	
 	
 	

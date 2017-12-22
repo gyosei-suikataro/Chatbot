@@ -12,16 +12,16 @@ import org.springframework.security.core.GrantedAuthority;
 public class CustinfoEntityImpl implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	//public final String auth = null;
+	
 	@Id
 	@Column
 	public String custid;
 	@Column
 	public String password;
-	/*
+	
 	@Column
 	public String role;
-*/
+
 	public CustinfoEntityImpl() {
 	}
 
@@ -29,7 +29,7 @@ public class CustinfoEntityImpl implements Serializable {
  
 		this.custid = custid;
 		this.password = password;
-		//this.role = role;
+		this.role = role;
 	}
 
 	public String getCustid() {
@@ -47,7 +47,7 @@ public class CustinfoEntityImpl implements Serializable {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-/*
+
 	public String getRole() {
 		return this.role;
 	}
@@ -60,5 +60,5 @@ public class CustinfoEntityImpl implements Serializable {
 			Collection<? extends GrantedAuthority> role) {
 		return null;
 	}
-*/
+
 }

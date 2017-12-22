@@ -23,16 +23,11 @@
 					
 					<tr th:each="custinfoEntityImpl :${custinfoEntityImpl}">
 						
-						<td th:text="${custinfoEntity.no}"></td>
 						<td th:text="${custinfoEntity.custid}"></td>
-						<td th:text="${custinfoEntity.custname}"></td>
-						<td th:text="${custinfoEntity.orgname}"></td>
-						<td th:text="${custinfoEntity.effect}"></td>
 						<td th:text="${custinfoEntity.role}"></td>
 					</tr>
 				</tbody>
 		</table>	
-
 
 <input id="btn_del"  value="選択行の削除" onclick="drow()">
 

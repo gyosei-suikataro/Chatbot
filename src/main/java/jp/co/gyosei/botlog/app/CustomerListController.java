@@ -20,12 +20,11 @@ public class CustomerListController {
     CustinfoService custinfoService;
 	
 	@Autowired
-	CustinfoRepositoryCustom custinfoRepositorycustom;
+	CustinfoRepositoryCustom custinfoRepositoryCustom;
 	
 	@GetMapping
 	public String list(Model model) {
-		List<CustinfoEntityImpl> custinfoEntity = custinfoRepositorycustom.findAll();
-		model.addAttribute("custinfoEntity",custinfoEntity);
+		model.addAttribute("custinfoEntity",custinfoEntityImpl);
 		return "CustomerList";
 	}
 	

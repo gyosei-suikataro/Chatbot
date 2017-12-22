@@ -6,9 +6,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import jp.co.gyosei.botlog.domain.entity.CustinfoEntityImpl;
+import jp.co.gyosei.botlog.domain.entity.CustinfoEntity;
 import jp.co.gyosei.botlog.domain.service.CustinfoService;
-import jp.co.gyosei.botlog.domain.repository.CustinfoRepositoryCustom;
+import jp.co.gyosei.botlog.domain.repository.CustinfoRepository;
 
 import java.util.List;
 
@@ -20,12 +20,12 @@ public class CustomerListController {
     CustinfoService custinfoService;
 	
 	@Autowired
-	CustinfoRepositoryCustom custinfoRepositoryCustom;
+	CustinfoRepository custinfoRepository;
 	
 	@GetMapping
 	public String list(Model model) {
-		List<CustinfoEntityImpl> custinfoEntityImpl = custinfoRepositoryCustom.findAll();
-		model.addAttribute("custinfoEntityImpl",custinfoEntityImpl);
+		List<CustinfoEntity> custinfoEntity = custinfoRepository.findAll();
+		model.addAttribute("custinfoEntity",custinfoEntity);
 		return "CustomerList";
 	}
 	

@@ -28,13 +28,13 @@ public class LoginCust extends User {
     public String role;
     
     // “Æ©‚Å•K—v‚È€–Ú
-    public String auth;
+    //public String auth;
 
     public LoginCust(CustinfoEntityImpl cust) {
         super(cust.custid, cust.password, new ArrayList<GrantedAuthority>());
         custid = cust.custid;
         password = cust.password;
         role = cust.role;
-        auth = cust.auth;
+        //auth = cust.auth;
     }
 }

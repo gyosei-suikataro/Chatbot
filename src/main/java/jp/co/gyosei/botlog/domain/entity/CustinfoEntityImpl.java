@@ -12,7 +12,7 @@ import org.springframework.security.core.GrantedAuthority;
 public class CustinfoEntityImpl implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	public final String auth = null;
+	//public final String auth = null;
 	@Id
 	@Column
 	public String custid;

@@ -52,14 +52,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 	}
 	
-	
+	/*
  	@Autowired
- 	public void configureGlobal1(AuthenticationManagerBuilder auth) throws Exception {
+ 	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
  		auth
  		.inMemoryAuthentication()
  		.withUser("user").password("password").roles("USER");
  	}
-	 
+	 */
 	
      @Bean
      public BCryptPasswordEncoder passwordEncoder() {

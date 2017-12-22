@@ -22,4 +22,9 @@ public class LoginController {
         return "/login";
     }
 */
+    
+    @RequestMapping(value = "/menu")
+    public String Menu() {
+        return "menu";
+    }
 }

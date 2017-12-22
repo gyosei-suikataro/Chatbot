@@ -29,7 +29,7 @@ public class CustomerController {
 	
 	@PostMapping("/Customer")
     public String customerPost(Model model, @Valid CustomerForm customerForm, BindingResult bindingResult, HttpServletRequest request) {
-		custinfoService.registerCustomer(customerForm.getNo(),customerForm.getCustid(),customerForm.getCustname(),customerForm.getOrgname(),customerForm.getPassword(),"1","USER");
+		custinfoService.registerCustomer(customerForm.getCustid(),customerForm.getPassword(),"USER");
 		return "Customer";
 	}
 	

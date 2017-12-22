@@ -5,7 +5,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 //import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
-
 import jp.co.gyosei.botlog.domain.entity.CustinfoEntityImpl;
 import jp.co.gyosei.botlog.domain.repository.CustinfoRepositoryCustom;
 
@@ -15,10 +14,7 @@ public class CustinfoService {
 	@Autowired
 	private CustinfoRepositoryCustom custinfoRepositoryCustom;
 	
-	
-	
 	//private BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-	
 	
 	@Transactional
     public void registerCustomer(String custid, String password, String role) {

@@ -1,14 +1,16 @@
 package jp.co.gyosei.botlog.app;
 
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-//import jp.co.gyosei.botlog.domain.form.LoginForm;
+import jp.co.gyosei.botlog.LoginCust;
+import jp.co.gyosei.botlog.domain.form.LoginForm;
 
 @Controller
 public class LoginController {
-/*
+
 	@RequestMapping(value = "/")
 	public String login(Model model) {
 		model.addAttribute(new LoginForm());
@@ -21,15 +23,16 @@ public class LoginController {
         model.addAttribute("loginError", true);
         return "/login";
     }
-	 */
-
+/*
 	@RequestMapping(value = "/")
 	public String Login() {
 		return "login";
 	}
-	
-	@RequestMapping(value = "/menu")
-	public String Menu() {
-		return "menu";
-	}
+*/
+    @RequestMapping(value = "/menu")
+    public String index(@AuthenticationPrincipal LoginCust loginUser, Model model) {
+        // @AuthenticationPrincipalを使うと認証オブジェクトを参照できる。
+
+        return "menu/menu";
+    }
 }

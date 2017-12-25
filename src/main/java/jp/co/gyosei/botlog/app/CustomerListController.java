@@ -40,7 +40,7 @@ public class CustomerListController {
 
 		    }
 	 */
-
+/*
 	@Controller
 	@RequestMapping("menu")
 	public class CustomerListController2{
@@ -58,4 +58,5 @@ public class CustomerListController {
 			return "menu";
 		}
 	}
+	*/
 }

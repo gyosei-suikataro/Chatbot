@@ -36,14 +36,14 @@
  
  <form  action="#" th:action="@{/CustomerList}" th:object="${customerListForm}" method="post">
  <input type="submit" value="選択行を削除" />
- <input type="hidden" name="rowIds" value ="[[${rowIds}]]" />
+ <input type="hidden" name="var[]"  />
  </form>
  
  
 <script type="text/javascript" th:inline="javascript">
 /*<![CDATA[*/
 var rowIds = [];
-rowIds = [[${rowIds}]]
+
 
 $(function() {
 	$("#grid-basic").bootgrid({

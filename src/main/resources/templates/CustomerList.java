@@ -38,8 +38,6 @@
 <script type="text/javascript" th:inline="javascript">
 /*<![CDATA[*/
 var rowIds = [];
-
-
 $(function() {
 	$("#grid-basic").bootgrid({
 		selection: true, 
@@ -77,4 +75,3 @@ $(function() {
  /*<![CDATA[*/  /*]]>*/
  
  -->
- 

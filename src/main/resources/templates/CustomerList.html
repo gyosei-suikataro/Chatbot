@@ -64,7 +64,7 @@ $(function() {
 </script>
 </body>
 </html>
-<!-- 
+<!--
 <form action="#" th:action="@{/CustomerList}" th:object="${customerListForm}" method="post">
  <input type="hidden" name = "rowIds[]" value = "rowIds[]" />
  <input type="submit" value="選択行を削除" />

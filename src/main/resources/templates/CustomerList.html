@@ -35,8 +35,7 @@
 		</table>	
  
  <form  action="#" th:action="@{/CustomerList}" th:object="${customerListForm}" method="post">
- <input type="hidden"  th:value="${rowIds[]}" />
- <input type="submit" value="選択行を削除" />
+ <input type="submit" value="選択行を削除" th:value="${rowIds[]}" />
  </form>
  
  
@@ -77,4 +76,6 @@ $(function() {
  <input type="hidden" name = "rowIds[]" value = "rowIds[]" />
  <input type="submit" value="選択行を削除" />
  </form>
+ 
+ <input type="hidden"  th:value="${rowIds[]}" />
  -->

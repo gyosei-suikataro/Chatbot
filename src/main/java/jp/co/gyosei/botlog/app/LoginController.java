@@ -12,22 +12,22 @@ import jp.co.gyosei.botlog.domain.form.LoginForm;
 public class LoginController {
 /*
 	@RequestMapping("/")
-	String login() {
-		return "login";
+	String Login() {
+		return "Login";
 	}
 */	
 	
 	@RequestMapping(value = "/")
-	public String login(Model model) {
+	public String Login(Model model) {
 		model.addAttribute(new LoginForm());
-		return "login";
+		return "Login";
 	}
 
     // SpringConfig
-    @RequestMapping(value = "/login-error")
-    public String loginError(Model model) {
-        model.addAttribute("loginError", true);
-        return "/login";
+    @RequestMapping(value = "/Login-error")
+    public String LoginError(Model model) {
+        model.addAttribute("LoginError", true);
+        return "Login";
     }
 
     @RequestMapping(value = "/menu")

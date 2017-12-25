@@ -19,7 +19,7 @@
 		               <th data-column-id="effect"  data-width="10%">EFFECT</th>
 		               <th data-column-id="role"  data-width="7%">役割</th>
 		           </tr>
-				</thead>		
+				</thead>
 				<tbody>
 					<tr th:each="custinfoEntity :${custinfoEntity}">
 						<td th:text="${custinfoEntity.no}"></td>

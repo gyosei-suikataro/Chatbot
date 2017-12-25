@@ -10,24 +10,23 @@ import jp.co.gyosei.botlog.domain.form.LoginForm;
 
 @Controller
 public class LoginController {
-/*
+
 	@RequestMapping("/")
-	String login() {
-		return "login";
+	String Login() {
+		return "Login";
 	}
-*/	
-	
+/*	
 	@RequestMapping(value = "/")
-	public String login(Model model) {
+	public String Login(Model model) {
 		model.addAttribute(new LoginForm());
-		return "login";
+		return "Login";
 	}
 
     // SpringConfigで設定したログインできなかった場合の処理を定義する
     @RequestMapping(value = "/login-error")
     public String loginError(Model model) {
         model.addAttribute("loginError", true);
-        return "/login";
+        return "Login";
     }
 
     @RequestMapping(value = "/menu")
@@ -36,4 +35,5 @@ public class LoginController {
 
         return "/menu";
     }
+*/
 }

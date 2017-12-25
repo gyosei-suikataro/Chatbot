@@ -1,3 +1,4 @@
+/*
 package jp.co.gyosei.botlog.domain.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,3 +19,4 @@ public class CustinfoService2 {
 		
     }
 }
+*/

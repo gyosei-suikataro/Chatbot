@@ -7,11 +7,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import jp.co.gyosei.botlog.domain.entity.CustinfoEntity;
-import jp.co.gyosei.botlog.domain.entity.CustinfoEntityImpl;
+//import jp.co.gyosei.botlog.domain.entity.CustinfoEntityImpl;
 import jp.co.gyosei.botlog.domain.service.CustinfoService;
-import jp.co.gyosei.botlog.domain.service.CustinfoService2;
+//import jp.co.gyosei.botlog.domain.service.CustinfoService2;
 import jp.co.gyosei.botlog.domain.repository.CustinfoRepository;
-import jp.co.gyosei.botlog.domain.repository.CustinfoRepositoryCustom;
+//import jp.co.gyosei.botlog.domain.repository.CustinfoRepositoryCustom;
 
 import java.util.List;
 
@@ -40,7 +40,7 @@ public class CustomerListController {
 
 		    }
 	 */
-
+/*
 	@Controller
 	@RequestMapping("menu")
 	public class CustomerListController2{
@@ -58,5 +58,5 @@ public class CustomerListController {
 			return "menu";
 		}
 	}
-	
+*/
 }

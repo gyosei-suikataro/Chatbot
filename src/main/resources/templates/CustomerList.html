@@ -7,6 +7,7 @@
 <link href="stylesheets/jquery.bootgrid.css" rel="stylesheet" />
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.js"></script>
 <script src="javascript/jquery.bootgrid.js"></script>
+<script src="javascript/jquery.bootgrid.js"></script>
 </head>
 <body>
 		<table id="grid-basic" class="table table-condensed table-hover table-striped">
@@ -34,46 +35,13 @@
 		
  <form  th:action="@{/CustomerList}" th:object="${customerListForm}" method="post">
  <input type="submit" value="選択行を削除" />
- <input type="hidden" name = "rowIds" th:field= "*{rowIds}" th:value = "${rowIds[]}" />
+ <input type="hidden" name = "rowIds"  th:value = "${rowIds[]}" />
  </form>
- 
-<script>
-/*<![CDATA[*/
-var rowIds = [];
 
-$(function() {
-	$("#grid-basic").bootgrid({
-		selection: true, 
-		multiSelect: true,
-		rowSelect: true,
-	    keepSelection: true
-	}).on("selected.rs.jquery.bootgrid", function(e, rows)
-	{
-	    for (var i = 0; i < rows.length; i++)
-	    {
-	        rowIds.push(rows[i].no);
-	    }
-	}).on("deselected.rs.jquery.bootgrid", function(e, rows)
-	{
-		for (var i = 0; i < rows.length; i++)
-	    {
-	    	rowIds.some(function(v, ii){
-	    	    if (v==rows[i].no) rowIds.splice(ii,1);
-	    	}); 
-	    }
-	});
-});
-
-/*]]>*/
-</script>
 </body>
 </html>
 
 <!--
 <form action="#" th:action="@{/CustomerList}" th:object="${customerListForm}" method="post">
- <input type="hidden" name = "rowIds[]" value = "rowIds[]" />
- <input type="submit" value="選択行を削除" />
- </form>
- /*<![CDATA[*/  /*]]>*/
- <script type="text/javascript" th:inline="javascript">
+ <script></script>
  -->

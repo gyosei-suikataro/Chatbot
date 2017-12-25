@@ -5,18 +5,18 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-//import jp.co.gyosei.botlog.LoginCust;
-//import jp.co.gyosei.botlog.domain.form.LoginForm;
+import jp.co.gyosei.botlog.LoginCust;
+import jp.co.gyosei.botlog.domain.form.LoginForm;
 
 @Controller
 public class LoginController {
-
+/*
 	@RequestMapping("/")
 	String login() {
 		return "login";
 	}
+*/	
 	
-	/*
 	@RequestMapping(value = "/")
 	public String login(Model model) {
 		model.addAttribute(new LoginForm());
@@ -34,7 +34,7 @@ public class LoginController {
 	public String Login() {
 		return "login";
 	}
-*/
+
 	/*
     @RequestMapping(value = "/menu")
     public String Menu(@AuthenticationPrincipal LoginCust loginCust, Model model) {

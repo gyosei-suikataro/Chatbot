@@ -1,4 +1,3 @@
-/*
 package jp.co.gyosei.botlog.domain.repository;
 
 import jp.co.gyosei.botlog.domain.entity.CustinfoEntityImpl;
@@ -18,4 +17,3 @@ public interface CustinfoRepositoryCustom extends JpaRepository<CustinfoEntityIm
 	}
 
 }
-*/

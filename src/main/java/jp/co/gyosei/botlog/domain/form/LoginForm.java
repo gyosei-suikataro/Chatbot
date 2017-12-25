@@ -1,4 +1,3 @@
-/*
 package jp.co.gyosei.botlog.domain.form;
 
 import java.util.Collection;
@@ -9,7 +8,7 @@ public class LoginForm {
 
 	private String custid;
 	private String password;
-	//private Collection<? extends GrantedAuthority> role;
+	private Collection<? extends GrantedAuthority> role;
 	
 	 String getCustid() {
 		return custid;
@@ -36,4 +35,3 @@ public class LoginForm {
 	}
 
 }
-*/

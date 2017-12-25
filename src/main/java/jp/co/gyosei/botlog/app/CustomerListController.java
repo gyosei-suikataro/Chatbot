@@ -1,6 +1,5 @@
 package jp.co.gyosei.botlog.app;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -35,8 +34,6 @@ import jp.co.gyosei.botlog.domain.repository.CustinfoRepository;
 import java.util.List;
 import java.util.ArrayList;
 
-
-
 @Controller
 public class CustomerListController {
 
@@ -45,9 +42,7 @@ public class CustomerListController {
 	
 	@Autowired
 	CustinfoRepository custinfoRepository;
-	
-	
-	
+
 	@RequestMapping(value = "CustomerList", method = RequestMethod.GET)
 	public String list(Model model) {
 		List<CustinfoEntity> custinfoEntity = custinfoRepository.findAll();
@@ -55,8 +50,7 @@ public class CustomerListController {
 		model.addAttribute("customerListForm", new CustomerListForm());
 		return "CustomerList";
 	}
-	
-	
+
 	@RequestMapping(value = "CustomerList", method = RequestMethod.POST)
     public String customerPost(Model model, @Valid CustomerListForm customerListForm, BindingResult bindingResult, HttpServletRequest request) {
 		
@@ -65,8 +59,6 @@ public class CustomerListController {
 			Integer no = rowIdsdata[i];
 			custinfoRepository.delete(no);
 		}
-		
 		return "Customer";
 	}
-	
 }

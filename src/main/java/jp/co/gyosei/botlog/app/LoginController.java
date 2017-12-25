@@ -23,7 +23,7 @@ public class LoginController {
 		return "login";
 	}
 
-    // SpringConfigで設定したログインできなかった場合の処理を定義する
+    // SpringConfig
     @RequestMapping(value = "/login-error")
     public String loginError(Model model) {
         model.addAttribute("loginError", true);
@@ -32,7 +32,7 @@ public class LoginController {
 
     @RequestMapping(value = "/menu")
     public String Menu(@AuthenticationPrincipal LoginCust loginCust, Model model) {
-        // @AuthenticationPrincipalを使うと認証オブジェクトを参照できる。
+        // @AuthenticationPrincipal
 
         return "/menu";
     }

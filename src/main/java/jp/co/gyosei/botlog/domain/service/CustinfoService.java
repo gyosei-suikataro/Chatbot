@@ -12,8 +12,8 @@ import jp.co.gyosei.botlog.domain.repository.CustinfoRepository;
 public class CustinfoService {
 	
 	@Autowired
-	private CustinfoRepository custinfoRepository;
-
+	private CustinfoRepository custinfoRepository;	
+	
 	private BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 	
 	@Transactional

@@ -23,7 +23,7 @@ public class LoginController {
 		return "login";
 	}
 
-    // SpringConfig‚Åİ’è‚µ‚½ƒƒOƒCƒ“‚Å‚«‚È‚©‚Á‚½ê‡‚Ìˆ—‚ğ’è‹`‚·‚é
+    // SpringConfigã§è¨­å®šã—ãŸãƒ­ã‚°ã‚¤ãƒ³ã§ããªã‹ã£ãŸå ´åˆã®å‡¦ç†ã‚’å®šç¾©ã™ã‚‹
     @RequestMapping(value = "/login-error")
     public String loginError(Model model) {
         model.addAttribute("loginError", true);
@@ -32,7 +32,7 @@ public class LoginController {
 
     @RequestMapping(value = "/menu")
     public String Menu(@AuthenticationPrincipal LoginCust loginCust, Model model) {
-        // @AuthenticationPrincipal‚ğg‚¤‚Æ”FØƒIƒuƒWƒFƒNƒg‚ğQÆ‚Å‚«‚éB
+        // @AuthenticationPrincipalã‚’ä½¿ã†ã¨èªè¨¼ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’å‚ç…§ã§ãã‚‹ã€‚
 
         return "/menu";
     }

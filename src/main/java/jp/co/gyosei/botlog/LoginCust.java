@@ -1,3 +1,4 @@
+/*
 package jp.co.gyosei.botlog;
 
 import java.util.ArrayList;
@@ -34,3 +35,4 @@ public class LoginCust extends User {
         role = cust.role;
     }
 }
+*/

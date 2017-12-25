@@ -1,11 +1,9 @@
 package jp.co.gyosei.botlog.app;
 
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import jp.co.gyosei.botlog.LoginCust;
 import jp.co.gyosei.botlog.domain.form.LoginForm;
 
 @Controller

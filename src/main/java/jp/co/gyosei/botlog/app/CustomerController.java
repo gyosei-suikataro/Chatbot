@@ -13,24 +13,20 @@ import jp.co.gyosei.botlog.domain.service.CustinfoService;
 import jp.co.gyosei.botlog.domain.repository.CustinfoRepository;
 import jp.co.gyosei.botlog.domain.form.CustomerForm;
 
-
-
 @Controller
 public class CustomerController {
-	
 
-	
 	@Autowired
     CustinfoService custinfoService;
 	
 	@Autowired
 	CustinfoRepository custinfoRepository;
-	
+/*
 	@RequestMapping("/")
 	public String Home() {
 		return "Customer";
 	}
-	
+*/
 	@GetMapping("/Customer")
     public String signup(Model model) {
         model.addAttribute("customerForm", new CustomerForm());

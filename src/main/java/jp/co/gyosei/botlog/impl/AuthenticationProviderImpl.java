@@ -12,7 +12,6 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.stereotype.Component;
 
 import jp.co.gyosei.botlog.LoginCust;
-import jp.co.gyosei.botlog.domain.entity.CustinfoEntityImpl;
 import jp.co.gyosei.botlog.domain.repository.CustinfoRepositoryCustom;
 
 @Component

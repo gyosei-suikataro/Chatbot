@@ -6,7 +6,6 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Component;
 
-import jp.co.gyosei.botlog.domain.entity.CustinfoEntityImpl;
 import jp.co.gyosei.botlog.LoginCust;
 import jp.co.gyosei.botlog.domain.repository.CustinfoRepositoryCustom;
 

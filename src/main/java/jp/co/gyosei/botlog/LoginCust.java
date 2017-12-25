@@ -6,10 +6,10 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
-import jp.co.gyosei.botlog.domain.entity.CustinfoEntityImpl;
-
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.User;
+
+import jp.co.gyosei.botlog.impl.CustinfoEntityImpl;
 
 @Data
 @EqualsAndHashCode(callSuper = true)

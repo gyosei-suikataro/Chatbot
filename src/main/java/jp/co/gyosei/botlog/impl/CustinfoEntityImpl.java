@@ -1,4 +1,4 @@
-package jp.co.gyosei.botlog.domain.entity;
+package jp.co.gyosei.botlog.impl;
 
 import java.io.Serializable;
 import java.util.Collection;

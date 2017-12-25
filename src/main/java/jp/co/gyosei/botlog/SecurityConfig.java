@@ -52,20 +52,20 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 	}
 	
-/*	
+
  	@Autowired
  	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
  		auth
  		.inMemoryAuthentication()
  		.withUser("user").password("password").roles("USER");
  	}
-*/ 
+
 	
      @Bean
      public BCryptPasswordEncoder passwordEncoder() {
          return new BCryptPasswordEncoder();
      }
- 
+ /*
 	@Autowired
 	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
 		// 独自認証クラスを設定する
@@ -73,5 +73,5 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		.authenticationProvider(authenticationProvider)
 		.userDetailsService(userDetailsService);
 	}
-
+*/
 }

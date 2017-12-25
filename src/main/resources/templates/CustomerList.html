@@ -35,8 +35,8 @@
 		</table>	
  
  <form  action="#" th:action="@{/CustomerList}" th:object="${customerListForm}" method="post">
- <input type="hidden"  name = "type[]" th:value="rowIds" />
  <input type="submit" value="選択行を削除" />
+ <input type="hidden"  name = "rowIds" th:value="${rowIds}" />
  </form>
  
  

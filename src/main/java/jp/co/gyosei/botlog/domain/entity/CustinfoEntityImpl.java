@@ -18,7 +18,6 @@ public class CustinfoEntityImpl implements Serializable {
 	public String custid;
 	@Column
 	public String password;
-	
 	@Column
 	public String role;
 

@@ -11,7 +11,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface CustinfoRepositoryCustom extends JpaRepository<CustinfoEntityImpl, String>{
 
-	static CustinfoEntityImpl custinfoRepositoryCustom(String custid, String password/*, Collection<? extends GrantedAuthority> role*/) {
+	static CustinfoEntityImpl custinfoRepositoryCustom(String custid, String password, Collection<? extends GrantedAuthority> role) {
 		// TODO 自動生成されたメソッド・スタブ
 		return null;
 	}

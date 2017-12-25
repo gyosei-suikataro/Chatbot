@@ -41,7 +41,7 @@
  
  
 <script type="text/javascript" th:inline="javascript">
-/*<![CDATA[*/
+<![CDATA[
 var rowIds = [];
 rowIds = [[${session.rowIds}]]
 
@@ -69,7 +69,7 @@ $(function() {
 });
 
 
-/*]]>*/
+]]>
 </script>
 </body>
 </html>
@@ -79,6 +79,6 @@ $(function() {
  <input type="hidden" name = "rowIds[]" value = "rowIds[]" />
  <input type="submit" value="選択行を削除" />
  </form>
- 
+ /*<![CDATA[*/  /*]]>*/
  
  -->

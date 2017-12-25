@@ -9,7 +9,6 @@
 <script src="javascript/jquery.bootgrid.js"></script>
 </head>
 <body>
-
 		<table id="grid-basic" class="table table-condensed table-hover table-striped">
 				<thead>
 					<tr>
@@ -20,8 +19,7 @@
 		               <th data-column-id="effect"  data-width="10%">EFFECT</th>
 		               <th data-column-id="role"  data-width="7%">役割</th>
 		           </tr>
-				</thead>
-				
+				</thead>		
 				<tbody>
 					<tr th:each="custinfoEntity :${custinfoEntity}">
 						<td th:text="${custinfoEntity.no}"></td>
@@ -32,9 +30,11 @@
 						<td th:text="${custinfoEntity.role}"></td>
 					</tr>
 				</tbody>
-		</table>	
- 
- 
+		</table>
+ <form action="#" th:action="@{/CustomerList}" th:object="${customerListForm}" method="post">
+ <input type="submit" value="選択行を削除" />
+ <input type="hidden" name = "rowIds[]" value = "rowIds[]" />
+ </form>
 <script type="text/javascript" th:inline="javascript">
 /*<![CDATA[*/
 var rowIds = [];
@@ -64,13 +64,10 @@ $(function() {
 </script>
 </body>
 </html>
-
 <!-- 
 <form action="#" th:action="@{/CustomerList}" th:object="${customerListForm}" method="post">
  <input type="hidden" name = "rowIds[]" value = "rowIds[]" />
  <input type="submit" value="選択行を削除" />
  </form>
  /*<![CDATA[*/  /*]]>*/
- 
  -->
- 

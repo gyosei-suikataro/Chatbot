@@ -38,7 +38,7 @@
 <script type="text/javascript" th:inline="javascript">
 /*<![CDATA[*/
 var rowIds = [];
-document.form1.action = rowIds;
+
 
 $(function() {
 	$("#grid-basic").bootgrid({

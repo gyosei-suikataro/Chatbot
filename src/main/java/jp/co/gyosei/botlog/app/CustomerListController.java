@@ -52,10 +52,11 @@ public class CustomerListController {
 		CustinfoRepositoryCustom custinfoRepositoryCustom;
 
 		@GetMapping
-		public String list(Model model) {
+		public String list(Model model1) {
 			List<CustinfoEntityImpl> custinfoEntityImpl = custinfoRepositoryCustom.findAll();
-			model.addAttribute("custinfoEntityImpl",custinfoEntityImpl);
+			model1.addAttribute("custinfoEntityImpl",custinfoEntityImpl);
 			return "menu";
 		}
 	}
+	
 }

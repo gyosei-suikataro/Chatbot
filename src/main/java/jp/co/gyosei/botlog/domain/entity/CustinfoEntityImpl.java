@@ -24,7 +24,7 @@ public class CustinfoEntityImpl implements Serializable {
 	public CustinfoEntityImpl() {
 	}
 
-	public CustinfoEntityImpl(String custid, String password/*, String role*/) {
+	public CustinfoEntityImpl(String custid, String password, String role) {
  
 		this.custid = custid;
 		this.password = password;

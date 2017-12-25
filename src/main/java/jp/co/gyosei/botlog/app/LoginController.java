@@ -28,11 +28,6 @@ public class LoginController {
         return "/login";
     }
 
-	@RequestMapping(value = "/")
-	public String Login() {
-		return "login";
-	}
-
 	/*
     @RequestMapping(value = "/menu")
     public String Menu(@AuthenticationPrincipal LoginCust loginCust, Model model) {

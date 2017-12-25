@@ -1,3 +1,4 @@
+/*
 package jp.co.gyosei.botlog.domain.form;
 
 import java.util.Collection;
@@ -25,7 +26,7 @@ public class LoginForm {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-/*
+
 	public Collection<? extends GrantedAuthority> getRole() {
 		return role;
 	}
@@ -33,5 +34,6 @@ public class LoginForm {
 	public void setRole(Collection<? extends GrantedAuthority> role) {
 		this.role = role;
 	}
-*/
+
 }
+*/

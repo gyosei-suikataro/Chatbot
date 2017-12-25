@@ -1,16 +1,15 @@
 package jp.co.gyosei.botlog;
 
 import java.util.ArrayList;
-import java.util.Collection;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
-import jp.co.gyosei.botlog.impl.CustinfoEntityImpl;
-
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.User;
+
+import jp.co.gyosei.botlog.impl.CustinfoEntityImpl;
 
 @Data
 @EqualsAndHashCode(callSuper = true)
@@ -26,7 +25,7 @@ public class LoginCust extends User {
     public String password;
 
     // ’Ç‰Á‚·‚é
-    public Collection<? extends GrantedAuthority> role;
+    public String role;
 
     public LoginCust(CustinfoEntityImpl cust) {
     	super(cust.custid, cust.password, true, true, true, true, new ArrayList<GrantedAuthority>());

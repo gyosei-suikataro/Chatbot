@@ -59,7 +59,6 @@ public class CustomerListController {
 	
 	
 	@PostMapping
-	@ResponseStatus(HttpStatus.NO_CONTENT)
     public String delete (@RequestParam Integer[] rowIds) {
 		
 		

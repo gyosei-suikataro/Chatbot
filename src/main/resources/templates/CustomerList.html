@@ -32,9 +32,9 @@
 				</tbody>
 		</table>
 		
- <form  action="#" th:action="@{/CustomerList}" th:object="${customerListForm}" method="post">
+ <form  th:action="@{/CustomerList}" th:object="${customerListForm}" method="post">
  <input type="submit" value="選択行を削除" />
- <input type="hidden"  name = "rowIds" value = "rowIds{13}" />
+ <input type="hidden"  name = "rowIds" th:value ="${rowIds}"  />
  </form>
  
  <script type="text/javascript" th:inline="javascript">

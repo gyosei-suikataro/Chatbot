@@ -34,7 +34,7 @@
 		
  <form  th:action="@{/CustomerList}" th:object="${customerListForm}" method="post">
  <input type="submit" value="選択行を削除" />
- <input type="hidden" id ="data" name = "rowIds" />
+ <input type="hidden" id ="data" name = "rowIds" th:value = "${rowIds[]}"/>
  </form>
  
  <script>
@@ -42,6 +42,10 @@
 var rowIds = [];
 
 $(function() {
+	
+}
+
+$(document).ready(function() {
 	$("#grid-basic").bootgrid({
 		selection: true, 
 		multiSelect: true,
@@ -64,8 +68,6 @@ $(function() {
 	});
 });
 
-rowIds[] = document.getElementById('data');
-element.innerHTML = data;
 /*]]>*/
  
 </script>

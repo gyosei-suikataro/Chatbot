@@ -3,11 +3,9 @@
 <head>
 </head>
 <body>
-    <h1>menu</h1>
-    <!-- 認証されているか -->
-    <p th:if="${#authorization.expression('isAuthenticated()')}">認証済み</p>
-
-    <!-- 認証オブジェクトの参照 -->
-    <p th:text="${#authentication.principal.cust}"></p>
+	<h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
+	<form th:action="@{/logout}" method="post">
+		<input type="submit" value="Sign Out" />
+	</form>
 </body>
 </html>

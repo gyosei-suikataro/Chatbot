@@ -28,7 +28,7 @@ import javax.validation.Valid;
 
 import jp.co.gyosei.botlog.domain.entity.CustinfoEntity;
 import jp.co.gyosei.botlog.domain.form.CustomerForm;
-//import jp.co.gyosei.botlog.domain.form.CustomerListForm;
+import jp.co.gyosei.botlog.domain.form.CustomerListForm;
 import jp.co.gyosei.botlog.domain.service.CustinfoService;
 import jp.co.gyosei.botlog.domain.repository.CustinfoRepository;
 
@@ -57,7 +57,7 @@ public class CustomerListController {
 		return "CustomerList";
 	}
 	
-	
+	/*
 	@PostMapping
     public String delete (@RequestParam int[] nums) {
 		
@@ -70,6 +70,21 @@ public class CustomerListController {
 		}
 		*/
 		
-		return "Customer";
-	}
+		@PostMapping
+	    public String customerPost(Model model,@Valid CustomerListForm customerListForm, BindingResult bindingResult, HttpServletRequest request) {
+			
+			int [] rowIdsdata = customerListForm.getRowIds();
+			System.out.println(rowIdsdata);
+			System.out.println(Arrays.toString(rowIdsdata));
+			/*
+			for(int i = 0; i < rowIdsdata.length; i++) {
+				Integer no = rowIdsdata[i];
+				custinfoRepository.delete(no);
+			}
+			*/
+			
+			return "Customer";
+		}
+		
+	
 }

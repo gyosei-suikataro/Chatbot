@@ -1,20 +1,20 @@
-/*package jp.co.gyosei.botlog.domain.form;
+package jp.co.gyosei.botlog.domain.form;
 
 
 public class CustomerListForm {
 	
 	 //private Integer[] rowIds = new Integer[] {12};
-	 private Integer[] rowIds;
+	 private int[] rowIds;
 	 
 	 
-	 public Integer[] getRowIds() {
+	 public int[] getRowIds() {
 	        return rowIds;
 	    }
 	 
 	 
-	 public void setRowIds(Integer[] rowIds) {
+	 public void setRowIds(int[] rowIds) {
 	        this.rowIds = rowIds;
 	    }
 	    
 }
-*/
+

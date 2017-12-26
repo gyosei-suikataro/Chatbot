@@ -11,7 +11,9 @@ public class CustomerListForm {
 	        return rowIds;
 	    }
 	 
+	 /*
 	 public void setRowIds(Integer[] rowIds) {
 	        this.rowIds = rowIds;
 	    }
+	    */
 }

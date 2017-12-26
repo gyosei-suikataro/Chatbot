@@ -62,12 +62,12 @@ public class CustomerListController {
     public String delete (@RequestParam Integer[] rowIds) {
 		
 		System.out.println(Arrays.toString(rowIds));
-		/*Integer [] rowIdsdata = customerListForm.getRowIds();
+		//Integer [] rowIdsdata = customerListForm.getRowIds();
 		for(int i = 0; i < rowIds.length; i++) {
 			Integer no = rowIds[i];
 			custinfoRepository.delete(no);
 		}
-		*/
+		
 		
 		return "Customer";
 	}

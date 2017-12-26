@@ -62,7 +62,7 @@ public class CustomerListController {
 		
 		int[] rowIdsdata = customerListForm.getRowIds();
 		for(int i = 0; i < rowIdsdata.length; i++) {
-			Integer no = rowIdsdata[i];
+			int no = rowIdsdata[i];
 			custinfoRepository.delete(no);
 		}
 		

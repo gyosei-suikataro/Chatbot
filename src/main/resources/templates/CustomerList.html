@@ -39,7 +39,7 @@
  
  <script type="text/javascript" th:inline="javascript">
 /*<![CDATA[*/
-var rowIds = [];
+var rowIds = /*[[${rowIds}]]*/ [];
 
 $(function() {
 	$("#grid-basic").bootgrid({
@@ -64,7 +64,7 @@ $(function() {
 	});
 });
 
-rowIds = /*[[${rowIds}]]*/;
+
 /*]]>*/
  
 </script>

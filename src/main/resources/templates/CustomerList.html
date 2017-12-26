@@ -39,7 +39,7 @@
  
  <script type="text/javascript" th:inline="javascript">
 /*<![CDATA[*/
-var rowId = [];
+var rowIds = [];
 
 $(function() {
 	$("#grid-basic").bootgrid({
@@ -51,14 +51,14 @@ $(function() {
 	{
 	    for (var i = 0; i < rows.length; i++)
 	    {
-	        rowId.push(rows[i].no);
+	        rowIds.push(rows[i].no);
 	    }
 	}).on("deselected.rs.jquery.bootgrid", function(e, rows)
 	{
 		for (var i = 0; i < rows.length; i++)
 	    {
-	    	rowId.some(function(v, ii){
-	    	    if (v==rows[i].no) rowId.splice(ii,1);
+	    	rowIds.some(function(v, ii){
+	    	    if (v==rows[i].no) rowIds.splice(ii,1);
 	    	}); 
 	    }
 	});

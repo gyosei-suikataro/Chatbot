@@ -4,15 +4,15 @@ package jp.co.gyosei.botlog.domain.form;
 public class CustomerListForm {
 	
 	 //private Integer[] rowIds = new Integer[] {12};
-	 private String[] rowIds;
+	 private Integer[] rowIds;
 	 
 	 
-	 public String[] getRowIds() {
+	 public Integer[] getRowIds() {
 	        return rowIds;
 	    }
 	 
 	 
-	 public void setRowIds(String[] rowIds) {
+	 public void setRowIds(Integer[] rowIds) {
 	        this.rowIds = rowIds;
 	    }
 	    

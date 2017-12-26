@@ -16,4 +16,6 @@ public interface CustinfoRepositoryCustom extends JpaRepository<CustinfoEntityIm
 		return null;
 	}
 
+	Object findByCustid(String custid);
+
 }

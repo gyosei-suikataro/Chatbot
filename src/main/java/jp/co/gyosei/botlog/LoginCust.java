@@ -33,4 +33,9 @@ public class LoginCust extends User {
         password = cust.password;
         role = cust.role;
     }
+
+	public String getCustid() {
+		// TODO 自動生成されたメソッド・スタブ
+		return null;
+	}
 }

@@ -38,6 +38,7 @@ import java.util.ArrayList;
 
 
 @Controller
+@RequestMapping("CustomerList")
 public class CustomerListController {
 
 	@Autowired
@@ -48,7 +49,7 @@ public class CustomerListController {
 	
 	
 	
-	@RequestMapping(value = "CustomerList", method = RequestMethod.GET)
+	@GetMapping
 	public String list(Model model) {
 		List<CustinfoEntity> custinfoEntity = custinfoRepository.findAll();
 		model.addAttribute("custinfoEntity",custinfoEntity);
@@ -57,8 +58,7 @@ public class CustomerListController {
 	}
 	
 	
-	@RequestMapping(value = "CustomerList", method = RequestMethod.POST)
-	@ResponseStatus(HttpStatus.NO_CONTENT)
+	@PostMapping
     void delete (@RequestParam Integer[] rowIds) {
 		
 		//Integer [] rowIdsdata = customerListForm.getRowIds();

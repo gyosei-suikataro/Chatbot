@@ -42,18 +42,16 @@
 <script type="text/javascript" th:inline="javascript">
  
  /*<![CDATA[*/
-var rowIds = ["1", "2"];
-/*	 
-var rowIds = []{10,11};
+var rowIds = [];
+	 
+
 $(function() {
 	$("#grid-basic").bootgrid({
 		selection: true, 
 		multiSelect: true,
 		rowSelect: true,
 	    keepSelection: true
-	})
-	
-	.on("selected.rs.jquery.bootgrid", function(e, rows)
+	}).on("selected.rs.jquery.bootgrid", function(e, rows)
 	{
 	    for (var i = 0; i < rows.length; i++)
 	    {
@@ -67,10 +65,8 @@ $(function() {
 	    	    if (v==rows[i].no) rowIds.splice(ii,1);
 	    	}); 
 	    }
-	});*/
+	});
 });
-
-
 
 /*]]>*/
  

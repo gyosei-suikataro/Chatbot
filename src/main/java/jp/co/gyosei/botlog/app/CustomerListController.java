@@ -73,7 +73,7 @@ public class CustomerListController {
 		@PostMapping
 	    public String customerPost(Model model,@Valid CustomerListForm customerListForm, BindingResult bindingResult, HttpServletRequest request) {
 			
-			int [] rowIdsdata = customerListForm.getRowIds();
+			Integer [] rowIdsdata = customerListForm.getRowIds();
 			System.out.println(rowIdsdata);
 			System.out.println(Arrays.toString(rowIdsdata));
 			/*

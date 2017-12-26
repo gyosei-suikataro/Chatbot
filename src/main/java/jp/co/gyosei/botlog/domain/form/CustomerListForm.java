@@ -7,7 +7,7 @@ public class CustomerListForm {
 	 private Integer[] rowId;
 	 
 	 
-	 public Integer[] getRowIds() {
+	 public Integer[] getRowId() {
 	        return rowId;
 	    }
 	 

@@ -66,7 +66,7 @@ public class CustomerListController {
 			custinfoRepository.delete(no);
 		}
 		
-		return "CustomerList";
+		return "Customer";
 	}
 	
 }

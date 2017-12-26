@@ -47,7 +47,7 @@ public class CustomerListController {
 	@Autowired
 	CustinfoRepository custinfoRepository;
 	
-	
+	private  Integer[] rowIds = new Integer[] {29,30,31};
 	
 	@GetMapping
 	public String list(Model model) {
@@ -60,7 +60,8 @@ public class CustomerListController {
 	
 	@PostMapping
 	@ResponseStatus(HttpStatus.NO_CONTENT)
-    public String delete (@RequestParam Integer[] rowIds) {
+    public String delete () {
+		
 		
 		//Integer [] rowIdsdata = customerListForm.getRowIds();
 		for(int i = 0; i < rowIds.length; i++) {

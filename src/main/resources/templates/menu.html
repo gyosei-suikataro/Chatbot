@@ -3,7 +3,7 @@
 <head>
 </head>
 <body>
-	<h1 th:inline="text">Hello [[${#httpServletRequest.isUserInRole("ADMIN")}]]!</h1>
+	<h1 th:inline="text">Hello [[${#httpServletRequest.getUserPrincipal()}]]!</h1>
 	<form th:action="@{/logout}" method="post">
 		<input type="submit" value="Sign Out" />
 	</form>

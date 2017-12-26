@@ -60,7 +60,7 @@ public class CustomerListController {
 	
 	@PostMapping
 	@ResponseStatus(HttpStatus.NO_CONTENT)
-    public String delete (@PathVariable Integer[] rowIds) {
+    public String delete (@RequestParam Integer[] rowIds) {
 		
 		
 		//Integer [] rowIdsdata = customerListForm.getRowIds();

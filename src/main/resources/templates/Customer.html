@@ -23,6 +23,7 @@
     <p><input type="submit" value="登録" /></p>
     
 </form>
+<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
 <input type="submit" onclick="location.href='/CustomerList'" value = "一覧" />
 <input type="submit" onclick="location.href='/menu'" value = "menu" />
 </body>

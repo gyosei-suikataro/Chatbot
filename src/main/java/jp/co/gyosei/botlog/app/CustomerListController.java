@@ -34,7 +34,7 @@ import jp.co.gyosei.botlog.domain.repository.CustinfoRepository;
 
 import java.util.List;
 import java.util.ArrayList;
-
+import java.util.Arrays;
 
 
 @Controller
@@ -61,12 +61,13 @@ public class CustomerListController {
 	@PostMapping
     public String delete (@RequestParam Integer[] rowIds) {
 		
-		
-		//Integer [] rowIdsdata = customerListForm.getRowIds();
+		System.out.println(Arrays.toString(rowIds));
+		/*Integer [] rowIdsdata = customerListForm.getRowIds();
 		for(int i = 0; i < rowIds.length; i++) {
 			Integer no = rowIds[i];
 			custinfoRepository.delete(no);
 		}
+		*/
 		
 		return "Customer";
 	}

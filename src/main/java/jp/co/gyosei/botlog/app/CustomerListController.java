@@ -28,7 +28,7 @@ import javax.validation.Valid;
 
 import jp.co.gyosei.botlog.domain.entity.CustinfoEntity;
 import jp.co.gyosei.botlog.domain.form.CustomerForm;
-import jp.co.gyosei.botlog.domain.form.CustomerListForm;
+//import jp.co.gyosei.botlog.domain.form.CustomerListForm;
 import jp.co.gyosei.botlog.domain.service.CustinfoService;
 import jp.co.gyosei.botlog.domain.repository.CustinfoRepository;
 
@@ -52,21 +52,21 @@ public class CustomerListController {
 	public String list(Model model) {
 		List<CustinfoEntity> custinfoEntity = custinfoRepository.findAll();
 		model.addAttribute("custinfoEntity",custinfoEntity);
-		model.addAttribute("customerListForm", new CustomerListForm());
+		//model.addAttribute("customerListForm", new CustomerListForm());
 		return "CustomerList";
 	}
 	
 	
 	@RequestMapping(value = "CustomerList", method = RequestMethod.POST)
-    public String customerPost(Model model,@Valid CustomerListForm customerListForm, BindingResult bindingResult, HttpServletRequest request) {
+	@ResponseStatus(HttpStatus.NO_CONTENT)
+    void delete (@RequestParam Integer[] rowIds) {
 		
-		Integer [] rowIdsdata = customerListForm.getRowIds();
-		for(int i = 0; i < rowIdsdata.length; i++) {
-			Integer no = rowIdsdata[i];
+		//Integer [] rowIdsdata = customerListForm.getRowIds();
+		for(int i = 0; i < rowIds.length; i++) {
+			Integer no = rowIds[i];
 			custinfoRepository.delete(no);
 		}
 		
-		return "Customer";
+		
 	}
-	
 }

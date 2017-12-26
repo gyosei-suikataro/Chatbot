@@ -33,12 +33,12 @@
 		</table>
 		
  <form  action="#" th:action="@{/CustomerList}" th:object="${customerListForm}" method="post">
- <input type="hidden" id = "rowIds" name = "rowIds" th:value = "rowIds" />
+ <input type="hidden" id = "rowIds" name = "rowIds" th:value = [__${rowIds}__] />
  <input type="submit" value="選択行を削除" />
  </form>
  
  <script type="text/javascript" th:inline="javascript">
-
+ /*<![CDATA[*/
 var rowIds = [];
 
 $(function() {
@@ -66,8 +66,7 @@ $(function() {
 
 
 
- 
+/*]]>*/
 </script>
 </body>
 </html>
-<!-- /*<![CDATA[*/   /*]]>*/ -->

@@ -59,10 +59,10 @@ public class CustomerListController {
 	
 	
 	@PostMapping
-    public String delete (@RequestParam Integer[] rowIds) {
+    public String delete (@RequestParam int[] nums) {
 		
-		System.out.println(rowIds);
-		System.out.println(Arrays.toString(rowIds));
+		System.out.println(nums);
+		System.out.println(Arrays.toString(nums));
 		/*Integer [] rowIdsdata = customerListForm.getRowIds();
 		for(int i = 0; i < rowIds.length; i++) {
 			Integer no = rowIds[i];

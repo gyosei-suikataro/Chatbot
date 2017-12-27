@@ -41,9 +41,10 @@ public class CustomerController {
         return "Customer";
     }
     
+	//HttpServletRequest request
 	
 	@PostMapping("/Customer")
-    public String customerPost(Model model, CustomerForm customerForm, BindingResult bindingResult, HttpServletRequest request) {
+    public String customerPost(Model model, CustomerForm customerForm, BindingResult bindingResult) {
 		
 		custinfoService.registerCustomer(customerForm.getNo(),customerForm.getCustid(),customerForm.getCustname(),customerForm.getOrgname(),customerForm.getPassword(),"1","USER");
 		return "Customer";

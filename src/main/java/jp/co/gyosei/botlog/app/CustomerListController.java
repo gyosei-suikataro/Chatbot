@@ -61,15 +61,13 @@ public class CustomerListController {
 	   public String customerPost(Model model, CustomerListForm customerListForm, BindingResult bindingResult) {
 			
 		Integer [] rowIdsdata = customerListForm.getRowIds();
-		System.out.println(rowIdsdata);
-		System.out.println(Arrays.toString(rowIdsdata));
+		//System.out.println(rowIdsdata);
+		//System.out.println(Arrays.toString(rowIdsdata));
 			
 			for(int i = 0; i < rowIdsdata.length; i++) {
 				Integer no = rowIdsdata[i];
 				custinfoRepository.delete(no);
 			}
-			
-			
 			return "Customer";
 		}
 		

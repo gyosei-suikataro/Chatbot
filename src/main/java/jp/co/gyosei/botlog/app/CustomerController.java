@@ -42,7 +42,7 @@ public class CustomerController {
     }
 	
 	@PostMapping("/Customer")
-    public String customerPost(Model model,@Validated(GroupOrder.class) @ModelAttribute("customerForm") CustomerForm customerForm, BindingResult bindingResult, HttpServletRequest request) {
+    public String customerPost(Model model,@Validated(GroupOrder.class) CustomerForm customerForm, BindingResult bindingResult, HttpServletRequest request) {
 		if(bindingResult.hasErrors()) {
 			return "Customer";
 		 }

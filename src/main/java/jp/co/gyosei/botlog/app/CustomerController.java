@@ -40,12 +40,10 @@ public class CustomerController {
         model.addAttribute("customerForm", new CustomerForm()); 
         return "Customer";
     }
+    
 	
 	@PostMapping("/Customer")
-    public String customerPost(Model model,@Validated(GroupOrder.class) CustomerForm customerForm, BindingResult bindingResult, HttpServletRequest request) {
-		if(bindingResult.hasErrors()) {
-			return "Customer";
-		 }
+    public String customerPost(Model model, CustomerForm customerForm, BindingResult bindingResult, HttpServletRequest request) {
 		
 		custinfoService.registerCustomer(customerForm.getNo(),customerForm.getCustid(),customerForm.getCustname(),customerForm.getOrgname(),customerForm.getPassword(),"1","USER");
 		return "RegisterResult";

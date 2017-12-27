@@ -11,17 +11,17 @@
     
     
     <p><label for="custid">ユーザーID</label>:
-       <input type="text" id="custid" name="custid" th:field="*{custid}"  autofocus="autofocus" />
-       <em th:if="${#fields.hasErrors('custid')}" th:errors="*{custid}">Error</em></p>
+       <input type="text" id="custid" name="custid" autofocus="autofocus" />
+       </p>
     <p><label for="custname">ユーザー名</label>:
-       <input type="text" id="custname" name="custname" th:field="*{custname}" />
-       <em th:if="${#fields.hasErrors('custname')}" th:errors="*{custname}">Error</em></p>
+       <input type="text" id="custname" name="custname" />
+       </p>
     <p><label for="orgname">組織名</label>:
-       <input type="text" id="orgname" name="orgname" th:field="*{orgname}" />
-       <em th:if="${#fields.hasErrors('orgname')}" th:errors="*{orgname}">Error</em></p>
+       <input type="text" id="orgname" name="orgname"  />
+       </p>
     <p><label for="password">パスワード</label>:
-       <input type="password" id="password" name="password" th:field="*{password}" />
-       <em th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Error</em></p>
+       <input type="password" id="password" name="password" />
+       </p>
     
     <p><input type="submit" value="登録" /></p>
     

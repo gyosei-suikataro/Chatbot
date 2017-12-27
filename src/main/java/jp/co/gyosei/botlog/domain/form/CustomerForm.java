@@ -9,19 +9,19 @@ import jp.co.gyosei.botlog.domain.validation.GroupOrder2;
 
 public class CustomerForm {
 
-	@NotEmpty(groups={GroupOrder1.class},message="入力してください。")
+	//@NotEmpty(groups={GroupOrder1.class},message="入力してください。")
 	private Integer no;
-	@NotEmpty(groups={GroupOrder1.class},message="入力してください。")
+	//@NotEmpty(groups={GroupOrder1.class},message="入力してください。")
 	private String custid;
-	@NotEmpty(groups={GroupOrder1.class},message="入力してください。")
+	//@NotEmpty(groups={GroupOrder1.class},message="入力してください。")
 	private String custname;
-	@NotEmpty(groups={GroupOrder1.class},message="入力してください。")
+	//@NotEmpty(groups={GroupOrder1.class},message="入力してください。")
 	private String orgname;
-	@NotEmpty(groups={GroupOrder1.class},message="入力してください。")
+	//@NotEmpty(groups={GroupOrder1.class},message="入力してください。")
 	private String password;
-	@NotEmpty(groups={GroupOrder1.class},message="入力してください。")
+	//@NotEmpty(groups={GroupOrder1.class},message="入力してください。")
 	private String effect;
-	@NotEmpty(groups={GroupOrder1.class},message="入力してください。")
+	//@NotEmpty(groups={GroupOrder1.class},message="入力してください。")
 	private String role;
 	
 	

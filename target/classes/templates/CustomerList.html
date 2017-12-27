@@ -42,7 +42,6 @@
 	<script type="text/javascript">
 		/*<![CDATA[*/
 		var rowIds = [];
-		console.log("rowIds");
 		$(function() {
 			$("#grid-basic").bootgrid({
 				selection : true,
@@ -61,6 +60,7 @@
 							rowIds.splice(ii, 1);
 					});
 					alert(rowIds);
+					rowIds.submit();
 				}
 			});
 		});

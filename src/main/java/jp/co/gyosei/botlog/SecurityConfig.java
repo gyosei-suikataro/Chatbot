@@ -49,7 +49,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		.deleteCookies("JSESSIONID")
 		.invalidateHttpSession(true)
 		.permitAll();
-
 	}
 	 
 	@Autowired
@@ -60,5 +59,4 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		.userDetailsService(userDetailsService)
 		.passwordEncoder(new BCryptPasswordEncoder());
 	}
-
 }

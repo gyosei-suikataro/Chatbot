@@ -16,7 +16,6 @@ public abstract class LoginUserDetails implements UserDetails {
 	private String password;
 	private Collection<GrantedAuthority> role;
 
-
 	public LoginUserDetails(String custid, String password, Collection<GrantedAuthority> role) {
 		super();
 		this.custid = custid;

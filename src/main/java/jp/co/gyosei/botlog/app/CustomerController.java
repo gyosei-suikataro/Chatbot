@@ -41,10 +41,11 @@ public class CustomerController {
     }
 	
 	@PostMapping("/Customer")
-    public String customerPost(@Validated CustomerForm customerForm, BindingResult bindingResult, HttpServletRequest request,Model model) {
+    public String customerPost(Model model,@Valid CustomerForm customerForm, BindingResult bindingResult, HttpServletRequest request) {
 		if(bindingResult.hasErrors()) {
 			return "Customer";
 		 }
+		
 		custinfoService.registerCustomer(customerForm.getNo(),customerForm.getCustid(),customerForm.getCustname(),customerForm.getOrgname(),customerForm.getPassword(),"1","USER");
 		return "RegisterResult";
 	}

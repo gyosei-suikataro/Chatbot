@@ -9,13 +9,13 @@ public class CustomerForm {
 
 	private Integer no;
 	
-	@NotNull
+	@NotEmpty(message="入力されていません。")
 	private String custid;
-	@NotNull
+	@NotEmpty(message="入力されていません。")
 	private String custname;
-	@NotNull
+	@NotEmpty(message="入力されていません。")
 	private String orgname;
-	@NotNull
+	@NotEmpty(message="入力されていません。")
 	private String password;
 	
 	private String effect;

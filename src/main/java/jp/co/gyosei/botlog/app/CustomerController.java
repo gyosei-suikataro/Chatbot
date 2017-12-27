@@ -35,13 +35,13 @@ public class CustomerController {
 	*/
 	
 	@GetMapping("/")
-    public String signup(CustomerForm customerForm) {
-        //model.addAttribute("customerForm", new CustomerForm()); public String signup(Model model)
+	public String signup(Model model) {
+        model.addAttribute("customerForm", new CustomerForm()); 
         return "Customer";
     }
 	
 	@PostMapping("/")
-    public String customerPost(@Valid CustomerForm customerForm, BindingResult bindingResult, HttpServletRequest request,Model model) {
+    public String customerPost(@Valid CustomerForm customerForm, BindingResult bindingResult, HttpServletRequest request,@Valid Model model) {
 		if(bindingResult.hasErrors()) {
 			return "Customer";
 		 }

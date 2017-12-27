@@ -36,15 +36,16 @@
 
 	<form action="#" th:action="@{/CustomerList}" method="post">
 		<input type="submit" value="選択行を削除" /> 
-		<input name="rowIds" th:value="${rowIds}" />
+		<input type ="hidden" name="rowIds" th:value="${rowIds}" />
 	</form>
 
 <script type="text/javascript" th:inline="javascript">
  
  /*<![CDATA[*/
-var rowIds = [];
-	 
 
+var rowIds = [1,2];
+/*
+var rowIds = [];
 $(function() {
 	$("#grid-basic").bootgrid({
 		selection: true, 
@@ -67,7 +68,7 @@ $(function() {
 	    }
 	});
 });
-
+*/
 
 /*]]>*/
  

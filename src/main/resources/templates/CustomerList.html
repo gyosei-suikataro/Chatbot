@@ -54,14 +54,15 @@
 				keepSelection : true
 			}).on("selected.rs.jquery.bootgrid", function(e, rows) {
 				for (var i = 0; i < rows.length; i++) {
+					System.out.println(rows);
 					rowIds.push(rows[i].no);
 				}
 			}).on("deselected.rs.jquery.bootgrid", function(e, rows) {
 				for (var i = 0; i < rows.length; i++) {
 					rowIds.some(function(v, ii) {
 						if (v == rows[i].no)
-							System.out.println(rows);
 							rowIds.splice(ii, 1);
+						System.out.println(rows);
 					});
 				}
 			});

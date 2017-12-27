@@ -38,14 +38,14 @@
 
 	<form action="#" th:action="@{/CustomerList}" method="post">
 		<input type="submit" value="選択行を削除" /> <input id="rowIds"
-			name="rowIds" />
+			name="rowIds" th: />
 	</form>
 
 	<script type="text/javascript">
 		/*<![CDATA[*/
 		var rowIds = [];
 		document.getElementById('rowIds').value = rowIds;
-		
+
 		$(function() {
 			$("#grid-basic").bootgrid({
 				selection : true,
@@ -56,7 +56,6 @@
 				for (var i = 0; i < rows.length; i++) {
 					rowIds.push(rows[i].no);
 				}
-
 			}).on("deselected.rs.jquery.bootgrid", function(e, rows) {
 				for (var i = 0; i < rows.length; i++) {
 					rowIds.some(function(v, ii) {
@@ -65,7 +64,7 @@
 					});
 				}
 			});
-
+			System.out.println(rowIds);
 		});
 		/*]]>*/
 	</script>

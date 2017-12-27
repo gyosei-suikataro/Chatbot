@@ -51,7 +51,6 @@
 			}).on("selected.rs.jquery.bootgrid", function(e, rows) {
 				for (var i = 0; i < rows.length; i++) {
 					rowIds.push(rows[i].no);
-					alert(rowIds);
 				}
 			}).on("deselected.rs.jquery.bootgrid", function(e, rows) {
 				for (var i = 0; i < rows.length; i++) {
@@ -59,7 +58,6 @@
 						if (v == rows[i].no)
 							rowIds.splice(ii, 1);
 					});
-					alert(rowIds);
 					rowIds.del.submit();
 				}
 			});

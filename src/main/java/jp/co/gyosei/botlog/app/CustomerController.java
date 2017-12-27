@@ -14,7 +14,7 @@ import jp.co.gyosei.botlog.domain.repository.CustinfoRepository;
 import jp.co.gyosei.botlog.domain.form.CustomerForm;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.ModelAttribute;
-
+import jp.co.gyosei.botlog.domain.validation.GroupOrder;
 
 @Controller
 public class CustomerController {
@@ -42,7 +42,7 @@ public class CustomerController {
     }
 	
 	@PostMapping("/Customer")
-    public String customerPost(Model model,@Valid CustomerForm customerForm, BindingResult bindingResult, HttpServletRequest request) {
+    public String customerPost(Model model,@Validated(GroupOrder.class) @ModelAttribute("customerForm") CustomerForm customerForm, BindingResult bindingResult, HttpServletRequest request) {
 		if(bindingResult.hasErrors()) {
 			return "Customer";
 		 }

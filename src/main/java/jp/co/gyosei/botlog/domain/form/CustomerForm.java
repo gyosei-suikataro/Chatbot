@@ -4,18 +4,20 @@ import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 import javax.validation.constraints.NotNull;
 import org.hibernate.validator.constraints.NotEmpty;
+import jp.co.gyosei.botlog.domain.validation.GroupOrder1;
+import jp.co.gyosei.botlog.domain.validation.GroupOrder2;
 
 public class CustomerForm {
 
 	private Integer no;
 	
-	@NotEmpty(message="入力されていません。")
+	@NotEmpty(groups={GroupOrder1.class},message="入力してください。")
 	private String custid;
-	@NotEmpty(message="入力されていません。")
+	@NotEmpty(groups={GroupOrder1.class},message="入力してください。")
 	private String custname;
-	@NotEmpty(message="入力されていません。")
+	@NotEmpty(groups={GroupOrder1.class},message="入力してください。")
 	private String orgname;
-	@NotEmpty(message="入力されていません。")
+	@NotEmpty(groups={GroupOrder1.class},message="入力してください。")
 	private String password;
 	
 	private String effect;

@@ -46,7 +46,7 @@ public class CustomerController {
     public String customerPost(Model model, CustomerForm customerForm, BindingResult bindingResult, HttpServletRequest request) {
 		
 		custinfoService.registerCustomer(customerForm.getNo(),customerForm.getCustid(),customerForm.getCustname(),customerForm.getOrgname(),customerForm.getPassword(),"1","USER");
-		return "RegisterResult";
+		return "CustomerList";
 	}
 	
 }

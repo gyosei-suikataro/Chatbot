@@ -12,8 +12,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import jp.co.gyosei.botlog.domain.service.CustinfoService;
 import jp.co.gyosei.botlog.domain.repository.CustinfoRepository;
 import jp.co.gyosei.botlog.domain.form.CustomerForm;
+import org.springframework.validation.annotation.Validated;
 
-
+import jp.co.gyosei.botlog.domain.validation.GroupOrder;
 
 @Controller
 public class CustomerController {
@@ -38,7 +39,7 @@ public class CustomerController {
     }
 	
 	@PostMapping("/Customer")
-    public String customerPost(Model model, @Valid CustomerForm customerForm, BindingResult bindingResult, HttpServletRequest request) {
+    public String customerPost(Model model, @Validated(GroupOrder.class) CustomerForm customerForm, BindingResult bindingResult, HttpServletRequest request) {
 		custinfoService.registerCustomer(customerForm.getNo(),customerForm.getCustid(),customerForm.getCustname(),customerForm.getOrgname(),customerForm.getPassword(),"1","USER");
 		return "Customer";
 	}

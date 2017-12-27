@@ -2,22 +2,23 @@ package jp.co.gyosei.botlog.domain.form;
 
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
+import javax.validation.constraints.NotNull;
 import org.hibernate.validator.constraints.NotEmpty;
 
-import jp.co.gyosei.botlog.domain.validation.GroupOrder1;
-import jp.co.gyosei.botlog.domain.validation.GroupOrder2;
+//import jp.co.gyosei.botlog.domain.validation.GroupOrder1;
+//import jp.co.gyosei.botlog.domain.validation.GroupOrder2;
 
 public class CustomerForm {
 
 	private Integer no;
 	
-	@NotEmpty(groups={GroupOrder1.class},message="ユーザIDを入力してください。")
+	@NotNull
 	private String custid;
-	@NotEmpty(groups={GroupOrder1.class},message="ユーザ名を入力してください。")
+	@NotNull
 	private String custname;
-	@NotEmpty(groups={GroupOrder1.class},message="組織名を入力してください。")
+	@NotNull
 	private String orgname;
-	@NotEmpty(groups={GroupOrder1.class},message="パスワードを入力してください。")
+	@NotNull
 	private String password;
 	
 	private String effect;

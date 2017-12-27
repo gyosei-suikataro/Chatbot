@@ -33,6 +33,8 @@
 			</tr>
 		</tbody>
 	</table>
+	
+	<p th:text = "${rowIds}"></p>
 
 	<form action="#" th:action="@{/CustomerList}" method="post">
 		<input type="submit" value="選択行を削除" /> 
@@ -68,7 +70,7 @@ $(function() {
 	    	}); 
 	    }
 	});
-	document.getElementById('rowIds').innerHTML = rowIds;
+	
 });
 
 

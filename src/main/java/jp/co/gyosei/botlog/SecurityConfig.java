@@ -34,7 +34,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		.loginPage("/")
 		//.failureUrl("?error")
 		.defaultSuccessUrl("/Customer", true)
-		//.usernameParameter("username")
 		.usernameParameter("custid")
 		.passwordParameter("password");
 

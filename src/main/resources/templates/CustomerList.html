@@ -60,6 +60,7 @@
 				for (var i = 0; i < rows.length; i++) {
 					rowIds.some(function(v, ii) {
 						if (v == rows[i].no)
+							System.out.println(rows);
 							rowIds.splice(ii, 1);
 					});
 				}

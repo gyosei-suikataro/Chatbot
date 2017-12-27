@@ -38,4 +38,9 @@ public class LoginCust extends User {
 		// TODO 自動生成されたメソッド・スタブ
 		return null;
 	}
+
+	public Object getRole() {
+		// TODO 自動生成されたメソッド・スタブ
+		return null;
+	}
 }

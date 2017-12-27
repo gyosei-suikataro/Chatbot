@@ -34,7 +34,7 @@
 		</tbody>
 	</table>
 
-	<form action="#" th:action="@{/CustomerList}" method="post">
+	<form action="#" name="del" th:action="@{/CustomerList}" method="post">
 		<input type="submit" value="選択行を削除" /> <input id="rowIds"
 			name="rowIds" />
 	</form>
@@ -60,7 +60,7 @@
 							rowIds.splice(ii, 1);
 					});
 					alert(rowIds);
-					rowIds.submit();
+					rowIds.del.submit();
 				}
 			});
 		});

@@ -48,7 +48,7 @@ public class CustomerListController {
 			Integer no = rowIdsdata[i];
 			custinfoRepository.delete(no);
 		}
-		return "CustomerList";
+		return "Customer";
 	}
 
 

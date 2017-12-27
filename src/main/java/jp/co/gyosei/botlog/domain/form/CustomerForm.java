@@ -1,12 +1,20 @@
 package jp.co.gyosei.botlog.domain.form;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 public class CustomerForm {
 
 	private Integer no;
+	
+	@NotEmpty(message = "入力されていません")
 	private String custid;
+	@NotEmpty(message = "入力されていません")
 	private String custname;
+	@NotEmpty(message = "入力されていません")
 	private String orgname;
+	@NotEmpty(message = "入力されていません")
 	private String password;
+	
 	private String effect;
 	private String role;
 	

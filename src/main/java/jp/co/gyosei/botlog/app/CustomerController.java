@@ -39,7 +39,7 @@ public class CustomerController {
     }
 	
 	@PostMapping("/Customer")
-    public String customerPost(Model model, @Validated CustomerForm customerForm, BindingResult bindingResult, HttpServletRequest request) {
+    public String customerPost(Model model, @Valid CustomerForm customerForm, BindingResult bindingResult, HttpServletRequest request) {
 		if(bindingResult.hasErrors()) {
 			return "Customer";
 		}

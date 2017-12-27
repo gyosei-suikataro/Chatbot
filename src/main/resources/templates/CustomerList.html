@@ -54,10 +54,9 @@ $(function() {
 	{
 	    for (var i = 0; i < rows.length; i++)
 	    {
-	    	System.out.println(Arrays.toString(rows));
 	        rowIds.push(rows[i].no);
-	        
 	    }
+	    alert(rowIds.join(","));
 	}).on("deselected.rs.jquery.bootgrid", function(e, rows)
 	{
 		for (var i = 0; i < rows.length; i++)

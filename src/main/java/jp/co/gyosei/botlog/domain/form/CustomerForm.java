@@ -5,9 +5,6 @@ import javax.validation.constraints.Size;
 import javax.validation.constraints.NotNull;
 import org.hibernate.validator.constraints.NotEmpty;
 
-import jp.co.gyosei.botlog.domain.validation.GroupOrder1;
-import jp.co.gyosei.botlog.domain.validation.GroupOrder2;
-
 public class CustomerForm {
 
 	private Integer no;

@@ -13,7 +13,8 @@
 		class="table table-condensed table-hover table-striped">
 		<thead>
 			<tr>
-				<th data-column-id="no" data-type="numeric" data-identifier="true" data-width="3%" data-order="desc">No</th>
+				<th data-column-id="no" data-type="numeric" data-identifier="true"
+					data-width="3%" data-order="desc">No</th>
 				<th data-column-id="custid" data-width="7%">ユーザーID</th>
 				<th data-column-id="custname" data-width="10%">ユーザー名</th>
 				<th data-column-id="orgname" data-width="20%">組織名</th>
@@ -32,46 +33,40 @@
 			</tr>
 		</tbody>
 	</table>
-	
+
 	<form action="#" th:action="@{/CustomerList}" method="post">
 		<input type="submit" value="選択行を削除" /> 
-		<input type = "hidden" id ="rowIds" name = "rowIds" th:value=${rowIds} />
+		<input type="hidden" id="rowIds" name="rowIds" th:value="${rowIds}" />
 	</form>
 
-<script type="text/javascript">
- 
-/*<![CDATA[*/
+	<script type="text/javascript">
+		/*<![CDATA[*/
 
-var rowIds = [];
- 
-$(function() {
-	$("#grid-basic").bootgrid({
-		selection: true, 
-		multiSelect: true,
-		rowSelect: true,
-	    keepSelection: true
-	}).on("selected.rs.jquery.bootgrid", function(e, rows)
-	{
-	    for (var i = 0; i < rows.length; i++)
-	    {
-	        rowIds.push(rows[i].no);
-	    }
-	    
-	}).on("deselected.rs.jquery.bootgrid", function(e, rows)
-	{
-		for (var i = 0; i < rows.length; i++)
-	    {
-	    	rowIds.some(function(v, ii){
-	    	    if (v==rows[i].no) rowIds.splice(ii,1);
-	    	}); 
-	    }
-	});
-	
-});
+		var rowIds = [];
 
+		$(function() {
+			$("#grid-basic").bootgrid({
+				selection : true,
+				multiSelect : true,
+				rowSelect : true,
+				keepSelection : true
+			}).on("selected.rs.jquery.bootgrid", function(e, rows) {
+				for (var i = 0; i < rows.length; i++) {
+					rowIds.push(rows[i].no);
+				}
 
-/*]]>*/
- 
-</script>
+			}).on("deselected.rs.jquery.bootgrid", function(e, rows) {
+				for (var i = 0; i < rows.length; i++) {
+					rowIds.some(function(v, ii) {
+						if (v == rows[i].no)
+							rowIds.splice(ii, 1);
+					});
+				}
+			});
+
+		});
+
+		/*]]>*/
+	</script>
 </body>
 </html>

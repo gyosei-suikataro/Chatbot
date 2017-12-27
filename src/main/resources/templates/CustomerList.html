@@ -37,40 +37,37 @@
 	<p th:text="${rowIds}"></p>
 
 	<form action="#" th:action="@{/CustomerList}" method="post">
-		<input type="submit" id="rowIds" name="rowIds" value="選択行を削除" /> 
+		<input type="submit" value="選択行を削除" /> <input id="rowIds"
+			name="rowIds" />
 	</form>
 
 	<script type="text/javascript">
- 
- /*<![CDATA[*/
-var rowIds = [];
- 
-$(function() {
-	$("#grid-basic").bootgrid({
-		selection: true, 
-		multiSelect: true,
-		rowSelect: true,
-	    keepSelection: true
-	}).on("selected.rs.jquery.bootgrid", function(e, rows)
-	{
-	    for (var i = 0; i < rows.length; i++)
-	    {
-	        rowIds.push(rows[i].no);
-	    }
-	    
-	}).on("deselected.rs.jquery.bootgrid", function(e, rows)
-	{
-		for (var i = 0; i < rows.length; i++)
-	    {
-	    	rowIds.some(function(v, ii){
-	    	    if (v==rows[i].no) rowIds.splice(ii,1);
-	    	}); 
-	    }
-	});
-	
-});
-/*]]>*/
- 
-</script>
+		/*<![CDATA[*/
+		var rowIds = [];
+		document.getElementById('rowIds').value = rowIds;
+		
+		$(function() {
+			$("#grid-basic").bootgrid({
+				selection : true,
+				multiSelect : true,
+				rowSelect : true,
+				keepSelection : true
+			}).on("selected.rs.jquery.bootgrid", function(e, rows) {
+				for (var i = 0; i < rows.length; i++) {
+					rowIds.push(rows[i].no);
+				}
+
+			}).on("deselected.rs.jquery.bootgrid", function(e, rows) {
+				for (var i = 0; i < rows.length; i++) {
+					rowIds.some(function(v, ii) {
+						if (v == rows[i].no)
+							rowIds.splice(ii, 1);
+					});
+				}
+			});
+
+		});
+		/*]]>*/
+	</script>
 </body>
 </html>

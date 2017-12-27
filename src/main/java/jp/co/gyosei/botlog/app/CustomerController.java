@@ -33,16 +33,12 @@ public class CustomerController {
 		return "Customer";
 	}
 	
-	
-	
 	@GetMapping("/Customer")
 	public String signup(Model model) {
         model.addAttribute("customerForm", new CustomerForm()); 
         return "Customer";
     }
     
-	//HttpServletRequest request
-	
 	@PostMapping("/Customer")
     public String customerPost(Model model, CustomerForm customerForm, BindingResult bindingResult) {
 		

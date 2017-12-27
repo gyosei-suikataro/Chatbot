@@ -71,7 +71,7 @@ public class CustomerListController {
 		*/
 		
 		@PostMapping
-	    public String customerPost(Model model,@Valid CustomerListForm customerListForm, BindingResult bindingResult, HttpServletRequest request) {
+	    public String customerPost(Model model, CustomerListForm customerListForm, BindingResult bindingResult, HttpServletRequest request) {
 			
 			Integer [] rowIdsdata = customerListForm.getRowIds();
 			System.out.println(rowIdsdata);

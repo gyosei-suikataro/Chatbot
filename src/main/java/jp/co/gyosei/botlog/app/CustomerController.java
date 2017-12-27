@@ -27,20 +27,20 @@ public class CustomerController {
 	@Autowired
 	CustinfoRepository custinfoRepository;
 	
-	/*
+	
 	@RequestMapping("/")
 	public String Home() {
 		return "Customer";
 	}
-	*/
 	
-	@GetMapping("/")
+	
+	@GetMapping("/Customer")
 	public String signup(Model model) {
         model.addAttribute("customerForm", new CustomerForm()); 
         return "Customer";
     }
 	
-	@PostMapping("/")
+	@PostMapping("/Customer")
     public String customerPost(@Valid CustomerForm customerForm, BindingResult bindingResult, HttpServletRequest request,@Valid Model model) {
 		if(bindingResult.hasErrors()) {
 			return "Customer";

@@ -35,8 +35,8 @@
 	</table>
 
 	<form action="#" name="del" th:action="@{/CustomerList}" method="post">
-		<input type="submit" value="選択行を削除" /> <input id="rowIds"
-			name="rowIds" />
+		<input name="rowIds" type="text" />
+		<button name="btn">削除</button>
 	</form>
 
 	<script type="text/javascript">

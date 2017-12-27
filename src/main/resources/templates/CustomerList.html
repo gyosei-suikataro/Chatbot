@@ -37,7 +37,7 @@
 	<p th:text="${rowIds}"></p>
 
 	<form action="#" th:action="@{/CustomerList}" method="post">
-		<input type="submit" value="選択行を削除" id="rowIds" name="rowIds" th:value= "${rowIds}"/>
+		<input type="submit" id="rowIds" name="rowIds" value="選択行を削除" /> 
 	</form>
 
 	<script type="text/javascript">

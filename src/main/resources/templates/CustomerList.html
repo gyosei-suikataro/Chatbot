@@ -36,7 +36,7 @@
 
 	<p th:text="${rowIds}"></p>
 
-	<form action="#" th:action="@{/CustomerList}" method="post">
+	<form action="#" th:action="@{/CustomerList}" method="get">
 		<input type="submit" value="選択行を削除" /> <input id="rowIds"
 			name="rowIds" />
 	</form>

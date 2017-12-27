@@ -66,7 +66,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		//“Æ©‚Ì”FØ‚ªÀ‘•‚³‚ê‚Ä‚¢‚é
 		auth
 		.authenticationProvider(authenticationProvider)
-		.userDetailsService(userDetailsService);
+		.userDetailsService(userDetailsService)
+		.passwordEncoder(new BCryptPasswordEncoder());
 	}
 
 }

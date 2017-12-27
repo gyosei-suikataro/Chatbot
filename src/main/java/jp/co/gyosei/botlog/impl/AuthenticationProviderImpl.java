@@ -43,11 +43,6 @@ public class AuthenticationProviderImpl implements AuthenticationProvider {
 
 		return new UsernamePasswordAuthenticationToken(new LoginCust(cust), password, auth.getAuthorities());
 	}
-	
-    @Bean
-    public BCryptPasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
-    }
 
 	@Override
 	public boolean supports(Class<?> token) {

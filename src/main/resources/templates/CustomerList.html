@@ -24,7 +24,7 @@
 		</thead>
 		<tbody>
 			<tr th:each="custinfoEntity :${custinfoEntity}">
-				<td th:text="${custinfoEntity.no}"></td>
+				<td><input type = "checkbox" th:text="${custinfoEntity.no}"></td>
 				<td th:text="${custinfoEntity.custid}"></td>
 				<td th:text="${custinfoEntity.custname}"></td>
 				<td th:text="${custinfoEntity.orgname}"></td>
@@ -46,7 +46,6 @@
  /*<![CDATA[*/
 
 var rowIds = [];
- document.getElementById('rowIds').value=rowIds;
  
 $(function() {
 	$("#grid-basic").bootgrid({

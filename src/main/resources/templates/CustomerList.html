@@ -36,10 +36,10 @@
 
 	<form action="#" th:action="@{/CustomerList}" method="post">
 		<input type="submit" value="選択行を削除" /> 
-		<input  id ="rowIds" name="rowIds" th:value= "${rowIds}" />
+		<input type = "hidden" id ="rowIds" name="rowIds" th:value= "${rowIds}" />
 	</form>
 
-<script type="text/javascript" th:inline="javascript">
+<script type="text/javascript">
  
  /*<![CDATA[*/
 

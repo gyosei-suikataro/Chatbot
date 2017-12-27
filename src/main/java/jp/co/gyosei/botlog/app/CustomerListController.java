@@ -1,5 +1,6 @@
 package jp.co.gyosei.botlog.app;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -7,58 +8,48 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMethod;
-/*
-import org.springframework.validation.BindingResult;
-import org.springframework.validation.annotation.Validated;
 
-import org.springframework.web.bind.annotation.DeleteMapping;
-*/
-//import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.ResponseStatus;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.PathVariable;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.validation.Valid;
 
 import jp.co.gyosei.botlog.domain.entity.CustinfoEntity;
-import jp.co.gyosei.botlog.domain.form.CustomerForm;
 import jp.co.gyosei.botlog.domain.form.CustomerListForm;
 import jp.co.gyosei.botlog.domain.service.CustinfoService;
 import jp.co.gyosei.botlog.domain.repository.CustinfoRepository;
 
 import java.util.List;
-import java.util.ArrayList;
+import java.util.Arrays;
 
 @Controller
+@RequestMapping("CustomerList")
 public class CustomerListController {
 
 	@Autowired
-    CustinfoService custinfoService;
-	
+	CustinfoService custinfoService;
+
 	@Autowired
 	CustinfoRepository custinfoRepository;
 
-	@RequestMapping(value = "CustomerList", method = RequestMethod.GET)
+	@GetMapping
 	public String list(Model model) {
 		List<CustinfoEntity> custinfoEntity = custinfoRepository.findAll();
 		model.addAttribute("custinfoEntity",custinfoEntity);
-		model.addAttribute("customerListForm", new CustomerListForm());
+		//model.addAttribute("customerListForm", new CustomerListForm());
 		return "CustomerList";
 	}
 
-	@RequestMapping(value = "CustomerList", method = RequestMethod.POST)
-    public String customerPost(Model model, @Valid CustomerListForm customerListForm, BindingResult bindingResult, HttpServletRequest request) {
-		
-		Integer[] rowIdsdata = customerListForm.getRowIds();
+	@PostMapping
+	public String customerPost(Model model, CustomerListForm customerListForm, BindingResult bindingResult, HttpServletRequest request) {
+
+		Integer [] rowIdsdata = customerListForm.getRowIds();
+		System.out.println(rowIdsdata);
+		System.out.println(Arrays.toString(rowIdsdata));
+
 		for(int i = 0; i < rowIdsdata.length; i++) {
 			Integer no = rowIdsdata[i];
 			custinfoRepository.delete(no);
 		}
 		return "Customer";
 	}
+
+
 }

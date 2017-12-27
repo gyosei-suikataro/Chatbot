@@ -37,15 +37,13 @@
 	<p th:text="${rowIds}"></p>
 
 	<form action="#" th:action="@{/CustomerList}" method="post">
-		<input type="submit" value="選択行を削除" /> <input id="rowIds"
-			name="rowIds" />
+		<input type="submit" value="選択行を削除" id="rowIds" name="rowIds" />
 	</form>
 
 	<script type="text/javascript">
  
  /*<![CDATA[*/
 var rowIds = [];
- document.getElementById('rowIds').value=rowIds;
  
 $(function() {
 	$("#grid-basic").bootgrid({

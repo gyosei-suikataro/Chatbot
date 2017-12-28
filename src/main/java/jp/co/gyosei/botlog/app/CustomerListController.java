@@ -53,6 +53,7 @@ public class CustomerListController {
 	public String list(Model model) {
 		List<CustinfoEntity> custinfoEntity = custinfoRepository.findAll();
 		model.addAttribute("custinfoEntity",custinfoEntity);
+		model.addAttribute("customerListForm", new CustomerListForm());
 		return "CustomerList";
 	}
 	

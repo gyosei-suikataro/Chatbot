@@ -34,7 +34,7 @@
 		</tbody>
 	</table>
 
-	<form action="#" th:action="@{/CustomerList}" method="post">
+	<form action="#" th:action="@{/CustomerList}" th:object="${customerListForm}" method="post">
 		<input type="submit" value="選択行を削除" /> 
 		<input type="hidden" id="rowIds" name="rowIds" th:value="${rowIds}" />
 	</form>

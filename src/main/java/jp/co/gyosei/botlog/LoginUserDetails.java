@@ -1,3 +1,4 @@
+/*
 package jp.co.gyosei.botlog;
 
 import java.util.Collection;
@@ -10,9 +11,6 @@ import jp.co.gyosei.botlog.impl.CustinfoEntityImpl;
 
 public class LoginUserDetails implements UserDetails{
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 
 	private CustinfoEntityImpl custinfoEntityImpl;
@@ -78,3 +76,4 @@ public class LoginUserDetails implements UserDetails{
 	}
 
 }
+*/

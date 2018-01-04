@@ -1,5 +1,7 @@
 var rowIds = [];
-	rowIds = document.getElementById('rowIds');	
+	rowIds = document.getElementById('rowIds');
+	document.write(rowIds);
+	
 		$(function() {
 			$("#grid-basic").bootgrid({
 				selection : true,

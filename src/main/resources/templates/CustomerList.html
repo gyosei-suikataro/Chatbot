@@ -8,6 +8,8 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.js"></script>
 <script type="text/javascript"
 	th:src="@{/javascript/jquery.bootgrid.js}" th:inline="javascript"></script>
+<script type="text/javascript"
+	th:src="@{/javascript/CustomerDelete.js}" th:inline="javascript"></script>
 </head>
 <body>
 	<table id="grid-basic"
@@ -31,41 +33,15 @@
 				<td th:text="${custinfoEntity.orgname}"></td>
 				<td th:text="${custinfoEntity.effect}"></td>
 				<td th:text="${custinfoEntity.role}"></td>
+				<td>
+					<form th:action="@{/Customerlist}" method="post">
+						<input type="submit" value="削除"/>
+						<input type="hidden" name="no" th:value="${custinfoEntity.no}"/>
+					</form>
+				</td>
 			</tr>
 		</tbody>
 	</table>
-	
-	<form action="#" th:action="@{/CustomerList}" th:object="${customerListForm}" method="post">
-		<input type="hidden" name = "rowIds" th:value="${rowIds}" />
-		<input type="submit" value="選択行を削除" /> 
-	</form>
 
-	<script type="text/javascript">
-		/*<![CDATA[*/
-
-		var rowIds = [];
-
-		$(function() {
-			$("#grid-basic").bootgrid({
-				selection : true,
-				multiSelect : true,
-				rowSelect : true,
-				keepSelection : true
-			}).on("selected.rs.jquery.bootgrid", function(e, rows) {
-				for (var i = 0; i < rows.length; i++) {
-					rowIds.push(rows[i].no);
-				}
-			}).on("deselected.rs.jquery.bootgrid", function(e, rows) {
-				for (var i = 0; i < rows.length; i++) {
-					rowIds.some(function(v, ii) {
-						if (v == rows[i].no)
-							rowIds.splice(ii, 1);
-					});
-				}
-			});
-		});
-
-		/*]]>*/
-	</script>
 </body>
 </html>

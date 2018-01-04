@@ -7,6 +7,7 @@
 <link href="stylesheets/jquery.bootgrid.css" rel="stylesheet" />
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.js"></script>
 <script src="javascript/jquery.bootgrid.js"></script>
+<script src="javascript/CustomerDelete.js"></script>
 </head>
 <body>
 	<table id="grid-basic"
@@ -36,9 +37,12 @@
 
 	<form action="#" th:action="@{/CustomerList}" th:object="${customerListForm}" method="post">
 		<input type="submit" value="選択行を削除" /> 
-		<input type="hidden" id="rowIds" name="rowIds" th:value="${rowIds[]}" />
+		<input type="hidden" id="rowIds" name="rowIds" th:value="${rowIds}" />
 	</form>
-
+	
+	</body>
+</html>
+<!--  
 	<script type="text/javascript">
 		/*<![CDATA[*/
 
@@ -68,5 +72,5 @@
 
 		/*]]>*/
 	</script>
-</body>
-</html>
+-->
+

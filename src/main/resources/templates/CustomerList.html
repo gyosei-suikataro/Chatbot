@@ -7,7 +7,6 @@
 <link href="stylesheets/jquery.bootgrid.css" rel="stylesheet" />
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.js"></script>
 <script src="javascript/jquery.bootgrid.js"></script>
-<script type="text/javascript" src="javascript/CustomerDelete.js"></script>
 </head>
 <body>
 	<table id="grid-basic"
@@ -39,14 +38,13 @@
 		<input type="submit" value="選択行を削除" /> 
 		<input type="hidden" id="rowIds" name="rowIds" th:value="${rowIds}" />
 	</form>
-	</body>
-</html>
-<!--  
+  
 	<script type="text/javascript">
 		/*<![CDATA[*/
 
 		var rowIds = [];
-		rowIds[] = document.getElementById("rowIds");
+		rowIds = document.getElementById('rowIds');
+		document.write(rowIds);
 		
 		$(function() {
 			$("#grid-basic").bootgrid({
@@ -71,5 +69,6 @@
 
 		/*]]>*/
 	</script>
--->
-
+	
+</body>
+</html>

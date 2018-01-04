@@ -1,3 +1,4 @@
+/*
 var rowIds = [];
 	rowIds = document.getElementById('rowIds');
 	document.write(rowIds);
@@ -22,4 +23,4 @@ var rowIds = [];
 				}
 			});
 		});
-
+*/

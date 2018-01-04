@@ -35,7 +35,7 @@
 	</table>
 
 	<form action="#" th:action="@{/CustomerList}" th:object="${customerListForm}" method="post">
-		<input  id="resultrowIds"  />
+		<input type="hidden" id="resultrowIds"  />
 		<input type="submit" value="選択行を削除" /> 
 	</form>
   
@@ -43,7 +43,8 @@
 		/*<![CDATA[*/
 
 		var rowIds = [];
-		var resultrowIds =document.getElementById("resultrowIds"); 
+		var resultrowIds = [];
+		resultrowIds = document.getElementById("resultrowIds"); 
 		resultrowIds.value = rowIds;
 		
 		$(function() {

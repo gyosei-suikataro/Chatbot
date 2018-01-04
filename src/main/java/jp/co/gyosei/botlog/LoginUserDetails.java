@@ -81,5 +81,4 @@ public class LoginUserDetails implements UserDetails{
 	public void setAuthority(Collection<GrantedAuthority> role) {
 		this.role = role;
 	}
-
 }

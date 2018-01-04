@@ -34,5 +34,4 @@ public class LoginCust extends User {
         password = cust.password;
         role = cust.role;
     }
-
 }

@@ -35,10 +35,8 @@
 	</table>
 
 	<form action="#" th:action="@{/CustomerList}" th:object="${customerListForm}" method="post">
-		<p id="rowId">
-		<input type="hidden" id="rowIds" name="rowIds" th:value="${rowIds}" />
+		<input> 
 		<input type="submit" value="選択行を削除" /> 
-		</p>
 	</form>
   
 	<script type="text/javascript">

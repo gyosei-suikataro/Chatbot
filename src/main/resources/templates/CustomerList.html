@@ -6,7 +6,8 @@
 <link href="stylesheets/bootstrap.css" rel="stylesheet" />
 <link href="stylesheets/jquery.bootgrid.css" rel="stylesheet" />
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.js"></script>
-<script  type="text/javascript" th:src="@{/javascript/jquery.bootgrid.js}" th:inline="javascript"></script>
+<script type="text/javascript"
+	th:src="@{/javascript/jquery.bootgrid.js}" th:inline="javascript"></script>
 </head>
 <body>
 	<table id="grid-basic"
@@ -30,46 +31,15 @@
 				<td th:text="${custinfoEntity.orgname}"></td>
 				<td th:text="${custinfoEntity.effect}"></td>
 				<td th:text="${custinfoEntity.role}"></td>
-				<td>
-					<form th:action="@{/Customerlist}" method="post">
-						<input type="submit" value="削除"/>
-						<input type="hidden" name="no" th:value="${custinfoEntity.no}"/>
-					</form>
-				</td>
 			</tr>
 		</tbody>
 	</table>
-	
-	<script type="text/javascript" >
-		
-			$(function() {
-				$("#grid-basic").bootgrid({
-					
-				});
-			});
-				
-	
-	</script>
-	
 
-</body>
-</html>
-<!--  
-	<form action="#" th:action="@{/CustomerList}" th:object="${customerListForm}" method="post">
-		<input type="hidden" name = "form" th:value="${rowIds}" />
-		<input type="submit" value="選択行を削除" /> 
-	</form>
--->	
- 
-  <!--  
-	<script type="text/javascript" >
+	<script type="text/javascript">
 		/*<![CDATA[*/
 
 		var rowIds = [];
-		document.form.action = rowIds;
-		//rowIds = document.getElementById("rowId");
-		//rowId.innerHTML = rowIds;
-		
+
 		$(function() {
 			$("#grid-basic").bootgrid({
 				selection : true,
@@ -92,5 +62,5 @@
 
 		/*]]>*/
 	</script>
--->
-
+</body>
+</html>

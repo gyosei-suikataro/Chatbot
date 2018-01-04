@@ -42,7 +42,7 @@
 	<script type="text/javascript" >
 		/*<![CDATA[*/
 
-		var rowIds = new Array( );
+		var rowIds = [];
 		
 		
 		$(function() {
@@ -55,7 +55,7 @@
 				for (var i = 0; i < rows.length; i++) {
 					rowIds.push(rows[i].no);
 				}
-				console.log(スタート);
+				console.log("スタート");
 				console.log(rowIds);
 			}).on("deselected.rs.jquery.bootgrid", function(e, rows) {
 				for (var i = 0; i < rows.length; i++) {

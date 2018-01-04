@@ -30,18 +30,18 @@ public class LoginUserDetails implements UserDetails{
 		// TODO 自動生成されたコンストラクター・スタブ
 	}
 
-	//どの列をパスワードとして使うのか
-	@Override
-	public String getPassword() {
-		// TODO 自動生成されたメソッド・スタブ
-		return custinfoEntityImpl.getPassword();
-	}
-
 	//どの列をユーザー名として使うのか
 	@Override
 	public String getUsername() {
 		// TODO 自動生成されたメソッド・スタブ
 		return custinfoEntityImpl.getCustid();
+	}
+	
+	//どの列をパスワードとして使うのか
+	@Override
+	public String getPassword() {
+		// TODO 自動生成されたメソッド・スタブ
+		return custinfoEntityImpl.getPassword();
 	}
 
 	@Override
@@ -72,6 +72,14 @@ public class LoginUserDetails implements UserDetails{
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		// TODO 自動生成されたメソッド・スタブ
 		return null;
+	}
+
+	public Collection<GrantedAuthority> getAuthority() {
+		return role;
+	}
+
+	public void setAuthority(Collection<GrantedAuthority> role) {
+		this.role = role;
 	}
 
 }

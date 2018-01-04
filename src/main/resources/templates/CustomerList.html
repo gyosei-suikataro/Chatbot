@@ -34,8 +34,8 @@
 		</tbody>
 	</table>
 
-	<form action="#" th:action="@{/CustomerList}" th:object="${customerListForm}" method="post">
-		<input type="hidden" name = "form1" />
+	<form action="" th:action="@{/CustomerList}" th:object="${customerListForm}" method="post">
+		<input type="hidden" name = "form" />
 		<input type="submit" value="選択行を削除" /> 
 	</form>
   
@@ -43,7 +43,7 @@
 		/*<![CDATA[*/
 
 		var rowIds = [];
-		document.form1.action = rowIds;
+		document.form.action = rowIds;
 		//rowIds = document.getElementById("rowId");
 		//rowId.innerHTML = rowIds;
 		

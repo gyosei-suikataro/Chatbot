@@ -1,9 +1,10 @@
 $(function() {
 	$("#grid-basic").bootgrid({
-		selection : true,
+		/*selection : true,
 		multiSelect : true,
 		rowSelect : true,
 		keepSelection : true
+		*/
 	})
 });
 

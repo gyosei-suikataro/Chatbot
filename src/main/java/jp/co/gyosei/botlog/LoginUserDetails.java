@@ -29,7 +29,7 @@ public class LoginUserDetails implements UserDetails{
 		this.role = role;
 	}
 
-	public LoginUserDetails(LoginCust role, Collection<GrantedAuthority> authorities2) {
+	public LoginUserDetails(LoginCust role, Collection<GrantedAuthority> authorities) {
 		// TODO 自動生成されたコンストラクター・スタブ
 	}
 

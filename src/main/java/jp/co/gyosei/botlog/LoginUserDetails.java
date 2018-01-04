@@ -1,4 +1,3 @@
-/*
 package jp.co.gyosei.botlog;
 
 import java.util.Collection;
@@ -31,14 +30,14 @@ public class LoginUserDetails implements UserDetails{
 		// TODO 自動生成されたコンストラクター・スタブ
 	}
 
-	//自分用に、どの列をパスワードとして使うのか変えましょう。
+	//どの列をパスワードとして使うのか
 	@Override
 	public String getPassword() {
 		// TODO 自動生成されたメソッド・スタブ
 		return custinfoEntityImpl.getPassword();
 	}
 
-	//自分用に、どの列をユーザー名として使うのかを変えましょう
+	//どの列をユーザー名として使うのか
 	@Override
 	public String getUsername() {
 		// TODO 自動生成されたメソッド・スタブ
@@ -76,4 +75,3 @@ public class LoginUserDetails implements UserDetails{
 	}
 
 }
-*/

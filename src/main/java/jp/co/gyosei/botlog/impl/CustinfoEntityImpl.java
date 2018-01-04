@@ -46,15 +46,7 @@ public class CustinfoEntityImpl implements Serializable {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-/*
-	public String getRole() {
-		return this.role;
-	}
-
-	public void setRole(String role) {
-		this.role = role;
-	}
-*/
+	
 	public static CustinfoEntityImpl custinfoRepositoryCustom(String custid, String password,
 			Collection<? extends GrantedAuthority> role) {
 		return null;

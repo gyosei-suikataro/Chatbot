@@ -33,5 +33,4 @@ public class LoginForm {
 	public void setRole(Collection<? extends GrantedAuthority> role) {
 		this.role = role;
 	}
-
 }

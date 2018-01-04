@@ -51,5 +51,4 @@ public class CustinfoEntityImpl implements Serializable {
 			String role) {
 		return null;
 	}
-
 }

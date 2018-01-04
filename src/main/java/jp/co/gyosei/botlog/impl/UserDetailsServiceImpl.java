@@ -31,7 +31,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 		}
 
 		LoginCust role = null;
-		return new LoginUserDetails(role, getAuthorities(role));
+		return new LoginUserDetails(cust, getAuthorities(role));
 	}
 
 	@SuppressWarnings("unused")

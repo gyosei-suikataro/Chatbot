@@ -19,14 +19,14 @@ public class LoginUserDetails implements UserDetails{
 
 	//権限情報を保存します
 	@Autowired
-	private Collection<GrantedAuthority> authorities;
+	private Collection<GrantedAuthority> role;
 
 	//コンストラクタです。
 	public LoginUserDetails(
 			CustinfoEntityImpl x_custinfoEntityImpl, Collection<GrantedAuthority> role
 			){
 		this.custinfoEntityImpl = x_custinfoEntityImpl;
-		this.authorities = role;
+		this.role = role;
 	}
 
 	public LoginUserDetails(LoginCust role, Collection<GrantedAuthority> authorities2) {

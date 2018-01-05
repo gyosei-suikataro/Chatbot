@@ -36,7 +36,6 @@
 	</table>
 
 
-	<input type="button" onclick = "checklist()" value ="テスト" />
 	
 	<form th:action="@{/CustomerList}" th:object="${customerListForm}" method="post">
 		<input id ="resultcheck" />
@@ -67,13 +66,12 @@
 					});
 				}
 			});
-		});
-		
-		function checklist(){
 			for (var i = 0; i < rowIds.length; i ++) {
 				document.getElementById('resultcheck').value = document.getElementById('resultcheck').value + rowIds[i];
 			}
-		}
+		});
+		
+		
 		
 		
 

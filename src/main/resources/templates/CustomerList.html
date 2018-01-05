@@ -38,7 +38,7 @@
 
 	
 	<form th:action="@{/CustomerList}" th:object="${customerListForm}" method="post">
-		<input  id ='resultcheck' />
+		<input  id ='resultcheck' th:value="" />
 		<input type="submit" value="選択行を削除" /> 
 	</form>
 

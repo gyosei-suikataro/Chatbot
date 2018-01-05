@@ -30,6 +30,11 @@ public class LoginUserDetails implements UserDetails {
 		// TODO 自動生成されたコンストラクター・スタブ
 	}
 
+	public LoginUserDetails(LoginCust role, Collection<GrantedAuthority> authorities) {
+		// TODO 自動生成されたコンストラクター・スタブ
+	}
+
+
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		// TODO 自動生成されたメソッド・スタブ

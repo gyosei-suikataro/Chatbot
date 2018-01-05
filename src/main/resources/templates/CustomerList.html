@@ -47,7 +47,7 @@
 		/*<![CDATA[*/
 
 		var rowIds = [];
-		rowIds.id='resultcheck'
+		
 		
 		$(function() {
 			$("#grid-basic").bootgrid({
@@ -70,6 +70,7 @@
 		});
 		
 		function checklist(){
+			rowIds.id='resultcheck'
 			for (var i = 0; i < rowIds.length; i ++) {
 				document.getElementById('resultcheck').value = document.getElementById('resultcheck').value + rowIds[i];
 			}

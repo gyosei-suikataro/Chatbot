@@ -69,7 +69,9 @@
 		});
 		
 		$(document).ready(function () {
-			document.getElementById('resultcheck').value = rowIds[];
+			for (var i = 0; i < rowIds.length; i ++) {
+				document.getElementById('resultcheck').value = document.getElementById('resultcheck').value + rowIds[i];
+			}
 		});
 		
 		

@@ -6,16 +6,13 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.stereotype.Repository;
 
-import jp.co.gyosei.botlog.impl.CustinfoEntityImpl;
+import jp.co.gyosei.botlog.domain.entity.CustinfoEntity;
 
 @Repository
-public interface CustinfoRepositoryCustom extends JpaRepository<CustinfoEntityImpl, String>{
+public interface CustinfoRepositoryCustom extends JpaRepository<CustinfoEntity, String>{
 
-	static CustinfoEntityImpl custinfoRepositoryCustom(String custid, String password, String role) {
+	static CustinfoEntity custinfoRepositoryCustom(String custid, String password, String role) {
 		// TODO 自動生成されたメソッド・スタブ
 		return null;
 	}
-
-	Object findByCustid(String custid);
-
 }

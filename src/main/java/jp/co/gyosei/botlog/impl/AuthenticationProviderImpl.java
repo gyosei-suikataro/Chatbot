@@ -14,6 +14,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 
 import jp.co.gyosei.botlog.LoginCust;
+import jp.co.gyosei.botlog.domain.entity.CustinfoEntity;
 import jp.co.gyosei.botlog.domain.repository.CustinfoRepositoryCustom;
 
 @Component
@@ -35,7 +36,7 @@ public class AuthenticationProviderImpl implements AuthenticationProvider {
 			throw new AuthenticationCredentialsNotFoundException("ログイン情報に不備があります。");
 		}
 
-		CustinfoEntityImpl cust = CustinfoRepositoryCustom.custinfoRepositoryCustom(custid, password, role);
+		CustinfoEntity cust = CustinfoRepositoryCustom.custinfoRepositoryCustom(custid, password, role);
 		if (cust == null) {
 			// 例外はSpringSecurityにあったものを適当に使用
 			throw new AuthenticationCredentialsNotFoundException("ログイン情報が存在しません。");

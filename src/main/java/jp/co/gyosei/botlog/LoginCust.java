@@ -10,7 +10,7 @@ import lombok.ToString;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 
-import jp.co.gyosei.botlog.impl.CustinfoEntityImpl;
+import jp.co.gyosei.botlog.domain.entity.CustinfoEntity;
 
 @Data
 @EqualsAndHashCode(callSuper = true)
@@ -28,7 +28,7 @@ public class LoginCust extends User {
     // ’Ç‰Á‚·‚é
     public String role;
 
-    public LoginCust(CustinfoEntityImpl cust) {
+    public LoginCust(CustinfoEntity cust) {
     	super(cust.custid, cust.role, true, true, true, true, new ArrayList<GrantedAuthority>());
         custid = cust.custid;
         password = cust.password;

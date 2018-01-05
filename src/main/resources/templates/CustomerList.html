@@ -46,7 +46,7 @@
 		/*<![CDATA[*/
 
 		var rowIds = [];
-		
+		var resultcheck ="";
 		
 		$(function() {
 			$("#grid-basic").bootgrid({
@@ -67,9 +67,6 @@
 						if (v == rows[i].no)
 							rowIds.splice(ii, 1);
 					});
-				}
-				for (var i = 0; i < rowIds.length; i ++) {
-					document.getElementById('resultcheck').value = document.getElementById('resultcheck').value + rowIds[i];
 				}
 			});
 		});

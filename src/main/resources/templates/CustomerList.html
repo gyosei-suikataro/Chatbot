@@ -35,10 +35,10 @@
 		</tbody>
 	</table>
 
-	<input type="button" onclick="checklist()" value="テスト" />
 
 	<form th:action="@{/Customerlist}" method="post">
-		<input type="submit" value="削除" /> <input id="resultcheck" />
+		<input type="submit" value="削除" /> 
+		<input id="resultcheck" />
 	</form>
 
 	<script type="text/javascript">
@@ -55,6 +55,7 @@
 			}).on("selected.rs.jquery.bootgrid", function(e, rows) {
 				for (var i = 0; i < rows.length; i++) {
 					rowIds.push(rows[i].no);
+					document.getElementById('resultcheck').value = rowIds[i];
 				}
 			}).on("deselected.rs.jquery.bootgrid", function(e, rows) {
 				for (var i = 0; i < rows.length; i++) {
@@ -66,11 +67,7 @@
 			});
 		});
 		
-		function checklist(){
-			for (var i = 0; i < rowIds.length; i ++) {
-				document.getElementById('resultcheck').value = rowIds[i];
-				}
-		}
+		
 
 		/*]]>*/
 	</script>

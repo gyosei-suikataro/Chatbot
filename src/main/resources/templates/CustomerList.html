@@ -39,7 +39,7 @@
 	<input type="button" onclick = "checklist()" value ="テスト" />
 	
 	<form th:action="@{/CustomerList}" th:object="${customerListForm}" method="post">
-		<input id ="resultcheck" >
+		<input id ="resultcheck" />
 		<input type="submit" value="選択行を削除" /> 
 	</form>
 

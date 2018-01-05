@@ -1,4 +1,4 @@
-var rowIds = [];
+/*var rowIds = [];
 
 		$(function() {
 			$("#grid-basic").bootgrid({
@@ -20,3 +20,4 @@ var rowIds = [];
 			});
 		});
 
+*/

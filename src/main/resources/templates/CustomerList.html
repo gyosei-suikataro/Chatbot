@@ -38,8 +38,8 @@
 
 	<input type="button" onclick = "checklist()" value ="テスト" />
 	
-	<form action="#" th:action="@{/CustomerList}" th:object="${customerListForm}" method="post">
-		<input type="text" id ="resultcheck" />
+	<form th:action="@{/CustomerList}" th:object="${customerListForm}" method="post">
+		<input id ="resultcheck" >
 		<input type="submit" value="選択行を削除" /> 
 	</form>
 
@@ -70,7 +70,6 @@
 		});
 		
 		function checklist(){
-			rowIds.id='resultcheck'
 			for (var i = 0; i < rowIds.length; i ++) {
 				document.getElementById('resultcheck').value = document.getElementById('resultcheck').value + rowIds[i];
 			}

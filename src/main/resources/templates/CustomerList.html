@@ -46,18 +46,17 @@
 		/*<![CDATA[*/
 
 		var rowIds = [];
-			
+		document.getElementById('resultcheck').innerHTML = rowIds;	
 		
 		$(function() {
 			$("#grid-basic").bootgrid({
 				selection : true,
-				multiSelect : false,
+				multiSelect : true,
 				rowSelect : true,
 				keepSelection : true
 			}).on("selected.rs.jquery.bootgrid", function(e, rows) {
 				for (var i = 0; i < rows.length; i++) {
 					rowIds.push(rows[i].no);
-					document.getElementById('resultcheck').value = rowIds[i];
 				}
 			}).on("deselected.rs.jquery.bootgrid", function(e, rows) {
 				for (var i = 0; i < rows.length; i++) {
@@ -68,6 +67,8 @@
 				}
 			});
 		});
+		
+		
 		
 		/*for (var i = 0; i < rowIds.length; i ++) {
 		document.getElementById('resultcheck').value = rowIds[i] + ",";

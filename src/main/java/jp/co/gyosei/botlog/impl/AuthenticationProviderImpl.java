@@ -3,12 +3,14 @@ package jp.co.gyosei.botlog.impl;
 import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.security.authentication.AuthenticationCredentialsNotFoundException;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 
 import jp.co.gyosei.botlog.LoginCust;
@@ -26,7 +28,7 @@ public class AuthenticationProviderImpl implements AuthenticationProvider {
 
 		String custid = auth.getName();
 		String password = auth.getCredentials().toString();
-		Collection<? extends GrantedAuthority> role = auth.getAuthorities();
+		String role = auth.toString();
 
 		if ("".equals(custid) || "".equals(password)) {
 			// 例外はSpringSecurityにあったものを適当に使用
@@ -39,7 +41,7 @@ public class AuthenticationProviderImpl implements AuthenticationProvider {
 			throw new AuthenticationCredentialsNotFoundException("ログイン情報が存在しません。");
 		}
 
-		return new UsernamePasswordAuthenticationToken(new LoginCust(cust), password, role);
+		return new UsernamePasswordAuthenticationToken(new LoginCust(cust), password, auth.getAuthorities());
 	}
 
 	@Override

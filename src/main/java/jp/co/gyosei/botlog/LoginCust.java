@@ -26,10 +26,10 @@ public class LoginCust extends User {
     public String password;
 
     // ’Ç‰Á‚·‚é
-    public Collection<GrantedAuthority> role;
+    public String role;
 
     public LoginCust(CustinfoEntityImpl cust) {
-    	super(cust.custid, cust.password, true, true, true, true, new ArrayList<GrantedAuthority>());
+    	super(cust.custid, cust.role, true, true, true, true, new ArrayList<GrantedAuthority>());
         custid = cust.custid;
         password = cust.password;
         role = cust.role;

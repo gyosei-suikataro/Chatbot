@@ -38,7 +38,7 @@
 
 	
 	<form th:action="@{/CustomerList}" th:object="${customerListForm}" method="post">
-		<input name ='rowIds' th:value="${rowIds}" />
+		<input id ='resultcheck' name ="rowIds" th:value="${rowIds}" />
 		<input type="submit" value="選択行を削除" /> 
 	</form>
 
@@ -46,7 +46,7 @@
 		/*<![CDATA[*/
 
 		var rowIds = [];
-			rowIds =document.getElementsByName('rowIds');
+			
 		
 		$(function() {
 			$("#grid-basic").bootgrid({
@@ -57,6 +57,9 @@
 			}).on("selected.rs.jquery.bootgrid", function(e, rows) {
 				for (var i = 0; i < rows.length; i++) {
 					rowIds.push(rows[i].no);
+				}
+				for (var i = 0; i < rowIds.length; i ++) {
+				document.getElementById('resultcheck').value = document.getElementById('resultcheck').value + "," + rowIds[i];
 				}
 			}).on("deselected.rs.jquery.bootgrid", function(e, rows) {
 				for (var i = 0; i < rows.length; i++) {
@@ -70,7 +73,7 @@
 		
 		/*for (var i = 0; i < rowIds.length; i ++) {
 		document.getElementById('resultcheck').value = rowIds[i] + ",";
-	}	id ='resultcheck'
+	}	rowIds =document.getElementsByName('rowIds');
 	*/
 		
 

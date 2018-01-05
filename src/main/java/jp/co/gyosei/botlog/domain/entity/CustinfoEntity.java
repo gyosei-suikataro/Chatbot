@@ -98,4 +98,8 @@ public class CustinfoEntity implements Serializable {
 		this.role = role;
 	}
 
+	public static CustinfoEntity custinfoRepositoryCustom(String custid, String password,
+			Collection<GrantedAuthority> role) {
+		return null;
+	}
 }

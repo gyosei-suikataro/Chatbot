@@ -57,31 +57,32 @@ public class CustomerListController {
 		return "CustomerList";
 	}
 	
-	
+	/*
 	@PostMapping
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	void delete(@RequestParam Integer no) {
 		custinfoRepository.delete(no);	
 	}
+	*/
 	
 	
-	/*	
+	
 	@PostMapping
 	   public String customerPost(Model model, CustomerListForm customerListForm, BindingResult bindingResult) {
 			
 		Integer  rowIdsdata = customerListForm.getRowIds();
 		custinfoRepository.delete(rowIdsdata);
 		
-		
+		/*
 		System.out.println(rowIdsdata);
 		System.out.println(Arrays.toString(rowIdsdata));
 			
 			for(int i = 0; i < rowIdsdata.length; i++) {
 				Integer no = rowIdsdata[i];
 				custinfoRepository.delete(no);
-			}
+			}*/
 			return "Customer";
 		}
-		*/
+		
 	
 }

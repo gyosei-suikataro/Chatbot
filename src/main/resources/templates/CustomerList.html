@@ -57,6 +57,7 @@
 			}).on("selected.rs.jquery.bootgrid", function(e, rows) {
 				for (var i = 0; i < rows.length; i++) {
 					rowIds.push(rows[i].no);
+					document.getElementsByName("rowIds").value = rowIds[i];
 				}
 			}).on("deselected.rs.jquery.bootgrid", function(e, rows) {
 				for (var i = 0; i < rows.length; i++) {
@@ -68,17 +69,14 @@
 			});
 		});
 		
+		/*
 		$(document).ready(function () {
 			for (var i = 0; i < rowIds.length; i ++) {
-				document.getElementById('resultcheck').value = document.getElementById('resultcheck').value + rowIds[i];
+				document.getElementById('resultcheck').value = rowIds[i];
 			}
 		});
+		*/
 		
-		
-		/*for (var i = 0; i < rowIds.length; i ++) {
-		document.getElementById('resultcheck').value = rowIds[i] + ",";
-	}	rowIds =document.getElementsByName('rowIds');
-	*/
 		
 
 		/*]]>*/

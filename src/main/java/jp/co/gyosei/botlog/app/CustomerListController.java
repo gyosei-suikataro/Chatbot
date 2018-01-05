@@ -57,16 +57,6 @@ public class CustomerListController {
 		return "CustomerList";
 	}
 	
-	/*
-	@PostMapping
-	@ResponseStatus(HttpStatus.NO_CONTENT)
-	void delete(@RequestParam Integer no) {
-		custinfoRepository.delete(no);	
-	}
-	*/
-	
-	
-	
 	@PostMapping
 	   public String customerPost(Model model, CustomerListForm customerListForm, BindingResult bindingResult) {
 			

@@ -45,8 +45,8 @@ public class AuthenticationProviderImpl implements AuthenticationProvider {
 	}
 
 	@Override
-	public boolean supports(Class<?> token) {
-		return UsernamePasswordAuthenticationToken.class.isAssignableFrom(token);
+	public boolean supports(Class<?> role) {
+		return UsernamePasswordAuthenticationToken.class.isAssignableFrom(role);
 	}
 
 	public CustinfoRepositoryCustom getCustinfoRepositoryCustom() {

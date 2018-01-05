@@ -1,6 +1,7 @@
 package jp.co.gyosei.botlog.impl;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Collection;
 
 import javax.persistence.*;
@@ -48,7 +49,12 @@ public class CustinfoEntityImpl implements Serializable {
 	}
 	
 	public static CustinfoEntityImpl custinfoRepositoryCustom(String custid, String password,
-			String role) {
+			Collection<GrantedAuthority> role) {
+		return null;
+	}
+
+	public Object getRole() {
+		// TODO 自動生成されたメソッド・スタブ
 		return null;
 	}
 }

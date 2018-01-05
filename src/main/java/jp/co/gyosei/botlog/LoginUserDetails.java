@@ -1,66 +1,74 @@
-/*
 package jp.co.gyosei.botlog;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import jp.co.gyosei.botlog.impl.CustinfoEntityImpl;
 
-public class LoginUserDetails implements UserDetails{
-
+public class LoginUserDetails implements UserDetails {
+	/**
+	 * 
+	 */
 	private static final long serialVersionUID = 1L;
-
-	private CustinfoEntityImpl custinfoEntityImpl;
-
-	//権限情報を保存します
-	@Autowired
 	private Collection<GrantedAuthority> role;
 
-	//コンストラクタです。
-	public LoginUserDetails(
-			CustinfoEntityImpl x_custinfoEntityImpl, Collection<GrantedAuthority> role
-			){
-		this.custinfoEntityImpl = x_custinfoEntityImpl;
+	public LoginUserDetails(String custid, String password, Collection<GrantedAuthority> role) {
+		super();
 		this.role = role;
 	}
 
-	public LoginUserDetails(LoginCust role, Collection<GrantedAuthority> authorities) {
-		// TODO 自動生成されたコンストラクター・スタブ
-	}
 
-	//どの列をユーザー名として使うのか
-	@Override
-	public String getUsername() {
-		// TODO 自動生成されたメソッド・スタブ
-		return custinfoEntityImpl.getCustid();
+	public static UserDetails create(CustinfoEntityImpl cust) {
+		List<GrantedAuthority> role = new ArrayList<GrantedAuthority>();
+		return new LoginUserDetails(cust.getCustid(), cust.getPassword(), role);
 	}
 	
-	//どの列をパスワードとして使うのか
+	@SuppressWarnings("unused")
+	private static GrantedAuthority getCustid() {
+		// TODO 自動生成されたメソッド・スタブ
+		return null;
+	}
+
+	/* (非 Javadoc)
+	 * @see org.springframework.security.core.userdetails.UserDetails#getAuthorities()
+	 */
+	public Collection<? extends GrantedAuthority> getRole() {
+		return this.role;
+	}
+
 	@Override
 	public String getPassword() {
 		// TODO 自動生成されたメソッド・スタブ
-		return custinfoEntityImpl.getPassword();
+		return null;
+	}
+
+	@Override
+	public String getUsername() {
+		// TODO 自動生成されたメソッド・スタブ
+		return null;
 	}
 
 	@Override
 	public boolean isAccountNonExpired() {
 		// TODO 自動生成されたメソッド・スタブ
-		return true;
+		return false;
 	}
 
 	@Override
 	public boolean isAccountNonLocked() {
 		// TODO 自動生成されたメソッド・スタブ
-		return true;
+		return false;
 	}
 
 	@Override
 	public boolean isCredentialsNonExpired() {
 		// TODO 自動生成されたメソッド・スタブ
-		return true;
+		return false;
 	}
 
 	@Override
@@ -69,18 +77,12 @@ public class LoginUserDetails implements UserDetails{
 		return false;
 	}
 
+	public void setCustid(String custid) {
+	}
+
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		// TODO 自動生成されたメソッド・スタブ
 		return null;
 	}
-
-	public Collection<GrantedAuthority> getAuthority() {
-		return role;
-	}
-
-	public void setAuthority(Collection<GrantedAuthority> role) {
-		this.role = role;
-	}
 }
-*/

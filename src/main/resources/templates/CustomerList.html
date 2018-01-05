@@ -38,7 +38,7 @@
 
 	
 	<form th:action="@{/CustomerList}" th:object="${customerListForm}" method="post">
-		<input type ="hidden" id ="resultcheck" />
+		<input  name ="result" />
 		<input type="submit" value="選択行を削除" /> 
 	</form>
 
@@ -46,7 +46,7 @@
 		/*<![CDATA[*/
 
 		var rowIds = [];
-		var resultcheck = 0;
+		var resultcheck = "";
 		
 		$(function() {
 			$("#grid-basic").bootgrid({

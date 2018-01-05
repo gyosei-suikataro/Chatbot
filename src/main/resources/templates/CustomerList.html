@@ -46,6 +46,7 @@
 		/*<![CDATA[*/
 
 		var rowIds = [];
+			rowIds = document.getElementById('resultcheck');
 		
 		$(function() {
 			$("#grid-basic").bootgrid({
@@ -57,9 +58,6 @@
 				for (var i = 0; i < rows.length; i++) {
 					rowIds.push(rows[i].no);
 				}
-				for (var i = 0; i < rowIds.length; i ++) {
-					document.getElementById('resultcheck').value = rowIds[i] + ",";
-				}
 			}).on("deselected.rs.jquery.bootgrid", function(e, rows) {
 				for (var i = 0; i < rows.length; i++) {
 					rowIds.some(function(v, ii) {
@@ -70,7 +68,10 @@
 			});
 		});
 		
-		
+		/*for (var i = 0; i < rowIds.length; i ++) {
+		document.getElementById('resultcheck').value = rowIds[i] + ",";
+	}
+	*/
 		
 
 		/*]]>*/

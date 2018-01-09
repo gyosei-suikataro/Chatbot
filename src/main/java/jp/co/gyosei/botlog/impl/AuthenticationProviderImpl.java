@@ -14,7 +14,8 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 
 import jp.co.gyosei.botlog.LoginCust;
-//import jp.co.gyosei.botlog.domain.entity.CustinfoEntityImnpls;
+import jp.co.gyosei.botlog.impl.CustinfoEntityImpl;
+import jp.co.gyosei.botlog.domain.entity.CustinfoEntity;
 import jp.co.gyosei.botlog.domain.repository.CustinfoRepositoryCustom;
 
 @Component
@@ -32,14 +33,14 @@ public class AuthenticationProviderImpl implements AuthenticationProvider {
 		Collection<? extends GrantedAuthority> role = auth.getAuthorities();
 
 		if ("".equals(custid) || "".equals(password)) {
-			// —áŠO‚ÍSpringSecurity‚É‚ ‚Á‚½‚à‚Ì‚ğ“K“–‚Ég—p
-			throw new AuthenticationCredentialsNotFoundException("ƒƒOƒCƒ“î•ñ‚É•s”õ‚ª‚ ‚è‚Ü‚·B");
+			// ä¾‹å¤–ã¯SpringSecurityã«ã‚ã£ãŸã‚‚ã®ã‚’é©å½“ã«ä½¿ç”¨
+			throw new AuthenticationCredentialsNotFoundException("ãƒ­ã‚°ã‚¤ãƒ³æƒ…å ±ã«ä¸å‚™ãŒã‚ã‚Šã¾ã™ã€‚");
 		}
 
 		CustinfoEntity cust = CustinfoRepositoryCustom.custinfoRepositoryCustom(custid, password, role);
 		if (cust == null) {
-			// —áŠO‚ÍSpringSecurity‚É‚ ‚Á‚½‚à‚Ì‚ğ“K“–‚Ég—p
-			throw new AuthenticationCredentialsNotFoundException("ƒƒOƒCƒ“î•ñ‚ª‘¶İ‚µ‚Ü‚¹‚ñB");
+			// ä¾‹å¤–ã¯SpringSecurityã«ã‚ã£ãŸã‚‚ã®ã‚’é©å½“ã«ä½¿ç”¨
+			throw new AuthenticationCredentialsNotFoundException("ãƒ­ã‚°ã‚¤ãƒ³æƒ…å ±ãŒå­˜åœ¨ã—ã¾ã›ã‚“ã€‚");
 		}
 
 		return new UsernamePasswordAuthenticationToken(new LoginCust(cust), password, auth.getAuthorities());

@@ -5,8 +5,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-//import jp.co.gyosei.botlog.LoginCust;
-import jp.co.gyosei.botlog.LoginUserDetails;
+import jp.co.gyosei.botlog.LoginCust;
+//import jp.co.gyosei.botlog.LoginUserDetails;
 import jp.co.gyosei.botlog.domain.form.LoginForm;
 
 @Controller
@@ -35,7 +35,7 @@ public class LoginController {
     public class MenuController {
 
         @RequestMapping(value = "/menu")
-        public String memu(@AuthenticationPrincipal LoginUserDetails loginCust, Model model) {
+        public String memu(@AuthenticationPrincipal LoginCust loginCust, Model model) {
             // @AuthenticationPrincipalを使うと認証オブジェクトを参照できる。
 
             return "menu";

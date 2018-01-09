@@ -1,3 +1,4 @@
+/*
 package jp.co.gyosei.botlog;
 
 import java.util.ArrayList;
@@ -30,3 +31,4 @@ public class LoginUserDetails extends User {
 		return customer;
 	}
 }
+*/

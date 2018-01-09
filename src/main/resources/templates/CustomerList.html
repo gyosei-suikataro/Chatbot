@@ -37,9 +37,9 @@
 
 	
 	
-	<form th:action="@{/CustomerList}" th:object="${customerListForm}" method="post">
+	<form  id = "deletetest" th:action="@{/CustomerList}" th:object="${customerListForm}" method="post">
 		<input type = "hidden" id ='resultcheck' name ="rowIds" th:value="${rowIds}" />
-		<input type="submit" id = "deletetest" value = "選択行を削除"/> 
+		
 	</form>
 
 	<form>
@@ -75,11 +75,13 @@
 		$(document).ready(function(){
 		    $('#test').on('click',function(e){
 		    	document.getElementById('resultcheck').value = rowIds;
-		    	document.getElementById('deletetest').click();
+		    	document.getElementById('deletetest').submit();
 		    });
 		});
 		
 
+		//<input type="submit" id = "deletetest" value = "選択行を削除"/> 
+		
 		/*]]>*/
 	</script>
 </body>

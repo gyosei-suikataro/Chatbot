@@ -33,10 +33,10 @@ public class LoginUserDetails extends User {
 	public String password;
 
 	// ’Ç‰Á‚·‚é
-	public String role;
+	public Collection<? extends GrantedAuthority> role;
 	
     public LoginUserDetails(CustinfoEntityImpl cust) {
-    	super(cust.custid, cust.role, true, true, true, true, new ArrayList<GrantedAuthority>());
+    	super(cust.custid, cust.password, true, true, true, true, new ArrayList<GrantedAuthority>());
         custid = cust.custid;
         password = cust.password;
         role = cust.role;

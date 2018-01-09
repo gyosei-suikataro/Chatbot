@@ -32,14 +32,14 @@ public class AuthenticationProviderImpl implements AuthenticationProvider {
 		String role = auth.toString();
 
 		if ("".equals(custid) || "".equals(password)) {
-			// ä¾‹å¤–ã¯SpringSecurityã«ã‚ã£ãŸã‚‚ã®ã‚’é©å½“ã«ä½¿ç”¨
-			throw new AuthenticationCredentialsNotFoundException("ãƒ­ã‚°ã‚¤ãƒ³æƒ…å ±ã«ä¸å‚™ãŒã‚ã‚Šã¾ã™ã€‚");
+			// —áŠO‚ÍSpringSecurity‚É‚ ‚Á‚½‚à‚Ì‚ğ“K“–‚Ég—p
+			throw new AuthenticationCredentialsNotFoundException("ƒƒOƒCƒ“î•ñ‚É•s”õ‚ª‚ ‚è‚Ü‚·B");
 		}
 
 		CustinfoEntity cust = CustinfoRepositoryCustom.custinfoRepositoryCustom(custid, password, role);
 		if (cust == null) {
-			// ä¾‹å¤–ã¯SpringSecurityã«ã‚ã£ãŸã‚‚ã®ã‚’é©å½“ã«ä½¿ç”¨
-			throw new AuthenticationCredentialsNotFoundException("ãƒ­ã‚°ã‚¤ãƒ³æƒ…å ±ãŒå­˜åœ¨ã—ã¾ã›ã‚“ã€‚");
+			// —áŠO‚ÍSpringSecurity‚É‚ ‚Á‚½‚à‚Ì‚ğ“K“–‚Ég—p
+			throw new AuthenticationCredentialsNotFoundException("ƒƒOƒCƒ“î•ñ‚ª‘¶İ‚µ‚Ü‚¹‚ñB");
 		}
 
 		return new UsernamePasswordAuthenticationToken(new LoginCust(cust), password, auth.getAuthorities());

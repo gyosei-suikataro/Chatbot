@@ -1,4 +1,3 @@
-/*
 package jp.co.gyosei.botlog;
 
 import java.util.Collection;
@@ -24,10 +23,6 @@ public class LoginUserDetails implements UserDetails {
     }
 
 	public LoginUserDetails(CustinfoEntityImpl cust) {
-		// TODO 自動生成されたコンストラクター・スタブ
-	}
-
-	public LoginUserDetails(LoginCust role, Collection<GrantedAuthority> authorities) {
 		// TODO 自動生成されたコンストラクター・スタブ
 	}
 
@@ -73,4 +68,3 @@ public class LoginUserDetails implements UserDetails {
 		return false;
 	}
 }
-*/

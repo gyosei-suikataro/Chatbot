@@ -11,7 +11,7 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.stereotype.Component;
 
-import jp.co.gyosei.botlog.LoginCust;
+import jp.co.gyosei.botlog.LoginUserDetails;
 import jp.co.gyosei.botlog.impl.CustinfoEntityImpl;
 import jp.co.gyosei.botlog.domain.repository.CustinfoRepositoryCustom;
 
@@ -40,7 +40,7 @@ public class AuthenticationProviderImpl implements AuthenticationProvider {
 			throw new AuthenticationCredentialsNotFoundException("ログイン情報が存在しません。");
 		}
 
-		return new UsernamePasswordAuthenticationToken(new LoginCust(cust), password, auth.getAuthorities());
+		return new UsernamePasswordAuthenticationToken(new LoginUserDetails(cust), password, auth.getAuthorities());
 	}
 
 	@Override

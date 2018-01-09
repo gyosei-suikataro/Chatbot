@@ -1,8 +1,7 @@
+/*
 package jp.co.gyosei.botlog;
 
 import java.util.ArrayList;
-import java.util.Collection;
-
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
@@ -10,8 +9,6 @@ import lombok.ToString;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 
-import jp.co.gyosei.botlog.domain.entity.CustinfoEntity;
-//import jp.co.gyosei.botlog.domain.entity.CustinfoEntity;
 import jp.co.gyosei.botlog.impl.CustinfoEntityImpl;
 
 @Data
@@ -37,3 +34,4 @@ public class LoginCust extends User {
         role = cust.role;
     }
 }
+*/

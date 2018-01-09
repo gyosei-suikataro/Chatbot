@@ -1,65 +1,45 @@
 package jp.co.gyosei.botlog;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
+
 import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.User;
 
 import jp.co.gyosei.botlog.impl.CustinfoEntityImpl;
 
-public class LoginUserDetails implements UserDetails {
+@Data
+@EqualsAndHashCode(callSuper = true)
+@ToString(callSuper = true)
+public class LoginUserDetails extends User {
+
+	public LoginUserDetails(String custid, String password, boolean enabled, boolean accountNonExpired,
+			boolean credentialsNonExpired, boolean accountNonLocked,
+			Collection<? extends GrantedAuthority> role) {
+		super(custid, password, enabled, accountNonExpired, credentialsNonExpired, accountNonLocked, role);
+		// TODO 自動生成されたコンストラクター・スタブ
+	}
 
 	private static final long serialVersionUID = 1L;
-	
-	private String custid;
-    private String password;
-    private Collection<GrantedAuthority> role;
 
-    public LoginUserDetails(String custid, String password, Collection<GrantedAuthority> role) {
-        super();
-        this.custid = custid;
-        this.password = password;
-        this.role = role;
+	// 追加する（テーブルでユーザーのキーとなる値を設定する）
+	public String custid;
+
+	// 追加する
+	public String password;
+
+	// 追加する
+	public String role;
+	/*
+    public LoginUserDetails(CustinfoEntityImpl cust) {
+    	super(cust.custid, cust.role, true, true, true, true, new ArrayList<GrantedAuthority>());
+        custid = cust.custid;
+        password = cust.password;
+        role = cust.role;
     }
-
-	public LoginUserDetails(CustinfoEntityImpl cust) {
-	}
-
-	public LoginUserDetails(LoginUserDetails role, Collection<GrantedAuthority> authorities) {
-	}
-
-	@Override
-	public Collection<? extends GrantedAuthority> getAuthorities() {
-		return null;
-	}
-
-	@Override
-	public String getPassword() {
-		return null;
-	}
-
-	@Override
-	public String getUsername() {
-		return null;
-	}
-
-	@Override
-	public boolean isAccountNonExpired() {
-		return false;
-	}
-
-	@Override
-	public boolean isAccountNonLocked() {
-		return false;
-	}
-
-	@Override
-	public boolean isCredentialsNonExpired() {
-		return false;
-	}
-
-	@Override
-	public boolean isEnabled() {
-		return false;
-	}
+	 */
 }

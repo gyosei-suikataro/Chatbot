@@ -27,7 +27,8 @@ public class AuthenticationProviderImpl implements AuthenticationProvider {
 
 		String custid = auth.getName();
 		String password = auth.getCredentials().toString();
-		Collection<? extends GrantedAuthority> role = auth.getAuthorities();
+		@SuppressWarnings("unchecked")
+		Collection<GrantedAuthority> role = (Collection<GrantedAuthority>) auth.getAuthorities();
 
 		if ("".equals(custid) || "".equals(password)) {
 			// 例外はSpringSecurityにあったものを適当に使用

@@ -37,7 +37,7 @@
 
 
 	
-	<form type = "post" th:action="@{/CustomerList}" th:object="${customerListForm}" >
+	<form th:action="@{/CustomerList}" th:object="${customerListForm}" method="post">
 		<input id ='resultcheck' name ="rowIds" th:value="${rowIds}" />
 		<input type="submit" value="選択行を削除" /> 
 	</form>

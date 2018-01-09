@@ -37,7 +37,7 @@
 
 
 	
-	<form th:action="@{/CustomerList}" th:object="${customerListForm}" method="post">
+	<form type = "post" th:action="@{/CustomerList}" th:object="${customerListForm}" >
 		<input id ='resultcheck' name ="rowIds" th:value="${rowIds}" />
 		<input type="submit" value="選択行を削除" /> 
 	</form>
@@ -57,7 +57,7 @@
 			}).on("selected.rs.jquery.bootgrid", function(e, rows) {
 				for (var i = 0; i < rows.length; i++) {
 					rowIds.push(rows[i].no);
-					document.getElementsByName("rowIds").value = rowIds[i];
+					
 				}
 			}).on("deselected.rs.jquery.bootgrid", function(e, rows) {
 				for (var i = 0; i < rows.length; i++) {
@@ -71,7 +71,7 @@
 		
 		/*
 		$(document).ready(function () {
-			for (var i = 0; i < rowIds.length; i ++) {
+			for (var i = 0; i < rowIds.length; i ++) { method="post"
 				document.getElementById('resultcheck').value = rowIds[i];
 			}
 		});

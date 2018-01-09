@@ -13,21 +13,21 @@ import jp.co.gyosei.botlog.domain.repository.CustinfoRepository;
 
 @Service
 public class CustinfoService {
-	
+
 	@Autowired
 	private CustinfoRepository custinfoRepository;	
-	
+
 	private BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-	
+
 	@Transactional
-    public void registerCustomer(Integer no,String custid,String custname,String orgname,String password,String effect,Collection<? extends GrantedAuthority> role) {
+	public void registerCustomer(Integer no,String custid,String custname,String orgname,String password,String effect,String role) {
 		CustinfoEntity custinfoEntity = new CustinfoEntity(no,custid,custname,orgname,passwordEncoder.encode(password),effect,role);
 		custinfoRepository.save(custinfoEntity);
-    }
-
+	}
+/*
 	public void registerCustomer(Integer no, String custid, String custname, String orgname, String password,
 			String effect, String role) {
 		// TODO 自動生成されたメソッド・スタブ
-		
 	}
+*/
 }

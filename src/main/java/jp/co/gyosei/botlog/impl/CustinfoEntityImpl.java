@@ -48,11 +48,11 @@ public class CustinfoEntityImpl implements Serializable {
 	}
 	
 	public static CustinfoEntityImpl custinfoRepositoryCustom(String custid, String password,
-			Collection<? extends GrantedAuthority> role) {
+			String role) {
 		return null;
 	}
 
-	public Collection<? extends GrantedAuthority> getRole() {
+	public String getRole() {
 		// TODO 自動生成されたメソッド・スタブ
 		return null;
 	}

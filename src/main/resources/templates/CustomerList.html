@@ -36,12 +36,12 @@
 	</table>
 
 	<form>
-	<input type="button" value="削除" onclick = "delete()" />
+	<input type="button"  id ="test" value="削除" />
 	</form>
 	
 	<form th:action="@{/CustomerList}" th:object="${customerListForm}" method="post">
 		<input id ='resultcheck' name ="rowIds" th:value="${rowIds}" />
-		<input type="submit" id = "test" /> 
+		<input type="submit"/> 
 	</form>
 
 	<script type="text/javascript" th:inline="javascript">
@@ -71,8 +71,16 @@
 			});
 		});
 		
+		$(document).ready(function(){
+		    $('#test').on('click',function(e){
+		        
+		    });
+		});
 		
+		/*
 		function delete(){
+			
+			onclick = "delete()"
 			
 			for (var i = 0; i < rowIds.length; i ++) { 
 				document.getElementById('resultcheck').value = rowIds[i];
@@ -81,7 +89,7 @@
 			//document.getElementById('resultcheck').value = rowIds[];
 			//document.getElementById('deletesubmit').click();
 		}
-		
+		*/
 		
 
 		/*]]>*/

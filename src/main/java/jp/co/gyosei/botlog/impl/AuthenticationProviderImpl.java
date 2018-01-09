@@ -14,7 +14,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 
 import jp.co.gyosei.botlog.LoginCust;
-import jp.co.gyosei.botlog.domain.entity.CustinfoEntity;
+//import jp.co.gyosei.botlog.domain.entity.CustinfoEntityImnpls;
 import jp.co.gyosei.botlog.domain.repository.CustinfoRepositoryCustom;
 
 @Component

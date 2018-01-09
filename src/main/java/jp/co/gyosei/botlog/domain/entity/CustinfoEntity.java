@@ -28,12 +28,12 @@ public class CustinfoEntity implements Serializable {
 	@Column
 	private String effect;
 	@Column
-	public String role;
+	public Collection<? extends GrantedAuthority> role;
 
 	public CustinfoEntity() {
 	}
 
-	public CustinfoEntity(Integer no,String custid,String custname,String orgname,String password,String effect,String role) {
+	public CustinfoEntity(Integer no,String custid,String custname,String orgname,String password,String effect,Collection<? extends GrantedAuthority> role) {
 		this.no = no; 
 		this.custid = custid;
 		this.custname = custname;
@@ -90,11 +90,11 @@ public class CustinfoEntity implements Serializable {
 		this.effect = effect;
 	}
 
-	public String getRole() {
+	public Collection<? extends GrantedAuthority> getRole() {
 		return this.role;
 	}
 
-	public void setRole(String role) {
+	public void setRole(Collection<? extends GrantedAuthority> role) {
 		this.role = role;
 	}
 

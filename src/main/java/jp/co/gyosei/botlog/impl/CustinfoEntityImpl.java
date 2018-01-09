@@ -1,7 +1,6 @@
 package jp.co.gyosei.botlog.impl;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.Collection;
 
 import javax.persistence.*;
@@ -20,12 +19,12 @@ public class CustinfoEntityImpl implements Serializable {
 	@Column
 	public String password;
 	@Column
-	public String role;
+	public Collection<? extends GrantedAuthority> role;
 
 	public CustinfoEntityImpl() {
 	}
 
-	public CustinfoEntityImpl(String custid, String password, String role) {
+	public CustinfoEntityImpl(String custid, String password, Collection<? extends GrantedAuthority> role) {
  
 		this.custid = custid;
 		this.password = password;

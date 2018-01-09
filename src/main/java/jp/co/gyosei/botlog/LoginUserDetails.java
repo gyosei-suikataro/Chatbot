@@ -12,7 +12,7 @@ public class LoginUserDetails implements UserDetails {
 	private static final long serialVersionUID = 1L;
 	
 	private String custid;
-	private String password;
+    private String password;
     private Collection<GrantedAuthority> role;
 
     public LoginUserDetails(String custid, String password, Collection<GrantedAuthority> role) {
@@ -23,48 +23,43 @@ public class LoginUserDetails implements UserDetails {
     }
 
 	public LoginUserDetails(CustinfoEntityImpl cust) {
-		// TODO 自動生成されたコンストラクター・スタブ
+	}
+
+	public LoginUserDetails(LoginUserDetails role, Collection<GrantedAuthority> authorities) {
 	}
 
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
-		// TODO 自動生成されたメソッド・スタブ
 		return null;
 	}
 
 	@Override
 	public String getPassword() {
-		// TODO 自動生成されたメソッド・スタブ
 		return null;
 	}
 
 	@Override
 	public String getUsername() {
-		// TODO 自動生成されたメソッド・スタブ
 		return null;
 	}
 
 	@Override
 	public boolean isAccountNonExpired() {
-		// TODO 自動生成されたメソッド・スタブ
 		return false;
 	}
 
 	@Override
 	public boolean isAccountNonLocked() {
-		// TODO 自動生成されたメソッド・スタブ
 		return false;
 	}
 
 	@Override
 	public boolean isCredentialsNonExpired() {
-		// TODO 自動生成されたメソッド・スタブ
 		return false;
 	}
 
 	@Override
 	public boolean isEnabled() {
-		// TODO 自動生成されたメソッド・スタブ
 		return false;
 	}
 }

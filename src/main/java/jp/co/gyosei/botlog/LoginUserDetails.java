@@ -1,24 +1,28 @@
 package jp.co.gyosei.botlog;
 
-import java.util.Collections;
-import java.util.List;
+import java.util.ArrayList;
+import java.util.Collection;
 
-import org.apache.tomcat.jni.User;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
+
 import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.User;
 
 import jp.co.gyosei.botlog.impl.CustinfoEntityImpl;
 
-public class LoginUserDetails extends User { // (1)
-	// omitted
+@Data
+@EqualsAndHashCode(callSuper = true)
+@ToString(callSuper = true)
+public class LoginUserDetails extends User {
 
+	private static final long serialVersionUID = 1L;
 	private final CustinfoEntityImpl customer; // (2)
-	/*
-    private static final List<? extends GrantedAuthority> DEFAULT_AUTHORITIES = Collections
-            .singletonList(new SimpleGrantedAuthority("ROLE_USER"));         // (3)
-	 */
+
 	public LoginUserDetails(CustinfoEntityImpl customer) {
-		super(); // (4)
+		super(customer.getCustid(),
+				customer.getPassword(), true, true, true, true, customer.role); 
 		this.customer = customer;
 	}
 

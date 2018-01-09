@@ -71,10 +71,8 @@
 		});
 		
 		$(document).ready(function(){
-		    $('#test').on('click',function(e){
-		    	for (var i = 0; i < rowIds.length; i ++) { 
-					document.getElementById('resultcheck').value = rowIds[i];
-				}
+		    $('#test').on('click',function(e){ 
+					document.getElementById('resultcheck').value = rowIds[0];
 		    });
 		});
 		

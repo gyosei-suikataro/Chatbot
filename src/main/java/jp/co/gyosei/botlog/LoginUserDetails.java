@@ -34,12 +34,12 @@ public class LoginUserDetails extends User {
 
 	// ’Ç‰Á‚·‚é
 	public String role;
-	/*
+	
     public LoginUserDetails(CustinfoEntityImpl cust) {
     	super(cust.custid, cust.role, true, true, true, true, new ArrayList<GrantedAuthority>());
         custid = cust.custid;
         password = cust.password;
         role = cust.role;
     }
-	 */
+	
 }

@@ -34,7 +34,7 @@ public class LoginCust extends User {
     	super(cust.custid, cust.password, true, true, true, true, new ArrayList<GrantedAuthority>());
         custid = cust.custid;
         password = cust.password;
-        //role = cust.role;
-        role = "ADMIN";
+        role = cust.role;
+        //role = "ADMIN";
     }
 }

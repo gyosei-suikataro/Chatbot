@@ -35,7 +35,7 @@ public class LoginController {
     public class MenuController {
 
         @RequestMapping(value = "/menu")
-        public String memu(@AuthenticationPrincipal LoginCust loginCust, Model model) {
+        public String memu(@AuthenticationPrincipal LoginCust cust, Model model) {
             // @AuthenticationPrincipalを使うと認証オブジェクトを参照できる。
 
             return "menu";

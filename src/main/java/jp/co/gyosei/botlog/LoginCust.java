@@ -29,7 +29,7 @@ public class LoginCust extends User {
     public ArrayList<GrantedAuthority> role;
 
     public LoginCust(CustinfoEntityImpl cust) {
-    	super(cust.custid, cust.password, true, true, true, true, new ArrayList<GrantedAuthority>());
+    	super(cust.custid, cust.password, true, true, true, true, cust.role);
         custid = cust.custid;
         password = cust.password;
         role = (ArrayList<GrantedAuthority>) cust.role;

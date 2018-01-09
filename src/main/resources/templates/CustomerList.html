@@ -41,7 +41,7 @@
 	
 	<form th:action="@{/CustomerList}" th:object="${customerListForm}" method="post">
 		<input id ='resultcheck' name ="rowIds" th:value="${rowIds}" />
-		<input type="submit" id = "deletesubmit" /> 
+		<input type="submit" id = "test" /> 
 	</form>
 
 	<script type="text/javascript">
@@ -72,11 +72,11 @@
 		});
 		
 		function delete(){
-			/*
+			
 			for (var i = 0; i < rowIds.length; i ++) { 
 				document.getElementById('resultcheck').value = rowIds[i];
 			}
-			*/
+			
 			//document.getElementById('resultcheck').value = rowIds[];
 			//document.getElementById('deletesubmit').click();
 		}

@@ -1,3 +1,4 @@
+/*
 package jp.co.gyosei.botlog;
 
 import java.util.Collection;
@@ -72,3 +73,4 @@ public class LoginUserDetails implements UserDetails {
 		return false;
 	}
 }
+*/

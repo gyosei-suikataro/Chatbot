@@ -19,12 +19,12 @@ public class CustinfoEntityImpl implements Serializable {
 	@Column
 	public String password;
 	@Column
-	public Collection<GrantedAuthority> role;
+	public String role;
 
 	public CustinfoEntityImpl() {
 	}
 
-	public CustinfoEntityImpl(String custid, String password, Collection<GrantedAuthority> role) {
+	public CustinfoEntityImpl(String custid, String password, String role) {
  
 		this.custid = custid;
 		this.password = password;
@@ -48,7 +48,7 @@ public class CustinfoEntityImpl implements Serializable {
 	}
 	
 	public static CustinfoEntityImpl custinfoRepositoryCustom(String custid, String password,
-			String role) {
+			Collection<? extends GrantedAuthority> role) {
 		return null;
 	}
 

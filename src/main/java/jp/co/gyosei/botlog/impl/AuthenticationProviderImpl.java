@@ -41,7 +41,7 @@ public class AuthenticationProviderImpl implements AuthenticationProvider {
 			throw new AuthenticationCredentialsNotFoundException("ログイン情報が存在しません。");
 		}
 
-		return new UsernamePasswordAuthenticationToken(new LoginCust(cust), password, role);
+		return new UsernamePasswordAuthenticationToken(new LoginCust(cust), password);
 	}
 
 	@Override

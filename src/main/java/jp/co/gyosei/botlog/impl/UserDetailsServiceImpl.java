@@ -6,8 +6,8 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Component;
 
-import jp.co.gyosei.botlog.LoginUserDetails;
-//import jp.co.gyosei.botlog.LoginCust;
+//import jp.co.gyosei.botlog.LoginUserDetails;
+import jp.co.gyosei.botlog.LoginCust;
 import jp.co.gyosei.botlog.domain.repository.CustinfoRepositoryCustom;
 
 @Component
@@ -25,6 +25,6 @@ public class UserDetailsServiceImpl implements UserDetailsService {
             throw new UsernameNotFoundException("ユーザーが見つかりませんでした。");
         }
 
-        return (UserDetails) new LoginUserDetails(cust);
+        return (UserDetails) new LoginCust(cust);
     }
 }

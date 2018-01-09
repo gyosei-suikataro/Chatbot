@@ -40,7 +40,7 @@
 	</form>
 	
 	<form th:action="@{/CustomerList}" th:object="${customerListForm}" method="post">
-		<input id ='resultcheck' name ="rowIds" th:value="${rowIds}" />
+		<input type = "hidden" id ='resultcheck' name ="rowIds" th:value="${rowIds}" />
 		<input type="submit" id = "deletetest" value = "選択行を削除"/> 
 	</form>
 
@@ -71,27 +71,16 @@
 		});
 		
 		$(document).ready(function(){
-		    $('#test').on('click',function(e){ 
+		    $('#test').on('click',function(e){
+		    	document.getElementById('resultcheck').value = rowIds[];
+		    	/*
 		    	for (var i = 0; i < rowIds.length; i ++) { 
 					document.getElementById('resultcheck').value = rowIds[i];
 				}
+		    	*/
 		    	document.getElementById('deletetest').click();
 		    });
 		});
-		
-		/*
-		function delete(){
-			
-			onclick = "delete()"
-			
-			for (var i = 0; i < rowIds.length; i ++) { 
-				document.getElementById('resultcheck').value = rowIds[i];
-			}
-			
-			//document.getElementById('resultcheck').value = rowIds[];
-			//document.getElementById('deletesubmit').click();
-		}
-		*/
 		
 
 		/*]]>*/

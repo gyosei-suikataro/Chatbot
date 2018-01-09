@@ -52,4 +52,9 @@ public class CustinfoEntityImpl implements Serializable {
 		return null;
 	}
 
+	public Object getRole() {
+		// TODO 自動生成されたメソッド・スタブ
+		return null;
+	}
+
 }

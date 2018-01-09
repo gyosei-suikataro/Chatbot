@@ -1,37 +1,27 @@
 /*
 package jp.co.gyosei.botlog;
 
-import java.util.ArrayList;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.ToString;
+import java.util.Collections;
+import java.util.List;
 
+import org.apache.tomcat.jni.User;
 import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 
 import jp.co.gyosei.botlog.impl.CustinfoEntityImpl;
 
-@Data
-@EqualsAndHashCode(callSuper = true)
-@ToString(callSuper = true)
-public class LoginCust extends User {
+public class LoginCust extends User { // (1)
+	// omitted
 
-    private static final long serialVersionUID = 1L;
+	private final CustinfoEntityImpl customer; // (2)
 
-    // 追加する（テーブルでユーザーのキーとなる値を設定する）
-    public String custid;
+	public LoginCust(CustinfoEntityImpl customer) {
+		super(); // (4)
+		this.customer = customer;
+	}
 
-    // 追加する
-    public String password;
-
-    // 追加する
-    public String role;
-
-    public LoginCust(CustinfoEntityImpl cust) {
-    	super(cust.custid, cust.role, true, true, true, true, new ArrayList<GrantedAuthority>());
-        custid = cust.custid;
-        password = cust.password;
-        role = cust.role;
-    }
+	public CustinfoEntityImpl getCustomer() { // (5)
+		return customer;
+	}
 }
 */

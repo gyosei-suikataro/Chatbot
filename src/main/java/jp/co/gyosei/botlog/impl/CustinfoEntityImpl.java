@@ -48,7 +48,7 @@ public class CustinfoEntityImpl implements Serializable {
 	}
 	
 	public static CustinfoEntityImpl custinfoRepositoryCustom(String custid, String password,
-			String role) {
+			Collection<? extends GrantedAuthority> role) {
 		return null;
 	}
 

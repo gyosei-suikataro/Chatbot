@@ -11,6 +11,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 
 import jp.co.gyosei.botlog.domain.entity.CustinfoEntity;
+//import jp.co.gyosei.botlog.domain.entity.CustinfoEntity;
 import jp.co.gyosei.botlog.impl.CustinfoEntityImpl;
 
 @Data
@@ -33,7 +34,7 @@ public class LoginCust extends User {
     	super(cust.custid, cust.password, true, true, true, true, new ArrayList<GrantedAuthority>());
         custid = cust.custid;
         password = cust.password;
-        //role = cust.role;
-        role = "ADMIN";
+        role = cust.role;
+        //role = "ADMIN";
     }
 }

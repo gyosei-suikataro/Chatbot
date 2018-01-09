@@ -11,7 +11,7 @@ import jp.co.gyosei.botlog.impl.CustinfoEntityImpl;
 @Repository
 public interface CustinfoRepositoryCustom extends JpaRepository<CustinfoEntityImpl, String>{
 
-	static CustinfoEntityImpl custinfoRepositoryCustom(String custid, String password, String role) {
+	static CustinfoEntityImpl custinfoRepositoryCustom(String custid, String password) {
 		// TODO 自動生成されたメソッド・スタブ
 		return null;
 	}

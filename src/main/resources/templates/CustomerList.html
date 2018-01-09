@@ -35,7 +35,9 @@
 		</tbody>
 	</table>
 
+	<form>
 	<input type="button" value="削除" onclick = "delete()" />
+	</form>
 	
 	<form th:action="@{/CustomerList}" th:object="${customerListForm}" method="post">
 		<input id ='resultcheck' name ="rowIds" th:value="${rowIds}" />
@@ -75,7 +77,7 @@
 				document.getElementById('resultcheck').value = rowIds[i];
 			}
 			*/
-			document.getElementById('resultcheck').value = rowIds[];
+			//document.getElementById('resultcheck').value = rowIds[];
 			//document.getElementById('deletesubmit').click();
 		}
 		

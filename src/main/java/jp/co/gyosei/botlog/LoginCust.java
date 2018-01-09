@@ -11,7 +11,6 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 
 import jp.co.gyosei.botlog.domain.entity.CustinfoEntity;
-//import jp.co.gyosei.botlog.domain.entity.CustinfoEntity;
 import jp.co.gyosei.botlog.impl.CustinfoEntityImpl;
 
 @Data

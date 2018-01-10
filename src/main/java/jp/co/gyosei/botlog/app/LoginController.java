@@ -11,12 +11,6 @@ import jp.co.gyosei.botlog.domain.form.LoginForm;
 
 @Controller
 public class LoginController {
-/*
-	@RequestMapping("/")
-	String Login() {
-		return "Login";
-	}
-*/	
 	
 	@RequestMapping(value = "/")
 	public String Login(Model model) {

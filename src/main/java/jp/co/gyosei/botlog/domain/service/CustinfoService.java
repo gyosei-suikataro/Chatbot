@@ -26,7 +26,7 @@ public class CustinfoService {
 	}
 
 	public void registerCustomer(Integer no, String custid, String custname, String orgname, String password,
-			String effect, String string) {
+			String effect, String role) {
 		// TODO 自動生成されたメソッド・スタブ
 		
 	}

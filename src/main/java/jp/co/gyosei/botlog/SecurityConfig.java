@@ -14,18 +14,21 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 import jp.co.gyosei.botlog.impl.UserDetailsServiceImpl;
 import jp.co.gyosei.botlog.domain.service.CustinfoService;
-import jp.co.gyosei.botlog.impl.AuthenticationProviderImpl;
+//import jp.co.gyosei.botlog.impl.AuthenticationProviderImpl;
 import jp.co.gyosei.botlog.LoginUserDetails;
 
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
+    @Autowired
+    private DataSource dataSource;
+	
 	@Autowired
 	private UserDetailsServiceImpl userDetailsService;
-
+	/*
 	@Autowired
 	private AuthenticationProviderImpl authenticationProvider;
-
+	 */
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http
@@ -56,9 +59,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Autowired
 	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-		//ì∆é©ÇÃîFèÿÇ™é¿ëïÇ≥ÇÍÇƒÇ¢ÇÈ
 		auth
-		.authenticationProvider(authenticationProvider)
+		//.authenticationProvider(authenticationProvider)
 		.userDetailsService(userDetailsService)
 		.passwordEncoder(new BCryptPasswordEncoder());
 	}

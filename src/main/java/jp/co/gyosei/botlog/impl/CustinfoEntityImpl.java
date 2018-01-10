@@ -51,7 +51,7 @@ public class CustinfoEntityImpl implements Serializable {
 		return role;
 	}
 
-	public void setRole(Collection<GrantedAuthority> role) {
+	public void setRole(Collection<? extends GrantedAuthority> role) {
 		this.role = role;
 	}
 	

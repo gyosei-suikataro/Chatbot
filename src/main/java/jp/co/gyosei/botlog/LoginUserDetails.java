@@ -37,9 +37,7 @@ public class LoginUserDetails implements UserDetails {
     * @return
     */
     public static UserDetails create(CustinfoEntityImpl entity) {
-        List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
-
-        return new LoginUserDetails(entity.getUsername(), entity.getPassword(), authorities);
+        return new LoginUserDetails(entity.getUsername(), entity.getPassword(), entity.getAuthorities());
     }
 
 	public Collection<? extends GrantedAuthority> getAuthorities() {

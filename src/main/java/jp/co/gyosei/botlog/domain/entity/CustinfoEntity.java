@@ -17,21 +17,19 @@ public class CustinfoEntity implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer no;
+	
 	@Column
 	public String custid;
-	@Column
-	private String custname;
-	@Column
-	private String orgname;
-	@Column
-	public String password;
-	@Column
-	private String effect;
-	@Column
-	public Collection<? extends GrantedAuthority> role;
 
-	public CustinfoEntity() {
-	}
+	private String custname;
+
+	private String orgname;
+
+	public String password;
+
+	private String effect;
+
+	public Collection<? extends GrantedAuthority> role;
 
 	public CustinfoEntity(Integer no,String custid,String custname,String orgname,String password,String effect,Collection<? extends GrantedAuthority> role) {
 		this.no = no; 

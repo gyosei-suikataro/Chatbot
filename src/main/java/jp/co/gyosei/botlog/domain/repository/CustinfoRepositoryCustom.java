@@ -17,4 +17,5 @@ public interface CustinfoRepositoryCustom extends JpaRepository<CustinfoEntityIm
 		// TODO 自動生成されたメソッド・スタブ
 		return null;
 	}
+	
 }

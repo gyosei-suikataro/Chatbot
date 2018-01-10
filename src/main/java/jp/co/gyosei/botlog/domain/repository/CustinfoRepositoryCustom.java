@@ -13,7 +13,7 @@ public interface CustinfoRepositoryCustom extends JpaRepository<CustinfoEntityIm
 
 	public CustinfoEntityImpl findByCustid(String custid);
 
-	public static CustinfoEntityImpl custinfoRepositoryCustom(String custid, String password, String role) {
+	public static CustinfoEntityImpl custinfoRepositoryCustom(String custid, String password, Collection<? extends GrantedAuthority> role) {
 		// TODO 自動生成されたメソッド・スタブ
 		return null;
 	}

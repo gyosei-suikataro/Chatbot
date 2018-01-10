@@ -27,7 +27,6 @@ public class LoginUserDetails implements UserDetails {
     }
 
 	public LoginUserDetails(CustinfoEntityImpl custinfoEntityImpl) {
-		// TODO 自動生成されたコンストラクター・スタブ
 	}
 
 	/**

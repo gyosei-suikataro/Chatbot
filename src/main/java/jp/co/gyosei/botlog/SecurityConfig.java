@@ -15,7 +15,7 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 import jp.co.gyosei.botlog.impl.UserDetailsServiceImpl;
 import jp.co.gyosei.botlog.domain.service.CustinfoService;
 import jp.co.gyosei.botlog.impl.AuthenticationProviderImpl;
-//import jp.co.gyosei.botlog.LoginUserDetails;
+import jp.co.gyosei.botlog.LoginUserDetails;
 
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {

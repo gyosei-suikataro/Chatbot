@@ -25,27 +25,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Autowired
 	private AuthenticationProviderImpl authenticationProvider;
-	/*
-	   @Autowired
-	    private CustinfoService custinfoService;
 
-		@Value("${spring.datasource.url}")
-		private String dbUrl;
-		@Autowired
-		@Qualifier("dataSource")
-		private DataSource dataSource;
-
-		private static final String USER_QUERY = "SELECT custid, password, auth FROM custinfo WHERE custid = ?";
-		private static final String ROLE_QUERY = "SELECT custid, effect FROM custinfo WHERE custid = ?";
-
-		@Override
-		public void configure(AuthenticationManagerBuilder auth) throws Exception {
-			auth.jdbcAuthentication()
-			.dataSource(dataSource)
-			.usersByUsernameQuery(USER_QUERY)
-			.authoritiesByUsernameQuery(ROLE_QUERY);
-		}
-	 */
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http
@@ -82,7 +62,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		.userDetailsService(userDetailsService)
 		.passwordEncoder(new BCryptPasswordEncoder());
 	}
-/*
+	/*
 	public CustinfoService getCustinfoService() {
 		return custinfoService;
 	}
@@ -90,5 +70,5 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	public void setCustinfoService(CustinfoService custinfoService) {
 		this.custinfoService = custinfoService;
 	}
-	*/
+	 */
 }

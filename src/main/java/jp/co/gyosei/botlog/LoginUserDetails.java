@@ -16,10 +16,10 @@ public class LoginUserDetails implements UserDetails {
 	private static final long serialVersionUID = 1L;
 	private String custid;
     private String password;
-    private Collection<GrantedAuthority> role;
+    private Collection<? extends GrantedAuthority> role;
 
     public LoginUserDetails(String custid, String password,
-           Collection<GrantedAuthority> role) {
+           Collection<? extends GrantedAuthority> role) {
         super();
         this.custid = custid;
         this.password = password;

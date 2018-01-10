@@ -38,8 +38,8 @@ public class CustinfoEntityImpl implements Serializable {
 		return this.custid;
 	}
 
-	public void setUsername(String username) {
-		this.custid = username;
+	public void setUsername(String custid) {
+		this.custid = custid;
 	}
 
 	public String getPassword() {
@@ -54,8 +54,8 @@ public class CustinfoEntityImpl implements Serializable {
 		return role;
 	}
 
-	public void setRole(Collection<GrantedAuthority> authorities) {
-		this.role = authorities;
+	public void setRole(Collection<GrantedAuthority> role) {
+		this.role = role;
 	}
 	
     public UserDetails toLoginUserDetails() {

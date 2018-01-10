@@ -20,7 +20,7 @@ public class CustinfoService {
 	private BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
 	@Transactional
-	public void registerCustomer(Integer no,String custid,String custname,String orgname,String password,String effect,Collection<GrantedAuthority> role) {
+	public void registerCustomer(Integer no,String custid,String custname,String orgname,String password,String effect,Collection<? extends GrantedAuthority> role) {
 		CustinfoEntity custinfoEntity = new CustinfoEntity(no,custid,custname,orgname,passwordEncoder.encode(password),effect,role);
 		custinfoRepository.save(custinfoEntity);
 	}

@@ -50,7 +50,7 @@ public class CustinfoEntityImpl implements Serializable {
 		this.password = password;
 	}
 	
-	public Collection<GrantedAuthority> getAuthorities() {
+	public Collection<GrantedAuthority> getRole() {
 		return role;
 	}
 
@@ -61,10 +61,5 @@ public class CustinfoEntityImpl implements Serializable {
     public UserDetails toLoginUserDetails() {
         return LoginUserDetails.create(this);
     }
-
-	public String getUsername() {
-		// TODO 自動生成されたメソッド・スタブ
-		return this.getUsername();
-	}
 
 }

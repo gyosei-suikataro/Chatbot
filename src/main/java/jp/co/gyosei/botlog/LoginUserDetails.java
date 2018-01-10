@@ -1,11 +1,7 @@
 package jp.co.gyosei.botlog;
 
-import java.util.ArrayList;
 import java.util.Collection;
-import java.util.List;
-
 import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import jp.co.gyosei.botlog.impl.CustinfoEntityImpl;
@@ -19,12 +15,12 @@ public class LoginUserDetails implements UserDetails {
     private String password;
     private Collection<GrantedAuthority> role;
 
-    public LoginUserDetails(String username, String password,
-           Collection<GrantedAuthority> authorities) {
+    public LoginUserDetails(String custid, String password,
+           Collection<GrantedAuthority> role) {
         super();
-        this.custid = username;
+        this.custid = custid;
         this.password = password;
-        this.role = authorities;
+        this.role = role;
     }
 
 	public LoginUserDetails(CustinfoEntityImpl custinfoEntityImpl) {
@@ -37,23 +33,16 @@ public class LoginUserDetails implements UserDetails {
     * @return
     */
     public static UserDetails create(CustinfoEntityImpl entity) {
-        return new LoginUserDetails(entity.getUsername(), entity.getPassword(), entity.getAuthorities());
+        return new LoginUserDetails(entity.getCustid(), entity.getPassword(), entity.getRole());
     }
-
-	public Collection<? extends GrantedAuthority> getAuthorities() {
-		// TODO 自動生成されたメソッド・スタブ
-		return this.role;
-	}
 
 	@Override
 	public String getUsername() {
-		// TODO 自動生成されたメソッド・スタブ
 		return this.custid;
 	}
 	
 	@Override
 	public String getPassword() {
-		// TODO 自動生成されたメソッド・スタブ
 		return this.password;
 	}
 
@@ -79,6 +68,11 @@ public class LoginUserDetails implements UserDetails {
 	public boolean isEnabled() {
 		// TODO 自動生成されたメソッド・スタブ
 		return false;
+	}
+
+	@Override
+	public Collection<? extends GrantedAuthority> getAuthorities() {
+		return this.role;
 	}
 
 }

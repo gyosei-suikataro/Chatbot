@@ -6,6 +6,9 @@ import java.util.Collection;
 import javax.persistence.*;
 
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
+import jp.co.gyosei.botlog.LoginUserDetails;
 
 @Entity
 @Table(name="custinfo")
@@ -19,12 +22,12 @@ public class CustinfoEntityImpl implements Serializable {
 	@Column
 	public String password;
 	@Column
-	public String role;
+	public Collection<GrantedAuthority> role;
 
 	public CustinfoEntityImpl() {
 	}
 
-	public CustinfoEntityImpl(String custid, String password, String role) {
+	public CustinfoEntityImpl(String custid, String password, Collection<GrantedAuthority> role) {
  
 		this.custid = custid;
 		this.password = password;
@@ -35,8 +38,8 @@ public class CustinfoEntityImpl implements Serializable {
 		return this.custid;
 	}
 
-	public void setCustid(String custid) {
-		this.custid = custid;
+	public void setUsername(String username) {
+		this.custid = username;
 	}
 
 	public String getPassword() {
@@ -47,14 +50,21 @@ public class CustinfoEntityImpl implements Serializable {
 		this.password = password;
 	}
 	
-	public static CustinfoEntityImpl cust(String custid, String password,
-			String role) {
-		return null;
+	public Collection<GrantedAuthority> getAuthorities() {
+		return role;
 	}
 
-	public String getRole() {
+	public void setRole(Collection<GrantedAuthority> authorities) {
+		this.role = authorities;
+	}
+	
+    public UserDetails toLoginUserDetails() {
+        return LoginUserDetails.create(this);
+    }
+
+	public String getUsername() {
 		// TODO 自動生成されたメソッド・スタブ
-		return null;
+		return this.getUsername();
 	}
 
 }

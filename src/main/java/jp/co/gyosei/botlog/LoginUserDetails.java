@@ -1,34 +1,86 @@
-/*
 package jp.co.gyosei.botlog;
 
 import java.util.ArrayList;
 import java.util.Collection;
-
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.ToString;
+import java.util.List;
 
 import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 
 import jp.co.gyosei.botlog.impl.CustinfoEntityImpl;
 
-@Data
-@EqualsAndHashCode(callSuper = true)
-@ToString(callSuper = true)
-public class LoginUserDetails extends User {
-
+public class LoginUserDetails implements UserDetails {
+    /**
+	 * 
+	 */
 	private static final long serialVersionUID = 1L;
-	private final CustinfoEntityImpl customer; // (2)
+	private String custid;
+    private String password;
+    private Collection<GrantedAuthority> role;
 
-	public LoginUserDetails(CustinfoEntityImpl customer) {
-		super(customer.getCustid(),
-				customer.getPassword(), true, true, true, true, customer.role); 
-		this.customer = customer;
+    public LoginUserDetails(String username, String password,
+           Collection<GrantedAuthority> authorities) {
+        super();
+        this.custid = username;
+        this.password = password;
+        this.role = authorities;
+    }
+
+	public LoginUserDetails(CustinfoEntityImpl custinfoEntityImpl) {
+		// TODO 自動生成されたコンストラクター・スタブ
 	}
 
-	public CustinfoEntityImpl getCustomer() { // (5)
-		return customer;
+	/**
+    * {@link Users}を元にインスタンスを生成します。
+    * @param user 生成元になるユーザ
+    * @return
+    */
+    public static UserDetails create(CustinfoEntityImpl entity) {
+        List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
+
+        return new LoginUserDetails(entity.getUsername(), entity.getPassword(), authorities);
+    }
+
+	public Collection<? extends GrantedAuthority> getAuthorities() {
+		// TODO 自動生成されたメソッド・スタブ
+		return this.role;
 	}
+
+	@Override
+	public String getUsername() {
+		// TODO 自動生成されたメソッド・スタブ
+		return this.custid;
+	}
+	
+	@Override
+	public String getPassword() {
+		// TODO 自動生成されたメソッド・スタブ
+		return this.password;
+	}
+
+	@Override
+	public boolean isAccountNonExpired() {
+		// TODO 自動生成されたメソッド・スタブ
+		return false;
+	}
+
+	@Override
+	public boolean isAccountNonLocked() {
+		// TODO 自動生成されたメソッド・スタブ
+		return false;
+	}
+
+	@Override
+	public boolean isCredentialsNonExpired() {
+		// TODO 自動生成されたメソッド・スタブ
+		return false;
+	}
+
+	@Override
+	public boolean isEnabled() {
+		// TODO 自動生成されたメソッド・スタブ
+		return false;
+	}
+
 }
-*/

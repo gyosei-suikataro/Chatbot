@@ -1,4 +1,3 @@
-/*
 package jp.co.gyosei.botlog.app;
 
 
@@ -52,4 +51,3 @@ public class CustomerListController {
 		return "Customer";
 	}
 }
-*/

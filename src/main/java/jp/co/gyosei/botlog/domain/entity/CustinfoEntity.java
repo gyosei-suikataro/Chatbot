@@ -1,4 +1,3 @@
-/*
 package jp.co.gyosei.botlog.domain.entity;
 
 import java.io.Serializable;
@@ -102,4 +101,3 @@ public class CustinfoEntity implements Serializable {
 		return null;
 	}
 }
-*/

@@ -1,4 +1,3 @@
-/*
 package jp.co.gyosei.botlog.domain.service;
 
 import java.util.Collection;
@@ -32,4 +31,3 @@ public class CustinfoService {
 		
 	}
 }
-*/

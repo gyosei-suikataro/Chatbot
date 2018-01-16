@@ -1,4 +1,4 @@
-/*
+
 package jp.co.gyosei.botlog.domain.repository;
 
 import jp.co.gyosei.botlog.domain.entity.CustinfoEntity;
@@ -9,4 +9,3 @@ import org.springframework.stereotype.Repository;
 public interface CustinfoRepository extends JpaRepository<CustinfoEntity, Integer>{
 
 }
-*/

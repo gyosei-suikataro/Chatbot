@@ -20,15 +20,15 @@ import jp.co.gyosei.botlog.LoginUserDetails;
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
-    @Autowired
-    private DataSource dataSource;
-	
+	@Autowired
+	private DataSource dataSource;
+
 	@Autowired
 	private UserDetailsServiceImpl userDetailsService;
-	
+
 	@Autowired
 	private AuthenticationProviderImpl authenticationProvider;
-	
+
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http
@@ -56,7 +56,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		.invalidateHttpSession(true)
 		.permitAll();
 	}
-
+	/*
 	@Autowired
 	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
 		auth
@@ -64,13 +64,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		.userDetailsService(userDetailsService)
 		.passwordEncoder(new BCryptPasswordEncoder());
 	}
-	/*
-	public CustinfoService getCustinfoService() {
-		return custinfoService;
-	}
-
-	public void setCustinfoService(CustinfoService custinfoService) {
-		this.custinfoService = custinfoService;
-	}
 	 */
+
+	@Autowired
+	public void configAuthentication(AuthenticationManagerBuilder auth)
+			throws Exception {
+		auth.userDetailsService(userDetailsService);
+	}
 }

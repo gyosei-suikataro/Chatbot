@@ -41,7 +41,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		.usersByUsernameQuery(USER_QUERY)
 		.authoritiesByUsernameQuery(ROLE_QUERY);
 	}
-	
+
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http
@@ -73,9 +73,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	@Autowired
 	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
 		auth
-		.authenticationProvider(createAuthProvider()); 
+		.userDetailsService(myUserDetailsService);
+		//.authenticationProvider(createAuthProvider()); 
 	}
-
+	/*
 	private AuthenticationProvider createAuthProvider() { 
 
 		DaoAuthenticationProvider authProvider = 
@@ -86,4 +87,5 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 		return authProvider; 
 	}
+	 */
 }

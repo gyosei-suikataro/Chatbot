@@ -22,7 +22,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		.authorizeRequests()
 		.antMatchers("/", "/login", "/loginerror").permitAll()
 		.antMatchers("/Customer").hasAnyAuthority("ADMIN","USER")
-		.antMatchers("/CustomerList").hasAnyAuthority("USER")
+		.antMatchers("/CustomerList").hasAnyAuthority("ADMIN")
 		.and()
 		.formLogin()
 		.loginProcessingUrl("/loading")

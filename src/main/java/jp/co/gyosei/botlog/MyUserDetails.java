@@ -23,7 +23,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor 
 @Entity
 @Table(name="custinfo") 
-public class LoginCust implements UserDetails {
+public class MyUserDetails implements UserDetails {
 	
 	/**
 	 * 

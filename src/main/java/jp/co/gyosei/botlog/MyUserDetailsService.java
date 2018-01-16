@@ -16,11 +16,11 @@ public class MyUserDetailsService implements UserDetailsService {
 		if (s==null || "".equals(s)) { 
 			throw new UsernameNotFoundException("Username is empty");
 		} 
-		LoginCust loginCust = CustinfoRepositoryCustom.findByCustid(s); 
-		if (loginCust == null) { 
+		MyUserDetails myUserDetails = CustinfoRepositoryCustom.findByCustid(s); 
+		if (myUserDetails == null) { 
 			throw new UsernameNotFoundException( "User not found for name: " + s);
 		}
-		return loginCust;
+		return myUserDetails;
 
 	}
 } 

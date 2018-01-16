@@ -34,6 +34,7 @@ public class MyUserDetails implements UserDetails {
 	private Boolean effect; 
 	@Column(nullable = false) 
 	private String role;
+	
 	public Collection<GrantedAuthority> getAuthorities() { 
 		List<GrantedAuthority> authorities = new ArrayList<>(); 
 		authorities.add(new SimpleGrantedAuthority(role)); 
@@ -50,22 +51,18 @@ public class MyUserDetails implements UserDetails {
 	}
 	@Override
 	public boolean isAccountNonExpired() {
-		// TODO 自動生成されたメソッド・スタブ
-		return false;
+		return true;
 	}
 	@Override
 	public boolean isAccountNonLocked() {
-		// TODO 自動生成されたメソッド・スタブ
-		return false;
+		return true;
 	}
 	@Override
 	public boolean isCredentialsNonExpired() {
-		// TODO 自動生成されたメソッド・スタブ
-		return false;
+		return true;
 	}
 	@Override
 	public boolean isEnabled() {
-		// TODO 自動生成されたメソッド・スタブ
-		return false;
+		return true;
 	}
 }

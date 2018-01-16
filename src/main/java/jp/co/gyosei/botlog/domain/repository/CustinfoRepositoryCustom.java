@@ -1,20 +1,15 @@
 package jp.co.gyosei.botlog.domain.repository;
 
-import java.util.Collection;
-
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.security.core.GrantedAuthority;
 import org.springframework.stereotype.Repository;
 
-import jp.co.gyosei.botlog.impl.CustinfoEntityImpl;
+import jp.co.gyosei.botlog.LoginCust;
 
 @Repository
-public interface CustinfoRepositoryCustom extends JpaRepository<CustinfoEntityImpl, String>{
+public interface CustinfoRepositoryCustom extends JpaRepository<LoginCust, String>{
 
-	public CustinfoEntityImpl findByCustid(String custid);
-/*
-	public static CustinfoEntityImpl custinfoRepositoryCustom(String custid, String password, Collection<? extends GrantedAuthority> role) {
-		return new CustinfoEntityImpl(password, password, role);
+	public static LoginCust findByCustid(String custid) {
+		// TODO 自動生成されたメソッド・スタブ
+		return null;
 	}
-	*/
 }

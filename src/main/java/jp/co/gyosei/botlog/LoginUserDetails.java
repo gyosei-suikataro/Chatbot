@@ -1,68 +1,24 @@
 package jp.co.gyosei.botlog;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-
-import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Service;
 
-import jp.co.gyosei.botlog.impl.CustinfoEntityImpl;
+import jp.co.gyosei.botlog.domain.repository.CustinfoRepositoryCustom;
 
-public class LoginUserDetails implements UserDetails {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-	private String custid;
-	private String password;
-	private Collection<? extends GrantedAuthority> role;
-
-	public LoginUserDetails(String custid, String password,
-			Collection<? extends GrantedAuthority> role) {
-		super();
-		this.custid = custid;
-		this.password = password;
-		this.role = role;
+@Service
+public class LoginUserDetails implements UserDetailsService { 
+	@Override 
+	public UserDetails loadUserByUsername(String s) 
+			throws UsernameNotFoundException { 
+		if (s==null || "".equals(s)) { 
+			throw new UsernameNotFoundException("Username is empty");
+		} 
+		LoginCust loginCust = CustinfoRepositoryCustom.findByCustid(s); 
+		if (loginCust == null) { 
+			throw new UsernameNotFoundException( "User not found for name: " + s);
+		} 
+		return loginCust;
 	}
-
-	public static UserDetails create(CustinfoEntityImpl entity) {
-		return new LoginUserDetails(entity.getUsername(), entity.getPassword(), entity.getAuthorities());
-	}
-
-	@Override
-	public String getUsername() {
-		return this.custid;
-	}
-
-	@Override
-	public String getPassword() {
-		return this.password;
-	}
-
-	@Override
-	public boolean isAccountNonExpired() {
-		return false;
-	}
-
-	@Override
-	public boolean isAccountNonLocked() {
-		return false;
-	}
-
-	@Override
-	public boolean isCredentialsNonExpired() {
-		return false;
-	}
-
-	@Override
-	public boolean isEnabled() {
-		return false;
-	}
-
-	@Override
-	public Collection<? extends GrantedAuthority> getAuthorities() {
-		return this.role;
-	}
-
-}
+} 

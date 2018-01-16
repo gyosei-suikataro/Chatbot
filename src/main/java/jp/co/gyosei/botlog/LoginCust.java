@@ -1,47 +1,84 @@
-/*
 package jp.co.gyosei.botlog;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.ToString;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import jp.co.gyosei.botlog.impl.CustinfoEntityImpl;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
-@EqualsAndHashCode(callSuper = true)
-@ToString(callSuper = true)
-public class LoginCust extends User {
+@NoArgsConstructor
+@AllArgsConstructor 
+@Entity
+@Table(name="custinfo") 
+public class LoginCust implements UserDetails {
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	@Id 
+	@GeneratedValue 
+	private String custid;
+	@Column(nullable = false) 
+	private String custname; 
+	@Column(nullable = false) 
+	private String password;
+	@Column(nullable = false) 
+	private Boolean effect; 
+	@Column(nullable = false) 
+	private String role;
 
-	public static UserDetails create( entity) {
-		List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
-		for(Authorities auth: entity.getAuthorities()){
-			authorities.add(new SimpleGrantedAuthority(auth.getId().getAuthority()));
-		}
-		return new MyUserDetail(entity.getId(), entity.getLoginId(), entity.getPassword(), entity.getName(), authorities);
+	public Collection<GrantedAuthority> getAuthorities() { 
+		List<GrantedAuthority> authorities = new ArrayList<>(); 
+		authorities.add(new SimpleGrantedAuthority(role)); 
+		return authorities; }
+
+	@Override
+	public String getPassword() {
+		// TODO 自動生成されたメソッド・スタブ
+		return null;
 	}
 
-	// �ǉ�����i�e�[�u���Ń��[�U�[�̃L�[�ƂȂ�l��ݒ肷��j
-	public String custid;
+	@Override
+	public String getUsername() {
+		// TODO 自動生成されたメソッド・スタブ
+		return null;
+	}
 
-	// �ǉ�����
-	public String password;
+	@Override
+	public boolean isAccountNonExpired() {
+		// TODO 自動生成されたメソッド・スタブ
+		return false;
+	}
 
-	// �ǉ�����
-	public String role;
+	@Override
+	public boolean isAccountNonLocked() {
+		// TODO 自動生成されたメソッド・スタブ
+		return false;
+	}
 
-	public LoginCust(CustinfoEntityImpl cust) {
-		super(cust.custid, cust.password, true, true, true, true, new ArrayList<GrantedAuthority>());
-		custid = cust.custid;
-		password = cust.password;
-		role = cust.role;
-		//role = "ADMIN";
+	@Override
+	public boolean isCredentialsNonExpired() {
+		// TODO 自動生成されたメソッド・スタブ
+		return false;
+	}
+
+	@Override
+	public boolean isEnabled() {
+		// TODO 自動生成されたメソッド・スタブ
+		return false;
 	}
 }
-*/

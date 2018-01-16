@@ -1,3 +1,4 @@
+/*
 package jp.co.gyosei.botlog.impl;
 
 import java.io.Serializable;
@@ -60,3 +61,4 @@ public class CustinfoEntityImpl implements Serializable {
     }
 
 }
+*/

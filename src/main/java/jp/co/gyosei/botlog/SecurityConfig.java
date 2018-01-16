@@ -5,6 +5,8 @@ import javax.activation.DataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.authentication.AuthenticationProvider;
+import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -12,7 +14,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
-import jp.co.gyosei.botlog.impl.UserDetailsServiceImpl;
+//import jp.co.gyosei.botlog.impl.UserDetailsServiceImpl;
 import jp.co.gyosei.botlog.domain.service.CustinfoService;
 //import jp.co.gyosei.botlog.impl.AuthenticationProviderImpl;
 import jp.co.gyosei.botlog.LoginUserDetails;
@@ -24,7 +26,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	private DataSource dataSource;
 
 	@Autowired
-	private UserDetailsServiceImpl userDetailsService;
+	private LoginUserDetails loginUserDetails;
 	/*
 	@Autowired
 	private AuthenticationProviderImpl authenticationProvider;
@@ -60,14 +62,17 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	@Autowired
 	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
 		auth
-		/*
-		.authenticationProvider(authenticationProvider)
-		.userDetailsService(userDetailsService)
-		.inMemoryAuthentication()
-		.withUser("user").password("pass").roles("ADMIN");
-		*/
-		.jdbcAuthentication()
-		.dataSource((javax.sql.DataSource) dataSource)
-		.passwordEncoder(new BCryptPasswordEncoder());
+		.authenticationProvider(createAuthProvider()); 
+	}
+
+	private AuthenticationProvider createAuthProvider() { 
+
+		DaoAuthenticationProvider authProvider = 
+				new DaoAuthenticationProvider();
+
+		authProvider.setUserDetailsService(loginUserDetails);
+		authProvider.setPasswordEncoder(new BCryptPasswordEncoder());
+
+		return authProvider; 
 	}
 }

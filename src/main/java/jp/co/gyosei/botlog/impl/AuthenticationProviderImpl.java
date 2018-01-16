@@ -1,3 +1,4 @@
+/*
 package jp.co.gyosei.botlog.impl;
 
 import java.util.Collection;
@@ -58,3 +59,4 @@ public class AuthenticationProviderImpl implements AuthenticationProvider {
 		this.custinfoRepositoryCustom = custinfoRepositoryCustom;
 	}
 }
+*/

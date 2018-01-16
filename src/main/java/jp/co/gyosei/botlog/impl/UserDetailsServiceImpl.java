@@ -18,16 +18,16 @@ public class UserDetailsServiceImpl implements UserDetailsService  {
     * @see org.springframework.security.core.userdetails.UserDetailsService#loadUserBycustid(java.lang.String)
     */
     @Override
-    public UserDetails loadUserByUsername(String username)
+    public UserDetails loadUserByUsername(String custid)
             throws UsernameNotFoundException {
-        if ( username == null || username.isEmpty() ){
+        if ( custid == null || custid.isEmpty() ){
             throw new UsernameNotFoundException("custid is empty");
         }
 
-        CustinfoEntityImpl foundUser = custinfoRepositoryCustom.findByCustid(username);
+        CustinfoEntityImpl foundUser = custinfoRepositoryCustom.findByCustid(custid);
         if( foundUser != null ){
             return foundUser.toLoginUserDetails();
         }
-        throw new UsernameNotFoundException( username + "is not found");
+        throw new UsernameNotFoundException( custid + "is not found");
     }
 }

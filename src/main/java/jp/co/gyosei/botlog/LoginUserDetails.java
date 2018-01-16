@@ -26,9 +26,6 @@ public class LoginUserDetails implements UserDetails {
 		this.role = role;
 	}
 
-	public LoginUserDetails(CustinfoEntityImpl custinfoEntityImpl) {
-	}
-
 	public static UserDetails create(CustinfoEntityImpl entity) {
 		return new LoginUserDetails(entity.getUsername(), entity.getPassword(), entity.getAuthorities());
 	}

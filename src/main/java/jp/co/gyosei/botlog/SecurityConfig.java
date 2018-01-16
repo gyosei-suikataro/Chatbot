@@ -1,6 +1,6 @@
 package jp.co.gyosei.botlog;
 
-import javax.activation.DataSource;
+import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -23,15 +23,30 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Autowired
 	private MyUserDetailsService myUserDetailsService;
-	/*
+
+	@Value("${spring.datasource.url}")
+	private String dbUrl;
+
 	@Autowired
-	private AuthenticationProviderImpl authenticationProvider;
-	 */
+	@Qualifier("dataSource")
+	private DataSource dataSource;
+
+	private static final String USER_QUERY = "SELECT custid, password, effect FROM custinfo WHERE custid = ?";
+	private static final String ROLE_QUERY = "SELECT custid, role FROM custinfo WHERE custid = ?";
+
+	@Override
+	public void configure(AuthenticationManagerBuilder auth) throws Exception {
+		auth.jdbcAuthentication()
+		.dataSource(dataSource)
+		.usersByUsernameQuery(USER_QUERY)
+		.authoritiesByUsernameQuery(ROLE_QUERY);
+	}
+	
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http
 		.authorizeRequests()
-		.antMatchers("/", "/login", "/loginerror").permitAll()
+		.antMatchers("/").permitAll()
 		.antMatchers("/**").hasAnyAuthority("ADMIN","USER")
 		.and()
 		.formLogin()

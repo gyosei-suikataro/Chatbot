@@ -1,3 +1,4 @@
+/*
 package jp.co.gyosei.botlog.domain.service;
 
 import java.util.Collection;
@@ -27,7 +28,8 @@ public class CustinfoService {
 
 	public void registerCustomer(Integer no, String custid, String custname, String orgname, String password,
 			String effect, String role) {
-		// TODO ©“®¶¬‚³‚ê‚½ƒƒ\ƒbƒhEƒXƒ^ƒu
+		// TODO ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ê‚½ï¿½ï¿½ï¿½\ï¿½bï¿½hï¿½Eï¿½Xï¿½^ï¿½u
 		
 	}
 }
+*/

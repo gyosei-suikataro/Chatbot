@@ -1,3 +1,4 @@
+/*
 package jp.co.gyosei.botlog.app;
 
 import javax.servlet.http.HttpServletRequest;
@@ -34,3 +35,4 @@ public class CustomerController {
 	}
 	
 }
+*/

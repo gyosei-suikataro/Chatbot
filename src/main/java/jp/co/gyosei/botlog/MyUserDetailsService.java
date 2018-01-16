@@ -1,3 +1,4 @@
+/*
 package jp.co.gyosei.botlog;
 
 import org.springframework.security.core.userdetails.UserDetails;
@@ -24,3 +25,4 @@ public class MyUserDetailsService implements UserDetailsService {
 
 	}
 } 
+*/

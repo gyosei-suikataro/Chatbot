@@ -1,3 +1,4 @@
+/*
 package jp.co.gyosei.botlog;
 
 import java.util.ArrayList;
@@ -25,9 +26,6 @@ import lombok.NoArgsConstructor;
 @Table(name="custinfo") 
 public class MyUserDetails implements UserDetails {
 	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	@Id 
 	@GeneratedValue 
@@ -82,3 +80,4 @@ public class MyUserDetails implements UserDetails {
 		return false;
 	}
 }
+*/

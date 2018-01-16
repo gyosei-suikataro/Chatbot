@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import jp.co.gyosei.botlog.domain.entity.MyUserDetails;
 import jp.co.gyosei.botlog.domain.repository.LoginRepository;
+
 @Service
 public class MyUserDetailsService implements UserDetailsService { 
 	@Override 

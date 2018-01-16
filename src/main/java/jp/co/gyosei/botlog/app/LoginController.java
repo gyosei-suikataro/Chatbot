@@ -4,6 +4,8 @@ import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import jp.co.gyosei.botlog.domain.entity.MyUserDetails;
 /*
 import jp.co.gyosei.botlog.LoginCust;
 import jp.co.gyosei.botlog.domain.form.LoginForm;
@@ -28,12 +30,12 @@ public class LoginController {
         model.addAttribute("loginError", true);
         return "Login";
     }
-
+*/
     @RequestMapping(value = "/menu")
-    public String Menu(@AuthenticationPrincipal LoginCust loginCust, Model model) {
+    public String Menu(@AuthenticationPrincipal MyUserDetails myUserDetails, Model model) {
         // @AuthenticationPrincipalを使うと認証オブジェクトを参照できる。
 
         return "/menu";
     }
-*/
+
 }

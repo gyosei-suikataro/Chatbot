@@ -1,4 +1,3 @@
-/*
 package jp.co.gyosei.botlog.app;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -56,4 +55,3 @@ public class CustomerListController {
 		return "Customer";
 	}
 }
-*/

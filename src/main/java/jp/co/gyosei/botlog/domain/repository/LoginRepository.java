@@ -6,8 +6,12 @@ import jp.co.gyosei.botlog.domain.entity.MyUserDetails;
 
 @Repository
 public interface LoginRepository extends JpaRepository<MyUserDetails, String>{
-	public static MyUserDetails findByCustid(String custid) {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
-	}
+
+	/**
+	 * {@link Users#get
+	 * @param loginId
+	 * @return
+	 */
+	public MyUserDetails findByCustid(String custid);
+
 }

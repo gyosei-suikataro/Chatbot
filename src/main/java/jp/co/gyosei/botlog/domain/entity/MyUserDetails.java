@@ -21,7 +21,7 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name="custinfo") 
 public class MyUserDetails implements UserDetails {
-	
+
 	private static final long serialVersionUID = 1L;
 	@Id 
 	@GeneratedValue 
@@ -37,16 +37,16 @@ public class MyUserDetails implements UserDetails {
 	public Collection<GrantedAuthority> getAuthorities() { 
 		List<GrantedAuthority> authorities = new ArrayList<>(); 
 		authorities.add(new SimpleGrantedAuthority(role)); 
-		return authorities; }
+		return authorities; 
+	}
+
 	@Override
 	public String getPassword() {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
+		return this.password;
 	}
 	@Override
 	public String getUsername() {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
+		return this.custid;
 	}
 	@Override
 	public boolean isAccountNonExpired() {

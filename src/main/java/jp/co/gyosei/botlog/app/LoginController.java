@@ -35,7 +35,7 @@ public class LoginController {
     public String Menu(@AuthenticationPrincipal MyUserDetails myUserDetails, Model model) {
         // @AuthenticationPrincipalを使うと認証オブジェクトを参照できる。
 
-        return "/menu";
+        return "menu";
     }
 
 }

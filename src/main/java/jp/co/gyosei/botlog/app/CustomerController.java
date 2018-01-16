@@ -1,3 +1,4 @@
+/*
 package jp.co.gyosei.botlog.app;
 
 import javax.servlet.http.HttpServletRequest;
@@ -21,12 +22,7 @@ public class CustomerController {
 	
 	@Autowired
 	CustinfoRepository custinfoRepository;
-/*
-	@RequestMapping("/")
-	public String Home() {
-		return "Customer";
-	}
-*/
+
 	@GetMapping("/Customer")
     public String signup(Model model) {
         model.addAttribute("customerForm", new CustomerForm());
@@ -40,4 +36,4 @@ public class CustomerController {
 	}
 	
 }
-
+*/

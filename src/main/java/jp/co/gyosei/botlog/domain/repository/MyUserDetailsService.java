@@ -21,6 +21,7 @@ public class MyUserDetailsService implements UserDetailsService {
 		if (s==null || "".equals(s)) { 
 			throw new UsernameNotFoundException("Username is empty");
 		} 
+		
 		MyUserDetails myUserDetails = loginRepository.findByCustid(s); 
 		if (myUserDetails == null) { 
 			throw new UsernameNotFoundException( "User not found for name: " + s);

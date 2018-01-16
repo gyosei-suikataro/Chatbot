@@ -10,39 +10,34 @@ import org.springframework.security.core.userdetails.UserDetails;
 import jp.co.gyosei.botlog.impl.CustinfoEntityImpl;
 
 public class LoginUserDetails implements UserDetails {
-    /**
+	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 	private String custid;
-    private String password;
-    private Collection<? extends GrantedAuthority> role;
+	private String password;
+	private Collection<? extends GrantedAuthority> role;
 
-    public LoginUserDetails(String custid, String password,
-           Collection<? extends GrantedAuthority> role) {
-        super();
-        this.custid = custid;
-        this.password = password;
-        this.role = role;
-    }
+	public LoginUserDetails(String custid, String password,
+			Collection<? extends GrantedAuthority> role) {
+		super();
+		this.custid = custid;
+		this.password = password;
+		this.role = role;
+	}
 
 	public LoginUserDetails(CustinfoEntityImpl custinfoEntityImpl) {
 	}
 
-	/**
-    * {@link Users}を元にインスタンスを生成します。
-    * @param user 生成元になるユーザ
-    * @return
-    */
-    public static UserDetails create(CustinfoEntityImpl entity) {
-        return new LoginUserDetails(entity.getCustid(), entity.getPassword(), entity.getRole());
-    }
+	public static UserDetails create(CustinfoEntityImpl entity) {
+		return new LoginUserDetails(entity.getUsername(), entity.getPassword(), entity.getAuthorities());
+	}
 
 	@Override
 	public String getUsername() {
 		return this.custid;
 	}
-	
+
 	@Override
 	public String getPassword() {
 		return this.password;
@@ -50,25 +45,21 @@ public class LoginUserDetails implements UserDetails {
 
 	@Override
 	public boolean isAccountNonExpired() {
-		// TODO 自動生成されたメソッド・スタブ
 		return false;
 	}
 
 	@Override
 	public boolean isAccountNonLocked() {
-		// TODO 自動生成されたメソッド・スタブ
 		return false;
 	}
 
 	@Override
 	public boolean isCredentialsNonExpired() {
-		// TODO 自動生成されたメソッド・スタブ
 		return false;
 	}
 
 	@Override
 	public boolean isEnabled() {
-		// TODO 自動生成されたメソッド・スタブ
 		return false;
 	}
 

@@ -31,7 +31,7 @@ public class CustinfoEntityImpl implements Serializable {
 		this.role = role;
 	}
 
-	public String getCustid() {
+	public String getUsername() {
 		return this.custid;
 	}
 
@@ -47,11 +47,11 @@ public class CustinfoEntityImpl implements Serializable {
 		this.password = password;
 	}
 	
-	public Collection<? extends GrantedAuthority> getRole() {
+	public Collection<? extends GrantedAuthority> getAuthorities() {
 		return role;
 	}
 
-	public void setRole(Collection<? extends GrantedAuthority> role) {
+	public void setAuthorities(Collection<? extends GrantedAuthority> role) {
 		this.role = role;
 	}
 	

@@ -1,4 +1,5 @@
-package jp.co.gyosei.botlog;
+package jp.co.gyosei.botlog.domain.entity;
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;

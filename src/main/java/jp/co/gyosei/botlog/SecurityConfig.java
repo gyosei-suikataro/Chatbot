@@ -25,10 +25,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Autowired
 	private UserDetailsServiceImpl userDetailsService;
-/*
+	/*
 	@Autowired
 	private AuthenticationProviderImpl authenticationProvider;
-*/
+	 */
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http
@@ -56,19 +56,16 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		.invalidateHttpSession(true)
 		.permitAll();
 	}
-	/*
+
 	@Autowired
 	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
 		auth
+		/*
 		.authenticationProvider(authenticationProvider)
 		.userDetailsService(userDetailsService)
+		 */
+		.jdbcAuthentication()
+		.dataSource((javax.sql.DataSource) dataSource)
 		.passwordEncoder(new BCryptPasswordEncoder());
-	}
-	 */
-
-	@Autowired
-	public void configAuthentication(AuthenticationManagerBuilder auth)
-			throws Exception {
-		auth.userDetailsService(userDetailsService);
 	}
 }

@@ -12,7 +12,6 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 @Configuration 
 @EnableWebSecurity
-@SpringBootApplication
 public class SecurityConfig extends WebSecurityConfigurerAdapter { 
 
 	@Autowired
@@ -23,7 +22,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		http
 		.authorizeRequests()
 		.antMatchers("/").permitAll()
-		.antMatchers("/**").hasAnyAuthority("ADMIN","USER")
+		.antMatchers("/Customer").hasAnyAuthority("ADMIN","USER")
 		.and()
 		.formLogin()
 		.loginProcessingUrl("/loading")

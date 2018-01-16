@@ -30,7 +30,6 @@ public class LoginController {
 
         @RequestMapping(value = "/menu")
         public String memu(@AuthenticationPrincipal LoginUserDetails cust, Model model) {
-            // @AuthenticationPrincipalを使うと認証オブジェクトを参照できる。
 
             return "menu";
         }

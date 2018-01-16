@@ -1,3 +1,4 @@
+/*
 package jp.co.gyosei.botlog.domain.form;
 
 import java.util.Collection;
@@ -34,3 +35,4 @@ public class LoginForm {
 		this.role = role;
 	}
 }
+*/

@@ -8,17 +8,19 @@ import org.springframework.stereotype.Service;
 import jp.co.gyosei.botlog.domain.repository.CustinfoRepositoryCustom;
 
 @Service
-public class LoginUserDetails implements UserDetailsService { 
+public class MyUserDetailsService implements UserDetailsService { 
 	@Override 
 	public UserDetails loadUserByUsername(String s) 
 			throws UsernameNotFoundException { 
+
 		if (s==null || "".equals(s)) { 
 			throw new UsernameNotFoundException("Username is empty");
 		} 
 		LoginCust loginCust = CustinfoRepositoryCustom.findByCustid(s); 
 		if (loginCust == null) { 
 			throw new UsernameNotFoundException( "User not found for name: " + s);
-		} 
+		}
 		return loginCust;
+
 	}
 } 

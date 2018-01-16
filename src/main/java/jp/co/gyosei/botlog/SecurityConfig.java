@@ -14,19 +14,14 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
-//import jp.co.gyosei.botlog.impl.UserDetailsServiceImpl;
-import jp.co.gyosei.botlog.domain.service.CustinfoService;
 //import jp.co.gyosei.botlog.impl.AuthenticationProviderImpl;
-import jp.co.gyosei.botlog.LoginUserDetails;
+import jp.co.gyosei.botlog.MyUserDetailsService;
 
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Autowired
-	private DataSource dataSource;
-
-	@Autowired
-	private LoginUserDetails loginUserDetails;
+	private MyUserDetailsService myUserDetailsService;
 	/*
 	@Autowired
 	private AuthenticationProviderImpl authenticationProvider;
@@ -70,7 +65,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		DaoAuthenticationProvider authProvider = 
 				new DaoAuthenticationProvider();
 
-		authProvider.setUserDetailsService(loginUserDetails);
+		authProvider.setUserDetailsService(myUserDetailsService);
 		authProvider.setPasswordEncoder(new BCryptPasswordEncoder());
 
 		return authProvider; 

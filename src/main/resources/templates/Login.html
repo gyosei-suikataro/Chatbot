@@ -1,60 +1,56 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
-<head th:replace="fragments/layout2 :: base_header(~{::link},'login')">
-<link href="/stylesheets/jquery.bootgrid.css" rel="stylesheet" />
-<link rel="stylesheet" type="text/css" href="/stylesheets/Buttons.css" />
-
-<style>
-.myform {
-	width: 730px;
-	margin: 0 auto;
-}
-</style>
-
+<head>
+<title>„É≠„Ç∞„Ç§„É≥</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<link rel="stylesheet"
+	href="../webjars/bootstrap/3.3.1/css/bootstrap.min.css" type="text/css"></link>
+<link rel="stylesheet" href="../css/common.css" type="text/css"></link>
+<!--[if lt IE 9]>
+    <script type="text/javascript" src="../javascript/ie8/html5shiv.js"></script>
+    <script type="text/javascript" src="../javascript/ie8/respond.js"></script>
+    <script type="text/javascript" src="../javascript/ie8/jquery-1.11.3.min.js"></script>
+<![endif]-->
+<!--[if gte IE 9]><!-->
+<script type="text/javascript"
+	src="../webjars/jquery/2.1.4/jquery.min.js"></script>
+<!--<![endif]-->
+<script type="text/javascript"
+	src="../webjars/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-	<div th:replace="fragments/layout2 :: header"></div>
-
 	<div class="container">
 		<div class="row">
-			<div class="col-xs-12 col-md-push-3 col-md-6">
-				<div class="form-wrap">
-					<div class="text-center">
-						<h1>Login</h1>
-					</div>
-					<br>
-					<form id="login_form" method="post" th:action="@{'/loading'}"
-						autocomplete="off" class="center-block">
-						<div class="form-group"
-							th:if="${session['SPRING_SECURITY_LAST_EXCEPTION']} != null">
-							<p class="form-control-static text-danger"
-								th:text="${session['SPRING_SECURITY_LAST_EXCEPTION'].message}"></p>
-						</div>
-						<div class="form-group">
-							<label for="id" class="sr-only">ID</label> <input type="text"
-								id="custid" name="custid" class="form-control input-lg"
-								placeholder="ID Çì¸óÕÇµÇƒâ∫Ç≥Ç¢" />
-						</div>
-						<div class="form-group" style="align: center">
-							<label for="password" class="sr-only">Password</label> <input
-								type="password" name="password" id="password"
-								class="form-control input-lg" placeholder="Password Çì¸óÕÇµÇƒâ∫Ç≥Ç¢"
-								style="margin-top: 30px;" />
-						</div>
-						<br>
-						<button id="btn-login" class="btn btn-primary btn-block">ÉçÉOÉCÉì</button>
+			<p>
+			<h1 id="title">„É≠„Ç∞„Ç§„É≥</h1>
+			</p>
+		</div>
+		<div class="row">
+			<div class="col-md-3 col-lg-3"></div>
+			<div class="col-md-6 col-lg-6">
+				<div class="well well-sm">
+					<form id="login_form" method="post" th:action="@{'/loading'}">
+						<fieldset id="login_field">
+							<div class="form-group">
+								<label>„É≠„Ç∞„Ç§„É≥ID</label> <input type="text" class="form-control"
+									id="custid" name="custid" placeholder="„É≠„Ç∞„Ç§„É≥ID„ÇíÂÖ•Âäõ„Åó„Å¶„Åè„Å†„Åï„ÅÑ"
+									autofocus="" required="" />
+							</div>
+							<div class="form-group">
+								<label>„Éë„Çπ„ÉØ„Éº„Éâ</label> <input type="password" class="form-control"
+									id="password" name="password" placeholder="„Éë„Çπ„ÉØ„Éº„Éâ„ÇíÂÖ•Âäõ„Åó„Å¶„Åè„Å†„Åï„ÅÑ"
+									required="" />
+							</div>
+							<div class="form-group">
+								<input id="login_button" type="submit" value="„É≠„Ç∞„Ç§„É≥" />
+							</div>
+						</fieldset>
 					</form>
 				</div>
 			</div>
+			<div class="col-md-3 col-lg-3"></div>
 		</div>
 	</div>
-
-	<!-- Bootstrap core JavaScript
-    ================================================== -->
-	<!-- Placed at the end of the document so the pages load faster -->
-	<script src="/js/jquery.min.js"></script>
-	<script src="/js/bootstrap.min.js"></script>
-	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-	<script src="/js/ie10-viewport-bug-workaround.js"></script>
 </body>
 </html>

@@ -45,15 +45,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		.permitAll();
 
 	}
-	
-/*
- 	@Autowired
- 	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
- 		auth
- 		.inMemoryAuthentication()
- 		.withUser("user").password("password").roles("USER");
- 	}
-*/
 
 	@Autowired
 	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
